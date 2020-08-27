@@ -10,12 +10,17 @@ class Place < ApplicationRecord
   belongs_to :user
 
   def average_rating
-    reviews = self.reviews
-    sum_rating = 0
-    reviews.each do |review|
-      sum_rating += review.rating
+    if (reviews.length != 0)
+      reviews = self.reviews
+      sum_rating = 0
+      reviews.each do |review|
+        sum_rating += review.rating
+      end
+      average = sum_rating / reviews.length
+    else
+      return 0
     end
-    average = sum_rating / reviews.length
+   
   end
 
   def get_top_genre

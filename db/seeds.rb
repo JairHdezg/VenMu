@@ -160,6 +160,7 @@ puts 'Creating 3 places'
 
 @place1 = Place.new(name: 'Taco Bar', top_genre: 'Chill', category: 'Bar', address: 'Panama City, Panama', description: 'Cozy hangout spot with good American Music', phone_number: '55 1845 9513')
 file = URI.open('https://www.dondeir.com/wp-content/uploads/2019/03/cafe-taco-bar-barra.jpg')
+@place1.photos.attach(io: file, filename: 'taco-bar.jpg', content_type: 'image/png')
 @place1.user = @user1
 @place1.save!
 
@@ -177,7 +178,7 @@ file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0d/c0/fa/d4/pho
 
 @place3 = Place.new(name: 'La Bodega', top_genre: 'Latin', category: 'Kitchen Bar', address: 'Cholula, Puebla', url: 'https://www.labodega.rest/', description: 'Mexican Restaurant with traditional music', phone_number: '55 5511 7390')
 file = URI.open('https://www.labodega.rest/images/galeria/1/1.jpg')
-@place3.photos.attach
+@place3.photos.attach(io: file, filename: 'labodega.jpg', content_type: 'image/png')
 @place3.user = @user2
 @place3.save!
 
@@ -193,20 +194,28 @@ genre_review1 = GenresReview.new
 genre_review1.review = @review1
 genre_review1.genre = Genre.find_by(name: 'electronic')
 genre_review1.save
-@review1.genres_reviews << genre_review1
 @review1.save!
 
-@review2 = Review.new(content: 'Alot of Variety, best songs out! Awesome vibe.', rating: 5)
+
+@review2= Review.new(content: 'Alot of Variety, best songs out! Awesome vibe.', rating: 5)
 @review2.user = @user2
-@review2.genres_reviews << genre_review1
 @review2.place = @place2
 @review2.save!
+genre_review2 = GenresReview.new
+genre_review2.review = @review2
+genre_review2.genre = Genre.find_by(name: 'rock')
+genre_review2.save
+
 
 @review3 = Review.new(content: 'Amazing Electronic music, delicious food.', rating: 5)
 @review3.user = @user2
-@review3.genres_reviews << genre_review1
 @review3.place = @place2
 @review3.save!
+genre_review3 = GenresReview.new
+genre_review3.review = @review3
+genre_review3.genre = Genre.find_by(name: 'pop')
+genre_review3.save
+
 
 puts 'Finished'
 
