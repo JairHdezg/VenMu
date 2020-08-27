@@ -2,12 +2,29 @@
 <div class="show-container">
   <div class="show-main" style="background-image: url('<%= cl_image_path @place.photos[0].key %>')">
   </div>
+
   <div class="place-container container">
     <div class="place-info border-bottom">
+
+      <!--average rating of place -->
+      <div class="place-rating">
+        <p class="">
+        <% @place.average_rating.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        </p>
+      </div>
+
       <h1 id="show-title"> <%= @place.name.capitalize %> </h1>
       <p id="show-address"> <%= @place.address %> </p>
       <p id="show-url"> <%= @place.url %> </p>
-        <!-- Slider main container -->
+
+      <!-- top genre tag -->
+      <div class="top-tag d-flex align-items-center">
+        <p class="top-tag-genre"> <%= @place.top_genre %> </p>
+      </div>
+
+      <!-- Slider main container -->
       <div class="swiper-container s1">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
@@ -18,11 +35,13 @@
         <!-- If we need pagination -->
       </div>
     </div>
+
     <div class="show-description border-bottom d-flex align-items-center">
       <%= @place.description %>
     </div>
-    <div class="show-reviews border-bottom">
 
+    <!-- Reviews -->
+    <div class="show-reviews border-bottom">
       <!-- Add review button -->
       <div type="button" class="review-button" data-toggle="modal" data-target="#review-modal">
         Add a review <i class="fas fa-plus"></i>
@@ -78,7 +97,7 @@
                       </div>
                     <% end %>
                   <% else %>
-
+                  <span>no reviews yet</span>
                   <% end %>
                 </div>
               </div>

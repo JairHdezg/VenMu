@@ -1,13 +1,13 @@
-<div class="container home-page d-flex flex-column justify-content-between">
+<div class="container home-page d-flex flex-column justify-content-between" id="home-container">
 
-    <div class="row mt-5">
+    <div class="row mt-5 hide">
       <div class="col-sm-12">
         <h1 class="title">VenMu</h1>
         <h2 class="sub-title">Your music. New places.</h2>
       </div>
     </div>
 
-    <div class="row pb-5">
+    <div class="row pb-5 hide">
       <div class="col-sm-12 d-flex flex-column align-items-center">
         <%= simple_form_for :search, url: places_path, method: "GET", html: { class: 'form-inline' } do |f| %>
             <%= f.input :genre, placeholder: "Search by genre...", label: false, input_html: { class: 'search-bar' } %>
@@ -19,46 +19,67 @@
           <% end %>
         <% end %>
         <h4 class="under-search mt-3">OR pick one!</h4>
-        <svg type="submit" data-toggle="modal" data-target="#myModal2" width="30px" height="30px" style="color:white" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg type="submit" data-toggle="modal" data-target="#myModal23" width="30px" height="30px" style="color:white" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
           </svg>
       </div>
     </div>
   </div>
 
-  <div class="modal fade animate light-background" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content animate-bottom mt-5" id="modal-content-background">
+  <div class="modal fade animate light-background" id="myModal23" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog"  role="document">
+      <div class="modal-content animate-bottom" id="modal-content-background-home-page">
         <div class="modal-body">
           <div class="container">
             <div class="row d-flex justify-content-around">
-              <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/descarga_3_mgvflq.jpg)">
-                <%= link_to "ROCK", places_path, class: "genre-title" %>
-              </div>
+              <%= link_to places_path do %>
+                <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/descarga_3_mgvflq.jpg)">
+                  <h4 class ="genre-title">ROCK </h4>
+                </div>
+              <% end %>
+              <%= link_to places_path do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/photo-1514525253161-7a46d19cd819_ndlj2b.jpg)">
-                <%= link_to "POP", places_path, class: "genre-title"%>
+                <h4 class ="genre-title">POP</h4>
               </div>
+              <% end %>
+              <%= link_to places_path do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479956/photo-1532981434728-a2706e29a80e_m44kil.jpg)">
-                <%= link_to "REGGAETON", places_path, class: "genre-title" %>
+                <h4 class ="genre-title">REGGAETON</h4>
               </div>
+              <% end %>
+              <%= link_to places_path do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479959/photo-1504609813442-a8924e83f76e_kcehsz.jpg)">
-                <%= link_to "LATIN", places_path, class: "genre-title" %>
+                <h4 class ="genre-title">LATIN</h4>
               </div>
+              <% end %>
+              <%= link_to places_path do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/dan-gold-YW9cBl03LmE-unsplash_toyjlx.jpg)">
-                <%= link_to "CLASSICAL", places_path, class: "genre-title" %>
+                <h4 class ="genre-title">CLASSICAL</h4>
               </div>
+              <% end %>
+              <%= link_to places_path do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480096/unnamed_wyze1e.jpg)">
-                <%= link_to "JAZZ", places_path, class: "genre-title" %>
+                <h4 class ="genre-title">JAZZ</h4>
               </div>
+              <% end %>
+              <%= link_to places_path do%>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/derek-truninger-uLitVttkC7o-unsplash_if201c.jpg)">
-                <%= link_to "SOUL", places_path, class: "genre-title" %>
+                <h4 class ="genre-title">SOUL</h4>
               </div>
+              <% end %>
+              <%= link_to places_path do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/marcela-laskoski-YrtFlrLo2DQ-unsplash_b74bg3.jpg)">
-                <%= link_to "DANCE", places_path, class: "genre-title" %>
+                <h4 class ="genre-title">DANCE</h4>
               </div>
+              <% end %>
             </div>
           </div>
         </div>
+        <button type="button" id="close-modal-btn" class="close" data-dismiss="modal" aria-label="Close">
+          <svg width="35px" height="35px" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
