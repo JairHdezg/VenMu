@@ -7,4 +7,7 @@ const initStarRating = () => {
     theme: 'css-stars'
 })};
 
+
+
+
 export { initStarRating };

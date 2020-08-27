@@ -158,12 +158,12 @@ puts 'Finished'
 
 puts 'Creating 3 places'
 
-@place1 = Place.new(name: 'Taco Bar', top_genre: 'Chill', category: 'Bar', address: 'Av Oaxaca 12, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX', description: 'Cozy hangout spot with good American Music', phone_number: '55 1845 9513')
+@place1 = Place.new(name: 'Taco Bar', top_genre: 'Chill', category: 'Bar', address: 'Panama City, Panama', description: 'Cozy hangout spot with good American Music', phone_number: '55 1845 9513')
 file = URI.open('https://www.dondeir.com/wp-content/uploads/2019/03/cafe-taco-bar-barra.jpg')
 @place1.user = @user1
 @place1.save!
 
-@place2 = Place.new(name: 'Gin Gin', top_genre: 'Electronic', category: 'Restaurant Bar', address: 'Av Oaxaca 87, Roma Nte., Cuauhtémoc, 06700 Mexico City, CDMX', description: 'Kitchen Bar specializing in gin cocktails', phone_number: '55 5248 0911')
+@place2 = Place.new(name: 'Gin Gin', top_genre: 'Electronic', category: 'Restaurant Bar', address: 'Cuernavaca, Morelos', description: 'Kitchen Bar specializing in gin cocktails', phone_number: '55 5248 0911')
 file = URI.open('https://gingin.mx/repository/imagenes/siteUbicacion/3/_MG_6749.jpg')
 @place2.photos.attach(io: file, filename: 'g1.png', content_type: 'image/png')
 file = URI.open('https://fastly.4sqi.net/img/general/200x200/156020961_g4F844ile81RCR0bOrOnAHYuMI10UBmLmORCglDoxqM.jpg')
@@ -175,7 +175,7 @@ file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0d/c0/fa/d4/pho
 @place2.user = @user1
 @place2.save!
 
-@place3 = Place.new(name: 'La Bodega', top_genre: 'Latin', category: 'Kitchen Bar', address: 'Amsterdam 10 (esquina con, Calle Popocatépetl, Hipódromo Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX', url: 'https://www.labodega.rest/', description: 'Mexican Restaurant with traditional music', phone_number: '55 5511 7390')
+@place3 = Place.new(name: 'La Bodega', top_genre: 'Latin', category: 'Kitchen Bar', address: 'Cholula, Puebla', url: 'https://www.labodega.rest/', description: 'Mexican Restaurant with traditional music', phone_number: '55 5511 7390')
 file = URI.open('https://www.labodega.rest/images/galeria/1/1.jpg')
 @place3.photos.attach
 @place3.user = @user2
