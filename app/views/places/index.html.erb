@@ -1,8 +1,10 @@
-<h1>Index page</h1>
+<div class="index-container">
+  <div id="map" class="main-map"
+    style="width: 100vw; height: 90vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="queryplaces-container">
+    s
+  </div>
 
- <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-
+</div>
