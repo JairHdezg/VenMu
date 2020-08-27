@@ -136,6 +136,7 @@ genres = [
   "work-out",
   "world-music"
 ]
+
 genres.each do |genre|
   Genre.create(name: genre)
 end

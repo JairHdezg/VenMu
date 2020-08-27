@@ -8,7 +8,70 @@
   z-index: 1;
   width: 100vw;
   position: relative;
-  top: 88vh;
+  top: 90vh;
   background-color: #ffffff;
   height: 40vh;
+}
+
+.places-query {
+  padding-top: 1vh;
+  height: 10vh;
+}
+
+.query-title {
+  font-family: 'roboto';
+  font-size: 24px;
+}
+
+.index-places {
+  width: 100%;
+  margin-bottom: 2vh;
+}
+
+.index-places-genre {
+  font-family: 'roboto';
+  font-size: 12px;
+  width: 100%;
+}
+
+.slide-rectangle {
+  border-radius: .4vh;
+  height: .5vh;
+  width: 12vw;
+  position: absolute;
+  background-color: #424040;
+  right: 44vw;
+  top: 1vh;
+}
+
+.places-categories {
+  margin-bottom: 1vh;
+  height: 5vh;
+  width: 100%;
+  background-color: #F0F0F0;
+}
+
+.places-query-category {
+  height: 4vh;
+  border-radius: 1vh;
+  font-size: 1.6vh;
+  padding: .5vh 3vw;
+  color: white;
+  background-color: $blue;
+}
+
+#places-query-burger i {
+  height: 4vh;
+  font-size: 14px;
+  margin: 0 auto;
+  border-radius: 20%;
+  width: 100%;
+  padding: 1vh;
+  color: white;
+  background-color: $blue;
+}
+
+#places-query-burger {
+  background-color: #F0F0F0;
+  width: 30px;
 }
