@@ -1,2 +1,16 @@
-<h2><%= place.name %></h2>
-<p><%= place.address %></p>
+<div class="background-popup" style="background-image: url(<%= cl_image_path place.photos[0].key %>)">
+    <div class="container">
+        <div class="row">
+            <div class="cl-xs-12">
+                <p class ="pop-up-text mt-5 ml-2"><strong><%= place.top_genre %></strong></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cl-xs-12">
+                <p class ="pop-up-text-title ml-2"><%= place.name %></p>
+                <p class ="pop-up-text ml-2"><%= place.address %></p>
+            </div>
+        </div>
+    </div>
+</div>
