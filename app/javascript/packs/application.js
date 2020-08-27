@@ -14,14 +14,13 @@ import { initMapbox } from '../plugins/init_mapbox'
 import { initStarRating } from '../plugins/init_star_rating';
 
 import { hidingHome } from '../packs/hiding_home';
-import { SearchGenres } from '..packs/searchgenre.js';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   initStarRating();
-  SearchGenres();
 });
 
 var swiper = new Swiper('.s1', {

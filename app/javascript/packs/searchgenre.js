@@ -1,5 +1,5 @@
 $( function SearchGenres() {
-  var availableGenres = [
+  var availableTags = [
   "acoustic",
   "afrobeat",
   "alt-rock",
@@ -127,8 +127,8 @@ $( function SearchGenres() {
   "work-out",
   "world-music"
   ];
-  $( "#place_top_genre" ).autocomplete({
-    source: availableGenres
+  $( "#tags" ).autocomplete({
+    source: availableTags
   });
 } );
 
