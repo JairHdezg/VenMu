@@ -2,13 +2,6 @@
     <%= f.input :name, required: true, label_html: { hidden: true }, placeholder: "Place name" %>
     <%= f.input :address, required: true, label_html: { hidden: true }, placeholder: "Address" %>
     <%= f.input :category, required: true, label_html: { hidden: true }, placeholder: "What kind of place is this?" %>
-    <div class="ui-widget form-group string required place_top_genre">
-      <label hidden="hidden" class="string required" for="tags">
-        Top genre
-          <abbr title="required">*</abbr>
-      </label>
-      <input class="form-control string required" required="required" aria-required="true" placeholder="Select genres played here" type="text" name="place[top_genre]" id="tags">
-    </div>
     <%= f.input :description, required: true, label_html: { hidden: true }, placeholder: "What's the music like?" %>
     <%= f.input :phone_number, label_html: { hidden: true }, placeholder: "Phone number" %>
     <%= f.input :url, label_html: { hidden: true }, placeholder: "www.website.com" %>
