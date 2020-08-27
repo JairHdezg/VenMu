@@ -6,7 +6,9 @@
     <%= f.input :description, required: true, label_html: { hidden: true }, placeholder: "What's the music like?" %>
     <%= f.input :phone_number, label_html: { hidden: true }, placeholder: "Phone number" %>
     <%= f.input :url, label_html: { hidden: true }, placeholder: "www.website.com" %>
-    <label id="places-photo-label" class="file optional" for="place_photos">Photos</label>
-    <input class="form-control-file file optional" multiple="multiple" hidden="hidden" type="file" name="place[photos][]" id="place_photos">
+    <div class="form-group file optional place_photos mb-5">
+      <label id="place-photo-label" class="file optional" for="place_photos">&nbsp;</label><input class="form-control-file file optional" hidden="hidden" type="file" name="place[photos]" id="place_photos">&nbsp;</label>
+      <input class="form-control-file file optional" hidden="hidden" type="file" name="place[photos]" id="place_photos">
+    </div>
     <%= f.button :submit, "Add to VenMu", class: 'btn btn-primary btn-block rounded shadow mt-5' %>
   <% end %>

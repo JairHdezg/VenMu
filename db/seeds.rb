@@ -181,15 +181,15 @@ puts 'Finished'
 
 puts 'Creating 3 reviews'
 
-@review1 = Review.new(place: 'Taco Bar' content: 'Great American chill music! Alot of variety, plus good tacos' rating: '5' genre: 'Chill')
+@review1 = Review.new(place: 'Taco Bar', content: 'Great American chill music! Alot of variety, plus good tacos', rating: '5', genre: 'Chill')
 @review1.place = 'Taco Bar'
 @review1.save
 
-@review2 = Review.new(place: 'Gin Gin' content: 'Alot of Variety, best songs out! Awesome vibe.' rating: '5' genre: 'Electronic')
+@review2 = Review.new(place: 'Gin Gin', content: 'Alot of Variety, best songs out! Awesome vibe.', rating: '5', genre: 'Electronic')
 @review2.place = 'Gin Gin'
 @review2.save
 
-@review3 = Review.new(place: 'La Bodega' content: 'Amazing Latin music, delicious food.' rating: '5' genre: 'Latin')
+@review3 = Review.new(place: 'La Bodega', content: 'Amazing Latin music, delicious food.', rating: '5', genre: 'Latin')
 @review3.place = 'La Bodega'
 @review3.save
 

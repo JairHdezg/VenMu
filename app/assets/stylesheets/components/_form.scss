@@ -1,20 +1,25 @@
-#places-photo-label {
+#place-photo-label {
   position: relative;
   width: 100%;
+  height: 1px !important;
+  margin: 0 auto !important;
 }
 
-#places-photo-label::after {
+#place-photo-label::after {
   position:absolute;
+  margin-top: 0px !important;
   background-color: $light-gray;
   color: $blue;
   width: 100%;
   height: 38px;
   border-radius: 25px;
-  top: 30px;
   left: 0;
-  margin-bottom: 2em;
-  content: "Add Photos";
+  content: "Photos";
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.place_url {
+  margin-bottom: 0px !important;
 }
