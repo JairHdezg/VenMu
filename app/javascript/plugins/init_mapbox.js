@@ -27,7 +27,14 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
-      new mapboxgl.Marker()
+      const element = document.createElement('div');
+        element.className = 'marker';
+        element.style.backgroundImage = "url('https://image.flaticon.com/icons/png/512/1789/1789848.png')";
+        element.style.backgroundSize = 'contain';
+        element.style.width = '50px';
+        element.style.height = '50px';
+
+      new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
