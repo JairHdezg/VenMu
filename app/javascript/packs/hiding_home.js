@@ -8,13 +8,14 @@ const hidingHome = () =>{
         element.classList = "d-none"
     })
 }
+if (arrow != undefined ) {
+  arrow.addEventListener('click', hidingHome)
+}
 
-arrow.addEventListener('click', hidingHome)
-
-
-
-closeModalBtn.addEventListener('click',() =>{
-    homepage.forEach ((element) => {
-        element.classList = "row mt-5 mb-5"
-    })
-}) 
+if (closeModalBtn != undefined ) {
+  closeModalBtn.addEventListener('click',() =>{
+      homešage.forEach ((element) => {
+          element.classList = "row mt-5 mb-5"
+      })
+  })
+}
