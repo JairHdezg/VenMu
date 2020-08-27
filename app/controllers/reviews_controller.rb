@@ -18,7 +18,9 @@ class ReviewsController < ApplicationController
       end
     end
 
+
     if @review.save
+      @place.get_top_genre
       redirect_to place_path(@place)
     else
       redirect_to place_path(@place)
