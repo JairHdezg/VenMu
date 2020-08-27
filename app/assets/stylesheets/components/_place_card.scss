@@ -1,0 +1,37 @@
+.places-card {
+  width: 100%;
+  padding: 3vw;
+  border-radius: 5vw;
+  height: 16vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.places-card-info {
+  color: white;
+}
+
+.places-card-info h4 {
+  font-family: 'roboto';
+  font-size: 2.5vh;
+  margin-bottom: .5vh;
+}
+
+.places-card-info p {
+  font-size: 1.5vh;
+  margin-bottom: .5vh;
+}
+
+.place-card-rating {
+  line-height: 2vh;
+  padding: 0;
+  position: absolute;
+  top: 1vh;
+  right: 5%;
+  letter-spacing: -2px;
+}
+
+.place-card-rating i {
+  color: #EAAE40;
+  font-size: 2vh;
+}

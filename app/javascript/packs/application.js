@@ -40,6 +40,25 @@ var swiper = new Swiper('.s2', {
   },
 });
 
+var swiper = new Swiper('.s3', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+var swiper = new Swiper('.s4', {
+  slidesPerView: 2.2,
+  spaceBetween: 10,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
