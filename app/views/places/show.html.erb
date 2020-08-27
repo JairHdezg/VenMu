@@ -40,7 +40,7 @@
             </div>
             <div class="modal-body">
               <%= simple_form_for [@place, @review] do |f| %>
-                <%= f.input :rating %>
+                <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {class: 'star_rating' } %>
                 <%= f.input :content %>
                 <%= f.collection_check_boxes :genres, Genre.all, :id, :name %>
             </div>
