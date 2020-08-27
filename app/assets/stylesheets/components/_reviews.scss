@@ -1,6 +1,6 @@
 .show-reviews {
   height: 18vh;
-  padding: 10px 5px;
+  padding: 5px 5px;
 }
 
 #reviews-title {
@@ -9,13 +9,13 @@
   font-size: 14px;
   line-height: 19px;
   text-transform: capitalize;
-  margin-bottom: 10px;
+  margin-bottom: 1.5vh;
 }
 
 .reviews-card {
   position: relative;
   height: 60%;
-  width: 90vw;
+  width: 88vw;
 }
 
 .review-button{
@@ -36,7 +36,6 @@
 .review-user {
   top: -20px;
   left: 0%;
-  position: absolute;
   text-align: left;
   font-style: normal;
   font-weight: normal;
@@ -44,7 +43,7 @@
   line-height: 14px;
   text-transform: capitalize;
   color: #424040;
-  margin-bottom: 10px;
+  margin-bottom: .7vh;
 }
 
 .review-content {
@@ -53,11 +52,10 @@
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 2.3vh;
   text-align: justify;
-  margin-bottom: 10px;
   color: #424040;
-  margin-bottom: 1px;
+  margin-bottom: .7vh;
 }
 
 #modal-review-title {
@@ -89,7 +87,7 @@
   line-height: 10px;
   padding: 0;
   position: absolute;
-  top: -22px;
+  top: 0;
   right: 5%;
   letter-spacing: -2px;
 }
@@ -97,4 +95,19 @@
 .review-rating i {
   color: #EAAE40;
   font-size: 11px;
+}
+
+@media (max-width: 320px) {
+
+  #reviews-title {
+    margin-bottom: 1.3vh;
+  }
+
+  .review-content {
+    font-size: 10px;
+    width: 95%;
+    line-height: 2.3vh;
+    color: #424040;
+    margin-bottom: 1px;
+  }
 }

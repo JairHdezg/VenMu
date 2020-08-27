@@ -158,10 +158,12 @@ puts 'Finished'
 
 puts 'Creating 3 places'
 
-@place1 = Place.new(name: 'Taco Bar', top_genre: 'Chill', category: 'Bar', address: 'Av Oaxaca 12, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX', description: 'Cozy hangout spot with good American Music', phone_number: '55 1845 9513')
+@place1 = Place.new(name: 'Taco Bar', top_genre: 'Chill', category: 'Bar', address: 'Panama City, Panama', description: 'Cozy hangout spot with good American Music', phone_number: '55 1845 9513')
 file = URI.open('https://www.dondeir.com/wp-content/uploads/2019/03/cafe-taco-bar-barra.jpg')
-@place1.save
+@place1.user = @user1
+@place1.save!
 
+@place2 = Place.new(name: 'Gin Gin', top_genre: 'Electronic', category: 'Restaurant Bar', address: 'Cuernavaca, Morelos', description: 'Kitchen Bar specializing in gin cocktails', phone_number: '55 5248 0911')
 file = URI.open('https://gingin.mx/repository/imagenes/siteUbicacion/3/_MG_6749.jpg')
 @place2.photos.attach(io: file, filename: 'g1.png', content_type: 'image/png')
 file = URI.open('https://fastly.4sqi.net/img/general/200x200/156020961_g4F844ile81RCR0bOrOnAHYuMI10UBmLmORCglDoxqM.jpg')
@@ -170,28 +172,41 @@ file = URI.open('https://i.ytimg.com/vi/wLgb5L84uiI/maxresdefault.jpg')
 @place2.photos.attach(io: file, filename: 'g3.png', content_type: 'image/png')
 file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0d/c0/fa/d4/photo0jpg.jpg')
 @place2.photos.attach(io: file, filename: 'g4.png', content_type: 'image/png')
-@place2.save
+@place2.user = @user1
+@place2.save!
 
-@place3 = Place.new(name: 'La Bodega', top_genre: 'Latin', category: 'Kitchen Bar', address: 'Amsterdam 10 (esquina con, Calle Popocatépetl, Hipódromo Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX', url: 'https://www.labodega.rest/', description: 'Mexican Restaurant with traditional music', phone_number: '55 5511 7390')
+@place3 = Place.new(name: 'La Bodega', top_genre: 'Latin', category: 'Kitchen Bar', address: 'Cholula, Puebla', url: 'https://www.labodega.rest/', description: 'Mexican Restaurant with traditional music', phone_number: '55 5511 7390')
 file = URI.open('https://www.labodega.rest/images/galeria/1/1.jpg')
-@place3.photo.attach
-@place3.save
+@place3.photos.attach
+@place3.user = @user2
+@place3.save!
 
 puts 'Finished'
 
 puts 'Creating 3 reviews'
 
-@review1 = Review.new(place: 'Taco Bar', content: 'Great American chill music! Alot of variety, plus good tacos', rating: '5', genre: 'Chill')
-@review1.place = 'Taco Bar'
-@review1.save
+@review1 = Review.new(content: 'Great music! Alot of variety, plus good tacos', rating: 5)
+@review1.place = @place2
+@review1.user = @user1
+@review1.save!
+genre_review1 = GenresReview.new
+genre_review1.review = @review1
+genre_review1.genre = Genre.find_by(name: 'electronic')
+genre_review1.save
+@review1.genres_reviews << genre_review1
+@review1.save!
 
-@review2 = Review.new(place: 'Gin Gin', content: 'Alot of Variety, best songs out! Awesome vibe.', rating: '5', genre: 'Electronic')
-@review2.place = 'Gin Gin'
-@review2.save
+@review2 = Review.new(content: 'Alot of Variety, best songs out! Awesome vibe.', rating: 5)
+@review2.user = @user2
+@review2.genres_reviews << genre_review1
+@review2.place = @place2
+@review2.save!
 
-@review3 = Review.new(place: 'La Bodega', content: 'Amazing Latin music, delicious food.', rating: '5', genre: 'Latin')
-@review3.place = 'La Bodega'
-@review3.save
+@review3 = Review.new(content: 'Amazing Electronic music, delicious food.', rating: 5)
+@review3.user = @user2
+@review3.genres_reviews << genre_review1
+@review3.place = @place2
+@review3.save!
 
 puts 'Finished'
 
