@@ -1,3 +1,18 @@
+.place-rating {
+  line-height: 10px;
+  padding: 0;
+  position: absolute;
+  top: 5vh;
+  right: 5%;
+  letter-spacing: -2px;
+}
+
+.place-rating i {
+  color: #EAAE40;
+  font-size: 15px;
+}
+
+
 .show-container {
   height: 100vh;
   width: 100vw;
@@ -5,13 +20,15 @@
 
 .show-photo {
   height: 16vh;
-  border-radius: 25px;
+  border-radius: 18px;
   background-size: cover;
   background-position: center;
 }
 
 .place-info {
-  padding-bottom: 30px;
+  height: 40vh;
+  padding-top: 7%;
+  padding-bottom: 7%;
 }
 
 .show-main {
@@ -30,18 +47,23 @@
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 2.3vh;
   text-align: justify;
   padding: 0 5px;
 }
 
+@media (max-width: 320px) {
+  .show-description{
+    font-size: 10px;
+  }
+}
+
 .place-container {
   position: relative;
-  top: 63vh;
+  top: 60vh;
   margin-top: 0vh;
   background-color: #ffffff;
   border-radius: 25px;
-  padding-top: 25px;
   padding-bottom: 20px;
   height: 100vh;
 }
@@ -59,5 +81,5 @@
 
 #show-url {
   font-size: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 5%;
 }
