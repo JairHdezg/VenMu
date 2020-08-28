@@ -2,6 +2,7 @@
     <%= f.input :name, required: true, label_html: { hidden: true }, placeholder: "Place name" %>
     <%= f.input :address, required: true, label_html: { hidden: true }, placeholder: "Address" %>
     <%= f.input :category, required: true, label_html: { hidden: true }, placeholder: "What kind of place is this?" %>
+    <%= f.input :top_genre, :input_html => { :class => 'select2' }, collections: Genre.all, required: true, label_html: { hidden: true }, placeholder: "Select genres played here" %>
     <%= f.input :description, required: true, label_html: { hidden: true }, placeholder: "What's the music like?" %>
     <%= f.input :phone_number, label_html: { hidden: true }, placeholder: "Phone number" %>
     <%= f.input :url, label_html: { hidden: true }, placeholder: "www.website.com" %>

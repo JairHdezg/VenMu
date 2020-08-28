@@ -14,6 +14,7 @@ import { initMapbox } from '../plugins/init_mapbox'
 import { initStarRating } from '../plugins/init_star_rating';
 
 import { hidingHome } from '../packs/hiding_home';
+import { initSelect2 } from '../plugins/init_select2';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -21,6 +22,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initStarRating();
+  initSelect2();
 });
 
 var swiper = new Swiper('.s1', {
