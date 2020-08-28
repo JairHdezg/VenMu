@@ -21,7 +21,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initStarRating();
-
 });
 
 var swiper = new Swiper('.s1', {
@@ -38,6 +37,25 @@ var swiper = new Swiper('.s2', {
   pagination: {
     el: '.swiper-pagination',
     dynamicBullets: true,
+  },
+});
+
+var swiper = new Swiper('.s3', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+var swiper = new Swiper('.s4', {
+  slidesPerView: 2.2,
+  spaceBetween: 10,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
   },
 });
 

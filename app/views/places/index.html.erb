@@ -1,10 +1,83 @@
 <div class="index-container">
   <div id="map" class="main-map"
-    style="width: 100vw; height: 90vh;"
+    style="width: 100vw; height: 93vh;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <div class="queryplaces-container">
-    s
-  </div>
 
+    <!-- slide rectangle -->
+    <div class="slide-rectangle"></div>
+
+    <div class="container">
+      <div class="places-query d-flex align-items-center">
+        <h1 class="query-title">Rock</h1>
+      </div>
+    </div>
+
+    <!--category for query -->
+    <div class="places-categories d-flex align-items-center">
+
+      <!-- Slider main container -->
+      <div class="swiper-container s3 ">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper d-flex align-items-center">
+
+          <div class="ml-3 swiper-slide d-flex align-items-center justify-content-center" id="places-query-burger"><i class="fas fa-align-left"></i></div>
+
+          <% @categories.each do |category| %>
+            <div class="swiper-slide places-query-category" style="width: unset"> <%= category %> </div>
+          <% end %>
+
+
+        </div>
+        <!-- If we need pagination -->
+      </div>
+    </div>
+
+    <!-- places -->
+    <div class="container">
+      <div class="index-places border-bottom">
+        <span class="index-places-genre mb-1"> Top Rock </span>
+      </div>
+
+      <div class="places-cards">
+
+        <!-- Slider main container -->
+        <div class="swiper-container s4 ">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+
+            <% @places.each do |place| %>
+                <%= link_to place_path(place), method: :get, class: "swiper-slide" do %>
+                <div class="places-card d-flex align-items-end justify-content-start" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('<%= cl_image_path place.photos[0].key %>')">
+
+                  <!--average rating of place -->
+                  <div class="place-card-rating">
+                    <p class="">
+                    <% place.average_rating.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    </p>
+                  </div>
+
+                  <div class="places-card-info">
+                    <h4> <%= place.name.capitalize %> </h4>
+                    <p> <%= place.address %> </p>
+                  </div>
+
+
+                </div>
+                <% end %>
+            <% end %>
+
+
+          </div>
+          <!-- If we need pagination -->
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
 </div>

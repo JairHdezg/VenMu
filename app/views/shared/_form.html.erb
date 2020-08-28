@@ -1,8 +1,7 @@
   <%= simple_form_for @place do |f| %>
     <%= f.input :name, required: true, label_html: { hidden: true }, placeholder: "Place name" %>
-    <%= f.input :address, required: true, label_html: { hidden: true }, placeholder: "address" %>
+    <%= f.input :address, required: true, label_html: { hidden: true }, placeholder: "Address" %>
     <%= f.input :category, required: true, label_html: { hidden: true }, placeholder: "What kind of place is this?" %>
-    <%= f.input :top_genre, required: true, label_html: { hidden: true }, placeholder: "Select genres played here" %>
     <%= f.input :description, required: true, label_html: { hidden: true }, placeholder: "What's the music like?" %>
     <%= f.input :phone_number, label_html: { hidden: true }, placeholder: "Phone number" %>
     <%= f.input :url, label_html: { hidden: true }, placeholder: "www.website.com" %>

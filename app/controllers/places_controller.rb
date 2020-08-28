@@ -23,6 +23,8 @@ class PlacesController < ApplicationController
 
       @markers = display_markers(@geocodedPlaces)
     end
+
+    @categories = [ 'Restaurant', 'Coffee shop', 'Nightclub', 'Bars', 'Brunch' ]
   end
 
   def show
