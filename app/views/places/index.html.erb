@@ -48,7 +48,7 @@
           <div class="swiper-wrapper">
 
             <% @places.each do |place| %>
-                <%= link_to place_path(place), class: "swiper-slide" do %>
+                <%= link_to place_path(place), method: :get, class: "swiper-slide" do %>
                 <div class="places-card d-flex align-items-end justify-content-start" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('<%= cl_image_path place.photos[0].key %>')">
 
                   <!--average rating of place -->

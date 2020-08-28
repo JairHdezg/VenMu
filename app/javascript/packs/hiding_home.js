@@ -14,7 +14,7 @@ if (arrow != undefined ) {
 
 if (closeModalBtn != undefined ) {
   closeModalBtn.addEventListener('click',() =>{
-      homešage.forEach ((element) => {
+      homepage.forEach ((element) => {
           element.classList = "row mt-5 mb-5"
       })
   })
