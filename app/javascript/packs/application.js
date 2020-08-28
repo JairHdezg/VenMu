@@ -16,6 +16,24 @@ import { initStarRating } from '../plugins/init_star_rating';
 import { hidingHome } from '../packs/hiding_home';
 import { initSelect2 } from '../plugins/init_select2';
 
+const menuButton = document.getElementById('main-menu-button')
+const navBar = document.getElementById('main-menu-nav')
+const closeNav = document.getElementById('main-menu-close')
+const searchButton = document.getElementById('main-search-button')
+
+if (menuButton != null ) {
+  menuButton.addEventListener('click',() =>{
+    navBar.classList.toggle("top");
+    navBar.classList.toggle("bottom")
+  });
+}
+
+if (closeNav != null ) {
+  closeNav.addEventListener('click',() =>{
+    navBar.classList.toggle("top");
+    navBar.classList.toggle("bottom")
+  });
+}
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
