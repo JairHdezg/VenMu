@@ -40,7 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initStarRating();
-  // initSelect2();
+  initSelect2();
 });
 
 var swiper = new Swiper('.s1', {
