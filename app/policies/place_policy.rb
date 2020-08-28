@@ -22,4 +22,7 @@ class PlacePolicy < ApplicationPolicy
     new?
   end
 
+  def index?
+    return true
+  end
 end
