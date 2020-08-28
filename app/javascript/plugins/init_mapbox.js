@@ -20,9 +20,9 @@ const initMapbox = () => {
       enableHighAccuracy: true
     },
       trackUserLocation: true
-    }));
+    }), 'top-left');
 
-    
+
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);

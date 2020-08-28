@@ -22,4 +22,12 @@ class PlacePolicy < ApplicationPolicy
     new?
   end
 
+  def edit?
+    if record.user == user
+      return true
+    else
+      false
+    end
+  end
+
 end

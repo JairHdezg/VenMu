@@ -1,4 +1,7 @@
 <div class="index-container">
+  <!-- navbar -->
+  <%= render 'shared/navbar' %>
+
   <div id="map" class="main-map"
     style="width: 100vw; height: 93vh;"
     data-markers="<%= @markers.to_json %>"
