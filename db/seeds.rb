@@ -217,6 +217,67 @@ genre_review3.review = @review3
 genre_review3.genre = Genre.find_by(name: 'pop')
 genre_review3.save
 
+# New seeds
+# Ligoneer, Indiana, United States
+@place4 = Place.new(name: 'Venturi', top_genre: 'Soul', category: 'Bar', address: 'Goshen, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+place4_picture = URI.open('https://images.squarespace-cdn.com/content/v1/52f12ea6e4b07a35a2f94fd7/1391551486776-TX3ZQXDEW39FF6KH6JB1/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/venturi-interior.jpg')
+@place4.photos.attach(io: place4_picture, filename: 'venturi.jpg', content_type: 'image/png')
+place42_picture = URI.open('https://images.squarespace-cdn.com/content/v1/52f12ea6e4b07a35a2f94fd7/1391712981281-Z4IVE7Y0NH9YAYEL6LVZ/ke17ZwdGBToddI8pDm48kNe6zOZTHfz7l6ZgjxUpukVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI_yASvo-WEqohroAwDGiHyF2S9ug-6_kqb0gBNu81ch4KMshLAGzx4R3EDFOm1kBS/three-margherite.jpg')
+@place4.photos.attach(io: place42_picture, filename: 'venturi-2.jpg', content_type: 'image/png')
+place43_picture = URI.open('https://cdn.usarestaurants.info/assets/uploads/f5d70eb642fcc334923ac860c95dcf5e_-united-states-indiana-elkhart-county-elkhart-township-goshen-venturi-574-485-2985htm.jpg')
+@place4.photos.attach(io: place43_picture, filename: 'venturi-3.jpg', content_type: 'image/png')
+@place4.user = @user1
+@place4.save!
+
+@place5 = Place.new(name: 'Common Spirits', top_genre: 'Soul', category: 'Bar', address: 'Ligoneer, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+place5_picture = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_20160520_110210-1.jpg')
+@place5.photos.attach(io: place5_picture, filename: 'common-spirits-1.jpg', content_type: 'image/png')
+@place5.user = @user1
+@place5.save!
+
+@place6 = Place.new(name: 'Constant Spring', top_genre: 'Soul', category: 'Bar', address: 'New Paris, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+place6_picture = URI.open('https://bloximages.newyork1.vip.townnews.com/southbendtribune.com/content/tncms/assets/v3/editorial/b/0a/b0a7bbc2-ed8e-5801-b0f4-0c70dd137ced/55e8158422eee.image.jpg?crop=543%2C543%2C128%2C0&resize=1200%2C1200&order=crop%2Cresize')
+@place6.photos.attach(io: place6_picture, filename: 'constant-spring-1.jpg', content_type: 'image/png')
+@place6.user = @user1
+@place6.save!
+
+@place7 = Place.new(name: 'Goshen Brewing Company', top_genre: 'Soul', category: 'Bar', address: 'Elkhart, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+place7_picture = URI.open('https://goshenbrewing.com/wp-content/uploads/2015/05/1080-goshen-brewing-8.jpg')
+@place7.photos.attach(io: place7_picture, filename: 'goshen-brewing-1.jpg', content_type: 'image/png')
+@place7.user = @user1
+@place7.save!
+
+# Reviews for Venturi
+
+@review4 = Review.new(content: 'Excelent soul music, I danced all night', rating: 5)
+@review4.place = @place4
+@review4.user = @user2
+@review4.save!
+genre_review4 = GenresReview.new
+genre_review4.review = @review4
+genre_review4.genre = Genre.find_by(name: 'soul')
+genre_review4.save
+@review4.save!
+
+@review5 = Review.new(content: 'Music was excelent, but the service can be better', rating: 3)
+@review5.place = @place4
+@review5.user = @user2
+@review5.save!
+genre_review5 = GenresReview.new
+genre_review5.review = @review5
+genre_review5.genre = Genre.find_by(name: 'soul')
+genre_review5.save
+@review5.save!
+
+@review6 = Review.new(content: 'Al Green marathon, freaking awesome!', rating: 5)
+@review6.place = @place4
+@review6.user = @user2
+@review6.save!
+genre_review5 = GenresReview.new
+genre_review5.review = @review6
+genre_review5.genre = Genre.find_by(name: 'soul')
+genre_review5.save
+@review6.save!
 
 puts 'Finished'
 
