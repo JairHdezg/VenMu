@@ -10,7 +10,7 @@
 
     <div class="container">
       <div class="places-query d-flex align-items-center">
-        <h1 class="query-title">Rock</h1>
+        <h1 class="query-title"><%= @query ? @query.capitalize : "All places" %></h1>
       </div>
     </div>
 
@@ -37,7 +37,7 @@
     <!-- places -->
     <div class="container">
       <div class="index-places border-bottom">
-        <span class="index-places-genre mb-1"> Top Rock </span>
+        <span class="index-places-genre mb-1"> Top <%= @query ? @query : "best" %> places </span>
       </div>
 
       <div class="places-cards">
@@ -48,7 +48,7 @@
           <div class="swiper-wrapper">
 
             <% @places.each do |place| %>
-                <%= link_to place_path(place), method: :get, class: "swiper-slide" do %>
+                <%= link_to place_path(place), method: :get, class: "swiper-slide no-underline" do %>
                 <div class="places-card d-flex align-items-end justify-content-start" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('<%= cl_image_path place.photos[0].key %>')">
 
                   <!--average rating of place -->

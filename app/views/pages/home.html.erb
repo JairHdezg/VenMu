@@ -9,16 +9,6 @@
 
     <div class="row pb-5 hide">
       <div class="col-sm-12 d-flex flex-column align-items-center">
-        <!-- <%= simple_form_for :search, url: places_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-            <%= f.input :genre, placeholder: "Search by genre...", label: false, input_html: { class: 'search-bar' } %>
-            <%= button_tag(type: 'submit', class: "btn btn-primary submit-btn") do %>
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-              </svg>
-          <% end %>
-        <% end %> -->
-
         <form action = "/places" method= "GET" class="form-inline" autocomplete="off">
           <input class="search-bar" type="search" placeholder="Search by genre" aria-label="Search" name="query" value="<%= @query %>">
           <button class="btn btn-primary submit-btn" type="submit">
@@ -43,42 +33,42 @@
         <div class="modal-body">
           <div class="container">
             <div class="row d-flex justify-content-around">
-              <%= link_to places_path, method: :get do %>
+              <%= link_to places_path({query: "rock"}), method: :get, class: "no-underline" do %>
                 <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/descarga_3_mgvflq.jpg)">
                   <h4 class ="genre-title">ROCK </h4>
                 </div>
               <% end %>
-              <%= link_to places_path, method: :get do %>
+              <%= link_to places_path({query: "pop"}), method: :get, class: "no-underline" do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/photo-1514525253161-7a46d19cd819_ndlj2b.jpg)">
                 <h4 class ="genre-title">POP</h4>
               </div>
               <% end %>
-              <%= link_to places_path, method: :get do %>
+              <%= link_to places_path({query: "pop"}), method: :get, class: "no-underline" do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479956/photo-1532981434728-a2706e29a80e_m44kil.jpg)">
                 <h4 class ="genre-title">REGGAETON</h4>
               </div>
               <% end %>
-              <%= link_to places_path, method: :get do %>
+              <%= link_to places_path({query: "latin"}), method: :get, class: "no-underline" do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479959/photo-1504609813442-a8924e83f76e_kcehsz.jpg)">
                 <h4 class ="genre-title">LATIN</h4>
               </div>
               <% end %>
-              <%= link_to places_path, method: :get do %>
+              <%= link_to places_path({query: "classical"}), method: :get, class: "no-underline" do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/dan-gold-YW9cBl03LmE-unsplash_toyjlx.jpg)">
                 <h4 class ="genre-title">CLASSICAL</h4>
               </div>
               <% end %>
-              <%= link_to places_path, method: :get do %>
+              <%= link_to places_path({query: "jazz"}), method: :get, class: "no-underline" do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480096/unnamed_wyze1e.jpg)">
                 <h4 class ="genre-title">JAZZ</h4>
               </div>
               <% end %>
-              <%= link_to places_path, method: :get do%>
+              <%= link_to places_path({query: "soul"}), method: :get, class: "no-underline" do%>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/derek-truninger-uLitVttkC7o-unsplash_if201c.jpg)">
                 <h4 class ="genre-title">SOUL</h4>
               </div>
               <% end %>
-              <%= link_to places_path, method: :get do %>
+              <%= link_to places_path({query: "dance"}), method: :get, class: "no-underline" do %>
               <div class="col-xs-6 genre-container text-center mb-3" style="background-image: url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/marcela-laskoski-YrtFlrLo2DQ-unsplash_b74bg3.jpg)">
                 <h4 class ="genre-title">DANCE</h4>
               </div>
