@@ -30,4 +30,9 @@ class PlacePolicy < ApplicationPolicy
     end
   end
 
+
+  def index?
+    return true
+  end
+
 end

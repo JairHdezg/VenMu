@@ -3,14 +3,15 @@ class PlacesController < ApplicationController
 
 
   def index
+    skip_policy_scope
     if params[:query]
       @query = params[:query]
       sql_query = " \
-        name ILIKE :query \
-        OR top_genre ILIKE :query \
+      name ILIKE :query \
+      OR top_genre ILIKE :query \
       "
       @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%")
-
+      
       @geocodedPlaces = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").geocoded
 
       @markers = display_markers(@geocodedPlaces)
