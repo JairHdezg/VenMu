@@ -1,16 +1,18 @@
-<div class="background-popup" style="background-image: url(<%= cl_image_path place.photos[0].key %>)">
-    <div class="container">
-        <div class="row">
-            <div class="cl-xs-12">
-                <p class ="pop-up-text mt-5 ml-2"><strong><%= place.top_genre %></strong></p>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="cl-xs-12">
-                <p class ="pop-up-text-title ml-2"><%= place.name %></p>
-                <p class ="pop-up-text ml-2"><%= place.address %></p>
+    <%= link_to place_path(place), method: :get, class: "no-underline" do %>
+    <div class="background-popup" style="background-image: url(<%= cl_image_path place.photos[0].key %>)">
+        <div class="container">
+            <div class="row">
+                <div class="cl-xs-12">
+                    <p class ="pop-up-text mt-5 ml-2"><strong><%= place.top_genre %></strong></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="cl-xs-12">
+                    <p class ="pop-up-text-title ml-2"><%= place.name %></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <% end %>
