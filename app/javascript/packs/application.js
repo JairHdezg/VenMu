@@ -15,6 +15,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 import { hidingHome } from '../packs/hiding_home';
 import { initSelect2 } from '../plugins/init_select2';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 const menuButton = document.getElementById('main-menu-button')
 const navBar = document.getElementById('main-menu-nav')
@@ -55,6 +56,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initStarRating();
   initSelect2();
+  initAutocomplete();
 });
 
 var swiper = new Swiper('.s1', {
