@@ -20,6 +20,20 @@ const menuButton = document.getElementById('main-menu-button')
 const navBar = document.getElementById('main-menu-nav')
 const closeNav = document.getElementById('main-menu-close')
 const searchButton = document.getElementById('main-search-button')
+const showPhoto = document.querySelectorAll('.show-photo')
+const mainPhoto = document.querySelector('.show-main')
+
+if (showPhoto != null) {
+  showPhoto.forEach((photo) => {
+    photo.addEventListener('click', () => {
+      var re = /background-image: url\(.*\);/;
+      let newPhoto = photo.getAttribute('style');
+      let result = newPhoto.match(re);
+      mainPhoto.removeAttribute('style');
+      mainPhoto.setAttribute('style', `${result[0]}`);
+    });
+  });
+}
 
 if (menuButton != null ) {
   menuButton.addEventListener('click',() =>{
