@@ -7,62 +7,92 @@
 <div class='navigation top ' id="main-menu-nav">
   <div id="main-menu-close"><i class="fas fa-times"></i></div>
   <div class="container" style="width: 100vw; height: 100vh;">
-      <div class="row">
+      <div class="row pt-3">
         <div class="col-4">
-          <div class="profile pic" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key, crop: :fill %>')"></div>
+          <div class="user-pic" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key, crop: :fill %>')">
+          </div>
         </div>
-        <div class="col-8">
-          <%= @user.email %>
-          <p> Edit Profile </p>
+        <div class="col-8 user-info">
+          <div class="user-name">
+            <%= @user.email %>
+          </div>
+          <div class="edit">
+            <p> Edit Profile </p>
+          </div>
         </div>
       </div>
-      <div class='text-center'>
-       <p> Connect With Your Favorite Songs </p>
+      <div class='text-center pt-1'>
+       <p class="fav"> Search with your Favorites! </p>
       </div>
-      <div class="d-flex justify-content-center btn btn-primary rounded" style="background-color: #1BD35D">
+      <div class="d-flex justify-content-center btn rounded pt-1" style="background-color: #1BD35D; color: white">
         Connect To Spotify
       </div>
-      <div>
-        <p>Favorites</p>
+      <div class="user-title">
+        Favorites
       </div>
-        <% @user.favorites.each do |favorite| %>
-          <div class="card" style="background-color: #F0F0F0">
-            <div class="row">
-              <div class="col">
-                <div class="favorite-photos" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path favorite.place.photos[0].key, crop: :fill %>')">
+        <div class="overflow">
+          <% @user.favorites.each do |favorite| %>
+            <div class="card" style="background-color: #F0F0F0">
+              <div class="row">
+                <div class="col">
+                  <div class="favorite-photos rounded" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path favorite.place.photos[0].key, crop: :fill %>')">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <%= favorite.place.name %>
+                  </div>
+                  <div class="row">  
+                    <%= favorite.place.address %>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                  <%= favorite.place.average_rating %>
+                  </div>
+                  <div class="row">
+                  <%= favorite.place.top_genre %>
+                  </div>
                 </div>
               </div>
-              <div class="col">
-                <%= favorite.place.name %>
-                <%= favorite.place.address %>
-              </div>
-              <div class="col">
-                <%= favorite.place.average_rating %>
-                <%= favorite.place.top_genre %>
-              </div>
             </div>
-          </div>
-        <% end %>
-      <div>
-        <p>My Places</p>
+          <% end %>
+        </div>
+      <div class="user-title">
+        My Places
       </div>
-      <div class="row card">
-        <div class="card" style="background-color: #F0F0F0">
-          <div class="row">
-            <div class="col">
-             
-            </div>
-            <div class="col">
-              
-            </div>
-            <div class="col">
-              
-            </div>
+        <div class="overflow">
+          <div class="row card">
+            <% @user.places.each do |place| %>
+              <div class="card" style="background-color: #F0F0F0">
+                <div class="row">
+                  <div class="col">
+                    <div class="favorite-photos rounded" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path place.photos[0].key, crop: :fill %>')">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <%= place.name %>
+                    </div>
+                    <div class="row">  
+                      <%= place.address %>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                    <%= place.average_rating %>
+                    </div>
+                    <div class="row">
+                    <%= place.top_genre %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
-      </div>
       <div>
-        <p class='text-center'>Are we missing your favorite place?</p>
+        <p class='text-center pt-1 fav'>Are we missing your favorite place?</p>
       </div>
       <div class="d-flex justify-content-center btn btn-primary rounded">
         Add it to Venmu!
