@@ -1,0 +1,49 @@
+.favorite-photos{
+  width: 100px;
+  height: 70px;
+  background-position: center;
+  background-size: cover;
+}
+.user-pic {
+  padding-top: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.overflow{
+  width:95vw; 
+  overflow:scroll; 
+  position:relative;
+  height: 80px;
+}
+
+.fav{
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top: 5px;
+  opacity: 0.5;
+}
+
+.title{
+  margin-bottom:0;
+}
+
+.user-info{
+  padding: 0;
+  margin-top: 28px;
+}
+.user-name{
+  font-size: 18px;
+  font-weight: bold;
+}
+.edit{
+  font-size: 12px;
+}
+.user-title{
+  font-size: 12px;
+  padding-top: 1px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

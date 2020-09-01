@@ -148,12 +148,12 @@ puts 'Creating 2 users'
 @user1 = User.new(email: 'harry@mail.com', password: '123456')
 file = URI.open('https://res.cloudinary.com/dtnzbx6ci/image/upload/v1597941567/img_1022_copy_lxyp2p.jpg')
 @user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-@user1.save
+@user1.save!
 
 @user2 = User.new(email: 'george@mail.com', password: '123456')
 file = URI.open('https://static.standard.co.uk/s3fs-public/thumbnails/image/2020/02/26/16/george-clooney-260220-23.jpg')
 @user2.photo.attach(io: file, filename: 'george.png', content_type: 'image/png')
-@user2.save
+@user2.save!
 
 puts 'Finished'
 
@@ -281,3 +281,21 @@ genre_review5.save
 
 puts 'Finished'
 
+puts 'Creating 3 favorites'
+
+@favorite1 = Favorite.new
+@favorite1.user = @user1
+@favorite1.place = @place1
+@favorite1.save!
+
+@favorite2 = Favorite.new
+@favorite2.user = @user1
+@favorite2.place = @place2
+@favorite2.save!
+
+@favorite3 = Favorite.new
+@favorite3.user = @user1
+@favorite3.place = @place3
+@favorite3.save!
+
+puts 'Finished'
