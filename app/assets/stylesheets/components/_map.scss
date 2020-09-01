@@ -45,11 +45,12 @@
 .mapboxgl-ctrl-geocoder{
   margin:0 !important;
   width: 25% !important;
-  right: 12% !important;
+  right: 30%;
   top: 9px !important;
   height: 30px !important; 
   z-index: 1 !important;
   margin-right: 2px !important;
+  align-items: center !important;
 }
 
 .mapboxgl-ctrl-geocoder--input{
@@ -71,4 +72,17 @@
 
 .mapboxgl-ctrl-geocoder--icon-loading{
   margin-top: 0 !important;
+}
+
+@media (max-width: 370px) {
+  .mapboxgl-ctrl-geocoder{
+    margin:0 !important;
+    right: 12%;
+    top: 9px !important;
+    height: 30px !important; 
+    z-index: 1 !important;
+    margin-right: 2px !important;
+    align-items: center !important;
+  }
+  
 }
