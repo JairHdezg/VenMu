@@ -25,6 +25,14 @@ const showPhoto = document.querySelectorAll('.show-photo')
 const mainPhoto = document.querySelector('.show-main')
 const favoriteButton = document.querySelector('.favorite-button')
 const backButton = document.getElementById('main-back-button')
+const connectSpotify = document.getElementById('spb')
+
+if (connectSpotify != null) {
+  connectSpotify.addEventListener('click', () => {
+    console.log('holi')
+  })
+}
+
 
 if (backButton != null) {
   backButton.addEventListener('click', () => {
