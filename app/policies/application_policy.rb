@@ -30,6 +30,10 @@ class ApplicationPolicy
     update?
   end
 
+  def connect?
+    true
+  end
+
   def destroy?
     false
   end

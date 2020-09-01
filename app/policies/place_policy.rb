@@ -30,6 +30,10 @@ class PlacePolicy < ApplicationPolicy
     end
   end
 
+  def connect?
+    true
+  end
+
 
   def index?
     return true
