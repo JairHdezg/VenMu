@@ -41,7 +41,10 @@
   margin: 0px;
   font-weight: bolder;
 }
-
+.mapboxgl-ctrl-top-left{
+  top: 40px !important;
+  left: 85%;
+}
 .mapboxgl-ctrl-geocoder{
   margin:0 !important;
   width: 25% !important;
@@ -64,6 +67,7 @@
 
 .mapboxgl-ctrl-geocoder--icon-search{
   top: 4px !important;
+  left: 85% !important;
 }
 
 .mapboxgl-ctrl-geocoder--icon-close{
