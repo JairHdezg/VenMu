@@ -23,6 +23,37 @@
   font-size: 24px;
 }
 
+.dropdown-toggle::after {
+  content: none;
+}
+
+.dropdown-toggle {
+  padding-left: 0;
+}
+
+.dropdown-item {
+  font-size: 1.5vh;
+  line-height: 2vh;
+  padding: .6vh 1vw;
+  margin-bottom: .1vh;
+}
+
+.button-container {
+  margin-top: .1vh;
+  width: 100%;
+}
+
+#category-button {
+  padding: .2vh;
+  font-size: 1.4vh;
+}
+
+.dropdown-menu {
+  width: 16vw;
+  padding: 1vh 5vw;
+  border-radius: 2vw;
+}
+
 .index-places {
   width: 100%;
   margin-bottom: 2vh;
@@ -52,12 +83,18 @@
 }
 
 .places-query-category {
+  text-decoration: none;
   height: 4vh;
   border-radius: 1vh;
   font-size: 1.6vh;
   padding: .5vh 3vw;
   color: white;
   background-color: $blue;
+}
+
+.places-query-category:hover {
+  text-decoration: none;
+  color: white;
 }
 
 #places-query-burger i {
