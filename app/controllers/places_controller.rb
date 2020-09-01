@@ -25,6 +25,7 @@ class PlacesController < ApplicationController
     end
 
     @categories = [ 'Restaurant', 'Coffee shop', 'Nightclub', 'Bars', 'Brunch' ]
+    @user = current_user
   end
 
   def show
@@ -33,6 +34,7 @@ class PlacesController < ApplicationController
     @review = Review.new
     @genres_review = GenresReview.new
     @genres = Genre.all
+    @user = current_user
   end
 
   def new

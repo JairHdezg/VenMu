@@ -9,11 +9,10 @@
   <div class="container" style="width: 100vw; height: 100vh;">
       <div class="row">
         <div class="col-4">
-          <img class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://pbs.twimg.com/profile_images/628455219370725376/vsyCAE_m.jpg')">
-          <p>avatar pic will be here</p>
+          <div class="profile pic" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key, crop: :fill %>')"></div>
         </div>
         <div class="col-8">
-          <p> will be in erb @user.name </p>
+          <%= @user.email %>
           <p> Edit Profile </p>
         </div>
       </div>
@@ -26,26 +25,41 @@
       <div>
         <p>Favorites</p>
       </div>
-        <div class="card" style="background-color: #F0F0F0">
-          <div class="row">
-            <div class="col">
-              <p>Image will go here</p>
-            </div>
-            <div class="col">
-              <p>Place Name</p>
-              <p>Address</p>
-            </div>
-            <div class="col">
-              <p>stars</p>
-              <p>Genre</p>
+        <% @user.favorites.each do |favorite| %>
+          <div class="card" style="background-color: #F0F0F0">
+            <div class="row">
+              <div class="col">
+                <div class="favorite-photos" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path favorite.place.photos[0].key, crop: :fill %>')">
+                </div>
+              </div>
+              <div class="col">
+                <%= favorite.place.name %>
+                <%= favorite.place.address %>
+              </div>
+              <div class="col">
+                <%= favorite.place.average_rating %>
+                <%= favorite.place.top_genre %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <div>
         <p>My Places</p>
       </div>
       <div class="row card">
-        
+        <div class="card" style="background-color: #F0F0F0">
+          <div class="row">
+            <div class="col">
+             
+            </div>
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <p class='text-center'>Are we missing your favorite place?</p>
