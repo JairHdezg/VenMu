@@ -17,10 +17,21 @@ class PlacesController < ApplicationController
         @markers = display_markers(@geocodedPlaces)
 
       elsif params[:categories]
-        @search_categories = params[:categories].map do |cat|
+        @search_categories = ""
+        params[:categories].each do |cat|
           cat.strip!
-          "%#{cat}"
-        end.join(',')
+          @search_categories += "'#{cat}',"
+        end
+
+        @search_categories = @search_categories[0..-2]
+        sql_query = " \
+          top_genre ILIKE :query \
+          AND category IN (:categories) \
+        "
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories])
+        @geocodedPlaces = @places.geocoded
+        @markers = display_markers(@geocodedPlaces)
+
 
       else
         sql_query = " \
