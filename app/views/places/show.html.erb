@@ -21,12 +21,32 @@
 
       <h1 id="show-title"> <%= @place.name.capitalize %> </h1>
       <p id="show-address"> <%= @place.address %> </p>
-      <p id="show-url"> <%= @place.url %> </p>
+      <p id="show-url"> <%= @place.category %> </p>
 
       <!-- top genre tag -->
       <div class="top-tag d-flex align-items-center">
         <p class="top-tag-genre"> <%= @place.top_genre %> </p>
       </div>
+
+      <!-- favorite button -->
+      <% if @place.isfavorite %>
+        <div class="favorite-button pressed d-flex align-items-center justify-content-center">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Added to your favorites!</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% else %>
+      <%= simple_form_for [@place, @favorite] do |f| %>
+        <button type="submit" class="favorite-button unpressed d-flex align-items-center justify-content-center">
+          <i class="fas fa-heart"></i>
+        </button>
+        <% end %>
+
+      <% end %>
 
       <!-- Slider main container -->
       <div class="swiper-container s1">
