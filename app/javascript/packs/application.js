@@ -22,6 +22,21 @@ const closeNav = document.getElementById('main-menu-close')
 const searchButton = document.getElementById('main-search-button')
 const showPhoto = document.querySelectorAll('.show-photo')
 const mainPhoto = document.querySelector('.show-main')
+const favoriteButton = document.querySelector('.favorite-button')
+const backButton = document.getElementById('main-back-button')
+
+if (backButton != null) {
+  backButton.addEventListener('click', () => {
+    window.history.back();
+  })
+}
+
+if (favoriteButton != null) {
+  favoriteButton.addEventListener('click', () => {
+    favoriteButton.classList.toggle('pressed');
+    favoriteButton.classList.toggle('unpressed');
+  })
+}
 
 if (showPhoto != null) {
   showPhoto.forEach((photo) => {

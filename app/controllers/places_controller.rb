@@ -6,25 +6,39 @@ class PlacesController < ApplicationController
     skip_policy_scope
     if params[:query]
       @query = params[:query]
-      sql_query = " \
-      name ILIKE :query \
-      OR top_genre ILIKE :query \
-      "
-      @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%")
-      
-      @geocodedPlaces = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").geocoded
 
-      @markers = display_markers(@geocodedPlaces)
+      if params[:category]
+        sql_query = " \
+          top_genre ILIKE :query \
+          AND category ILIKE :category \
+        "
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category])
+        @geocodedPlaces = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: "%#{params[:category]}%").geocoded
+        @markers = display_markers(@geocodedPlaces)
+
+      elsif params[:categories]
+        @search_categories = params[:categories].map do |cat|
+          cat.strip!
+          "%#{cat}"
+        end.join(',')
+
+      else
+        sql_query = " \
+          name ILIKE :query \
+          OR top_genre ILIKE :query \
+        "
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%")
+        @geocodedPlaces = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").geocoded
+        @markers = display_markers(@geocodedPlaces)
+      end
 
     else
       @places = policy_scope(Place)
-
       @geocodedPlaces = Place.geocoded
-
       @markers = display_markers(@geocodedPlaces)
     end
 
-    @categories = [ 'Restaurant', 'Coffee shop', 'Nightclub', 'Bars', 'Brunch' ]
+    @categories = [ 'Restaurant', 'Coffee', 'Nightclub', 'Bar', 'Brunch' ]
   end
 
   def show
@@ -33,6 +47,7 @@ class PlacesController < ApplicationController
     @review = Review.new
     @genres_review = GenresReview.new
     @genres = Genre.all
+    @favorite = Favorite.new
   end
 
   def new

@@ -1,5 +1,7 @@
 class Place < ApplicationRecord
+
   geocoded_by :address
+
   has_many_attached :photos
 
   after_validation :geocode, if: :will_save_change_to_address?
@@ -20,7 +22,14 @@ class Place < ApplicationRecord
     else
       return 0
     end
-   
+
+  end
+
+  def isfavorite
+    user.favorites.each do |favorite|
+      return true if favorite.place == self
+    end
+    return false
   end
 
   def get_top_genre
