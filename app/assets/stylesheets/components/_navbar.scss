@@ -47,6 +47,17 @@
 }
 
 .navigation-bar {
+  right: 0;
+  z-index: 12;
+  position: fixed;
+  background-color: none;
+  height: 7vh;
+  width: 50vw;
+  right:0;
+}
+
+.navigation-bar-white {
+  right: 0;
   z-index: 12;
   position: fixed;
   background-color: none;

@@ -43,7 +43,10 @@ class PlacesController < ApplicationController
   end
 
   def create
+    @genres = Genre.all
     @place = Place.new(strong_params)
+    @place.photos = params[:photos]
+    @place.top_genre = @genres[params[:place][:top_genre].to_i - 1].name.capitalize
     @place.user = current_user
     authorize @place
     if @place.save
@@ -74,7 +77,7 @@ class PlacesController < ApplicationController
 
   private
   def strong_params
-      params.require(:place).permit(:name, :top_genre, :category, :address, :url, :description, :phone_number, photos: [])
+      params.require(:place).permit(:name, :top_genre, :category, :address, :url, :description, :phone_number, :photos=> [])
   end
 
   def display_markers(geocoded)

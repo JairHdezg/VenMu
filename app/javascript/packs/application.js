@@ -15,11 +15,26 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 import { hidingHome } from '../packs/hiding_home';
 import { initSelect2 } from '../plugins/init_select2';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 const menuButton = document.getElementById('main-menu-button')
 const navBar = document.getElementById('main-menu-nav')
 const closeNav = document.getElementById('main-menu-close')
 const searchButton = document.getElementById('main-search-button')
+const showPhoto = document.querySelectorAll('.show-photo')
+const mainPhoto = document.querySelector('.show-main')
+
+if (showPhoto != null) {
+  showPhoto.forEach((photo) => {
+    photo.addEventListener('click', () => {
+      var re = /background-image: url\(.*\);/;
+      let newPhoto = photo.getAttribute('style');
+      let result = newPhoto.match(re);
+      mainPhoto.removeAttribute('style');
+      mainPhoto.setAttribute('style', `${result[0]}`);
+    });
+  });
+}
 
 if (menuButton != null ) {
   menuButton.addEventListener('click',() =>{
@@ -41,6 +56,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initStarRating();
   initSelect2();
+  initAutocomplete();
 });
 
 var swiper = new Swiper('.s1', {

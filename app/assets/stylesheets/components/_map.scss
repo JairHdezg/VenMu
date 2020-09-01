@@ -9,6 +9,7 @@
     font-family: 'Open Sans', sans-serif;
     border-radius: 20px;
     background:none;
+    box-shadow: none !important;
 }
 
 .main-map {
@@ -23,18 +24,20 @@
   width: 167px;
   background-size: cover;
   background-position: center;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2)
 }
 
 .pop-up-text-title{
   color: #FFFFFF;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: bolder;
   font-style: normal;
   margin: 0px;
+  
 }
 
 .pop-up-text{
   color:white;
   margin: 0px;
-  font-weight: bold;
+  font-weight: bolder;
 }

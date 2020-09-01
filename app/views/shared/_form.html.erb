@@ -1,14 +1,15 @@
   <%= simple_form_for @place do |f| %>
     <%= f.input :name, required: true, label_html: { hidden: true }, placeholder: "Place name" %>
-    <%= f.input :address, required: true, label_html: { hidden: true }, placeholder: "Address" %>
+    <%= f.input :address, required: true, label_html: { hidden: true }, input_html: {id: "address-bar"}, placeholder: "Address" %>
     <%= f.input :category, required: true, label_html: { hidden: true }, placeholder: "What kind of place is this?" %>
     <%= f.input :top_genre, as: :select, :input_html => { :class => 'select2' }, collection: Genre.all, required: true, label_html: { hidden: true } %>
     <%= f.input :description, required: true, label_html: { hidden: true }, placeholder: "What's the music like?" %>
     <%= f.input :phone_number, label_html: { hidden: true }, placeholder: "Phone number" %>
     <%= f.input :url, label_html: { hidden: true }, placeholder: "www.website.com" %>
-    <div class="form-group file optional place_photos mb-5">
-      <label id="place-photo-label" class="file optional" for="place_photos">&nbsp;</label><input class="form-control-file file optional" hidden="hidden" type="file" name="place[photos]" id="place_photos">&nbsp;</label>
-      <input class="form-control-file file optional" hidden="hidden" type="file" name="place[photos]" id="place_photos">
-    </div>
+     <div class="form-group file optional place_photos mb-5">
+      <label id="place-photo-label" class="file optional" for="place_photos">&nbsp;</label>
+      <!-- <input class="form-control-file file optional" hidden="hidden" type="file" name="photos[]" id="place_photos" multiple> -->
+      <%= f.input :photos, input_html: {multiple: true, name:"photos[]", id:"place_photos", class:"form-control-file file optional", hidden:"hidden"} , as: :file %> 
+    </div> 
     <%= f.button :submit, "Add to VenMu", class: 'btn btn-primary btn-block rounded shadow mt-5' %>
   <% end %>
