@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -27,6 +28,9 @@ const initMapbox = () => {
     map.on('load', function() {
       geolocate.trigger();
     });
+
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl, placeholder: "Search location!" }));
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
