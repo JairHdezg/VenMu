@@ -69,11 +69,31 @@ to {
 }
 }
 
+.modal-body {
+  display: flex;
+  align-items: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 90vh;
+  width: 100vw;
+}
+
+.container-flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+  width: 85vw;
+}
+
 .genre-container{
-  height: 25vh;
-  width: 35vw;
+  width: 34vw;
+  height: 20vh;
   background-size: cover;
   background-position: center;
+  margin: 20px;
 }
 
 .genre-container h4 {
@@ -82,20 +102,16 @@ to {
 
 .genre-title {
   color: $white;
-  line-height: 2em;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-#modal-content-background-home-page {
-  background: none;
-  border:none;
-}
-
-#modal-body-home {
-  box-shadow: none;
+  line-height: 1.5em;
+  font-size: .94em;
 }
 
 .background-light {
   background: linear-gradient( rgba(244,244,244,0.3),rgba(244,244,244,0.4));
+}
+
+.btn-close {
+  width: 80vw;
+  height: 2rem;
+  display: block;
 }
