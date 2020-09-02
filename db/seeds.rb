@@ -143,7 +143,7 @@ end
 
 puts 'finished'
 
-puts 'Creating 2 users'
+puts 'Creating 3 users'
 
 @user1 = User.new(email: 'harry@mail.com', password: '123456')
 file = URI.open('https://res.cloudinary.com/dtnzbx6ci/image/upload/v1597941567/img_1022_copy_lxyp2p.jpg')
@@ -155,10 +155,14 @@ file = URI.open('https://static.standard.co.uk/s3fs-public/thumbnails/image/2020
 @user2.photo.attach(io: file, filename: 'george.png', content_type: 'image/png')
 @user2.save!
 
+@user3 = User.new(email: 'triblo@mail.com', password: '123456')
+file = URI.open('https://goodofgoshen.com/wp-content/uploads/2019/06/GoG19_profile-Tricia-Blosser.jpg')
+@user3.photo.attach(io: file, filename: 'tricia.png', content_type: 'image/png')
+@user3.save!
+
 puts 'Finished'
 
 puts 'Creating 3 places'
-
 @place1 = Place.new(name: 'Taco Bar', top_genre: 'Chill', category: 'Bar', address: 'Panama City, Panama', description: 'Cozy hangout spot with good American Music', phone_number: '55 1845 9513')
 file = URI.open('https://www.dondeir.com/wp-content/uploads/2019/03/cafe-taco-bar-barra.jpg')
 @place1.photos.attach(io: file, filename: 'taco-bar.jpg', content_type: 'image/png')
@@ -182,6 +186,18 @@ file = URI.open('https://www.labodega.rest/images/galeria/1/1.jpg')
 @place3.photos.attach(io: file, filename: 'labodega.jpg', content_type: 'image/png')
 @place3.user = @user2
 @place3.save!
+
+@place4 = Place.new(name: 'The Electric Brew', top_genre: '', category: 'Restaurant Bar', address: 'Cuernavaca, Morelos', description: 'Kitchen Bar specializing in gin cocktails', phone_number: '55 5248 0911')
+file = URI.open('https://gingin.mx/repository/imagenes/siteUbicacion/3/_MG_6749.jpg')
+@place4.photos.attach(io: file, filename: 'g1.png', content_type: 'image/png')
+file = URI.open('https://fastly.4sqi.net/img/general/200x200/156020961_g4F844ile81RCR0bOrOnAHYuMI10UBmLmORCglDoxqM.jpg')
+@place4.photos.attach(io: file, filename: 'g2.png', content_type: 'image/png')
+file = URI.open('https://i.ytimg.com/vi/wLgb5L84uiI/maxresdefault.jpg')
+@place4.photos.attach(io: file, filename: 'g3.png', content_type: 'image/png')
+file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0d/c0/fa/d4/photo0jpg.jpg')
+@place4.photos.attach(io: file, filename: 'g4.png', content_type: 'image/png')
+@place4.user = @user1
+@place4.save!
 
 puts 'Finished'
 
