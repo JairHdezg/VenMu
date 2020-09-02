@@ -23,14 +23,15 @@
       <div class="col-sm-12 d-flex flex-column align-items-center">
         <h4 class="under-search mt-3">Pick a Genre!</h4>
         <svg type="submit" data-toggle="modal" data-target="#myModal23" width="30px" height="30px" style="color:white" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+          <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
         </svg>
       </div>
     </div>
   </div>
-  <div class="modal fade animate background-light p-0" id="myModal23" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-body container-fluid d-flex justify-content-center mx-0 my-1">
-          <div class="container-flexbox">
+  <div class="modal fade animate background-light p-0" id="myModal23" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fluid" role="document">
+      <div class="modal-body container-fluid d-flex justify-content-center mx-0 my-1">
+        <div class="container-flexbox">
               <div data-genre='rock' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/descarga_3_mgvflq.jpg)">
                 <h4 class="genre-title">ROCK</h4>
               </div>
@@ -61,15 +62,13 @@
               <div data-genre='dance' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/marcela-laskoski-YrtFlrLo2DQ-unsplash_b74bg3.jpg)">
                 <h4 class="genre-title">DANCE</h4>
               </div>
-
-            <div class="btn-close">
-              <button type="button" id="modal-btn-close" class="close" data-dismiss="modal" aria-label="Close">
-                <svg width="30px" height="30px" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
-                </svg>
-              </button>
-            </div>
-          </div>
         </div>
+      </div>
+      <button type="button" id="modal-btn-close" class="close" data-dismiss="modal" aria-label="Close">
+        <svg width="30px" height="30px" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
