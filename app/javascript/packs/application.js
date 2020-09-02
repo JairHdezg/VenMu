@@ -26,7 +26,7 @@ const mainPhoto = document.querySelector('.show-main')
 const favoriteButton = document.querySelector('.favorite-button')
 const backButton = document.getElementById('main-back-button')
 const connectSpotify = document.getElementById('spb')
-const genreButtons = document.querySelectorAll('.genre-container')
+const genreButtons = document.querySelectorAll('.genre-container');
 
 if (connectSpotify != null) {
   connectSpotify.addEventListener('click', () => {
