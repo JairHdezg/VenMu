@@ -88,7 +88,7 @@
               <%= simple_form_for [@place, @review] do |f| %>
                 <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {class: 'star_rating' } %>
                 <%= f.input :content %>
-                <%= f.input :genres, as: :select, :input_html => { :id => 'review' },collection: Genre.all %>
+                <%= f.input :genres, as: :select, :input_html => { :id => 'review-multiselect', :multiple => true },collection: Genre.all %>
             </div>
             <div class="modal-footer" id="review-modal-footer">
               <%= f.submit class: "btn btn-primary btn-sm rounded"%>

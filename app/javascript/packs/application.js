@@ -2,6 +2,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+// require('multiselect')
 
 // External imports
 import "bootstrap";
@@ -57,12 +58,11 @@ function transformToAssocArray( prmstr ) {
 const params = getSearchParameters();
 
 if (window.location.pathname=='/places') {
-  if (params['lon']=='') {
+  if (params['lon']=='' || params['lon'] == null ) {
     navigator.geolocation.getCurrentPosition((data) => {
       const lat = data.coords.latitude;
       const lon = data.coords.longitude;
       const query = params['query'];
-      console.log('joli');
       window.location.href = `/places?lon=${lon}&lat=${lat}&query=${query}&gl=y`;
     });
   }
@@ -127,6 +127,7 @@ document.addEventListener('turbolinks:load', () => {
   initStarRating();
   initSelect2();
   initAutocomplete();
+  // ('#review-multiselect').multiselect()
 });
 
 var swiper = new Swiper('.s1', {
