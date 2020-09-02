@@ -9,12 +9,15 @@
     </button>
 
     <div class="dropdown-menu search" aria-labelledby="dropdownMenuButton">
-
-      <%= simple_form_for :search, url: '/places', method: "GET" do |f| %>
-        <%= f.input :address, required: true, label_html: { hidden: true }, input_html: {id: "address-bar"}, placeholder: "Address" %>
-        <%= f.input :query, as: :select, :input_html => { :class => 'select2' }, collection: Genre.all, required: true, label_html: { hidden: true } %>
-        <%= f.button :submit, "Find", class: 'btn btn-primary btn-block rounded shadow mt-5' %>
-      <% end %>
+      <form action="/places">
+        <input name='address' class="form-control rounded form-control-sm mb-1" id="addressInput" aria-describedby="emailHelp" placeholder="City">
+        <input name='query' value="<%= params[:query] %>" class="form-control rounded form-control-sm mb-1" id="genreInput" aria-describedby="emailHelp" placeholder="Genre">
+        <input class="form-check-input" value="<%= params[:lat]%>" id="defaultCheck1" name="lat" hidden checked>
+        <input class="form-check-input" value="<%= params[:lon]%>" id="defaultCheck1" name="lon" hidden checked>
+        <div class="button-container d-flex justify-content-end">
+        <button type="submit" class="btn btn-block btn-sm btn-primary align-items-end" id="category-button">Find</button>
+        </div>
+      </form>
     </div>
   </div>
 
