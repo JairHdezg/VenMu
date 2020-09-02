@@ -317,7 +317,7 @@ file = URI.open('https://images.unsplash.com/photo-1577099636826-7a532667d518?ix
 @place11.user = @user2
 @place11.save!
 
-@place9 = Place.new(name: 'Los Primos', top_genre: 'rock', category: 'Bar', address: 'Calle Querétaro 227, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX, Mexico', description: 'Great spot with awesome rock music! Classic rock until 9:00pm, hard rock and metal into the night!', phone_number: '55 1847 9513')
+@place9 = Place.new(name: 'Los Primos', top_genre: 'rock', category: 'Bar', address: 'Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX, Mexico', description: 'Great spot with awesome rock music! Classic rock until 9:00pm, hard rock and metal into the night!', phone_number: '55 1847 9513')
 file = URI.open('https://images.unsplash.com/photo-1570936100858-56eb3a5f5ae1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place9.photos.attach(io: file, filename: 'rockbar1.jpg', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1565755713428-1bdfaa7db8ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
@@ -327,7 +327,7 @@ file = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_201605
 @place9.user = @user2
 @place9.save!
 
-@place10 = Place.new(name: "Limon", top_genre: 'pop', category: 'restaurant', address: 'Monterrey 332, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1897 9513')
+@place10 = Place.new(name: "Limon", top_genre: 'pop', category: 'restaurant', address: 'Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1897 9513')
 file = URI.open('https://images.unsplash.com/photo-1530119412657-4f6cd87aad79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place10.photos.attach(io: file, filename: 'limon1.jpg', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1554917134-21e9f7431d08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
@@ -337,7 +337,7 @@ file = URI.open('https://images.unsplash.com/photo-1553194588-6ba2cd5b410f?ixlib
 @place10.user = @user2
 @place10.save!
 
-@place12 = Place.new(name: 'Cafe Discoteq', top_genre: 'reggaeton', category: 'Nightclub', address: 'Av. Tamaulipas 107, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX, Mexico', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+@place12 = Place.new(name: 'Cafe Discoteq', top_genre: 'reggaeton', category: 'Nightclub', address: 'Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX, Mexico', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
 file = URI.open('https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place12.photos.attach(io: file, filename: 'cafediscoteq1.jpg', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1516460541734-4d739711d218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
@@ -347,7 +347,7 @@ file = URI.open('https://images.unsplash.com/photo-1569924995012-c4c706bfcd51?ix
 @place12.user = @user2
 @place12.save!
 
-@place13 = Place.new(name: "Frida's", top_genre: 'latin', category: 'Coffee', address: 'Londres 255, Del Carmen, Coyoacán, 04100 Ciudad de México, CDMX, Mexico', description: "Mostly music with latin flavors played here, a cozy vibe Frida would've loved.", phone_number: '(574) 555-0911')
+@place13 = Place.new(name: "Frida's", top_genre: 'latin', category: 'Coffee', address: 'Del Carmen, Coyoacán, 04100 Ciudad de México, CDMX, Mexico', description: "Mostly music with latin flavors played here, a cozy vibe Frida would've loved.", phone_number: '(574) 555-0911')
 file = URI.open('https://images.unsplash.com/photo-1453614512568-c4024d13c247?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place13.photos.attach(io: file, filename: 'fridas.png', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1578499026171-a1016496b7f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
@@ -451,3 +451,96 @@ puts 'Creating 5 favorites'
 @favorite4.save!
 
 puts 'Finished'
+
+puts "Creating new reviews for places9-13"
+@review10 = Review.new(content: 'Went to the SOAD tribute, awesome night', rating: 5)
+@review10.user = @user1
+@review10.place = @place9
+@review10.save!
+genre_review10 = GenresReview.new
+genre_review10.review = @review10
+genre_review10.genre = Genre.find_by(name: 'rock')
+genre_review10.save
+
+@review11 = Review.new(content: 'Pretty chill.', rating: 4)
+@review11.user = @user2
+@review11.place = @place9
+@review11.save!
+genre_review11 = GenresReview.new
+genre_review11.review = @review11
+genre_review11.genre = Genre.find_by(name: 'rock')
+genre_review11.save
+
+@review12 = Review.new(content: 'Music is great, had a blast! ', rating: 5)
+@review12.user = @user1
+@review12.place = @place10
+@review12.save!
+genre_review12 = GenresReview.new
+genre_review12.review = @review12
+genre_review12.genre = Genre.find_by(name: 'pop')
+genre_review12.save
+
+@review13 = Review.new(content: 'It was good, danced with my friends all night', rating: 4)
+@review13.user = @user2
+@review13.place = @place10
+@review13.save!
+genre_review13 = GenresReview.new
+genre_review13.review = @review13
+genre_review13.genre = Genre.find_by(name: 'pop')
+genre_review13.save
+
+@review14 = Review.new(content: 'Music spoke to my soul, cozy place, I loved it', rating: 5)
+@review14.user = @user1
+@review14.place = @place11
+@review14.save!
+genre_review14 = GenresReview.new
+genre_review14.review = @review14
+genre_review14.genre = Genre.find_by(name: 'jazz')
+genre_review14.save
+
+@review15 = Review.new(content: 'Good music, cheap drinks, after-office approved!', rating: 5)
+@review15.user = @user2
+@review15.place = @place11
+@review15.save!
+genre_review15 = GenresReview.new
+genre_review15.review = @review15
+genre_review15.genre = Genre.find_by(name: 'jazz')
+genre_review15.save
+
+@review16 = Review.new(content: "Poor music. They need a new dj.", rating: 2)
+@review16.user = @user1
+@review16.place = @place12
+@review16.save!
+genre_review16 = GenresReview.new
+genre_review16.review = @review16
+genre_review16.genre = Genre.find_by(name: "reggaeton")
+genre_review16.save
+
+@review17 = Review.new(content: "Just amazing! Great vibe, will come back!", rating: 5)
+@review17.user = @user2
+@review17.place = @place12
+@review17.save!
+genre_review17 = GenresReview.new
+genre_review17.review = @review17
+genre_review17.genre = Genre.find_by(name: "reggaeton")
+genre_review17.save
+
+@review18 = Review.new(content: "Pretty good music.", rating: 4)
+@review18.user = @user1
+@review18.place = @place13
+@review18.save!
+genre_review18 = GenresReview.new
+genre_review18.review = @review18
+genre_review18.genre = Genre.find_by(name: "latin")
+genre_review18.save
+
+@review19 = Review.new(content: "Best latin music in the city! I want to stay all night!", rating: 5)
+@review19.user = @user2
+@review19.place = @place13
+@review19.save!
+genre_review19 = GenresReview.new
+genre_review19.review = @review19
+genre_review19.genre = Genre.find_by(name: "latin")
+genre_review19.save
+
+puts "finished!"
