@@ -7,16 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
+puts "Destroying existing genres reviews"
+@genres = GenresReview.all
+@genres.each do |genre|
+  genre.destroy
+end
+
 puts "Destroying existing genres"
 @genres = Genre.all
 @genres.each do |genre|
   genre.destroy
-end 
+end
 
 puts 'Destroying existing places'
 @places = Place.all
 @places.each do |place|
-  place.photo.purge if place.photo.attached?
+  place.photos.purge if place.photos.attached?
   place.destroy
 end
 
