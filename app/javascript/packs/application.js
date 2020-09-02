@@ -23,6 +23,76 @@ const closeNav = document.getElementById('main-menu-close')
 const searchButton = document.getElementById('main-search-button')
 const showPhoto = document.querySelectorAll('.show-photo')
 const mainPhoto = document.querySelector('.show-main')
+const favoriteButton = document.querySelector('.favorite-button')
+const backButton = document.getElementById('main-back-button')
+const connectSpotify = document.getElementById('spb')
+const genreButtons = document.querySelectorAll('.genre-container');
+
+if (connectSpotify != null) {
+  connectSpotify.addEventListener('click', () => {
+    navigator.geolocation.getCurrentPosition((data) => {
+      var prmstr = window.location.search
+      const lat = data.coords.latitude;
+      const lon = data.coords.longitude;
+
+    });
+  })
+}
+
+function getSearchParameters() {
+    var prmstr = window.location.search.substr(1);
+    return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+  }
+
+function transformToAssocArray( prmstr ) {
+  var params = {};
+  var prmarr = prmstr.split("&");
+  for ( var i = 0; i < prmarr.length; i++) {
+      var tmparr = prmarr[i].split("=");
+      params[tmparr[0]] = tmparr[1];
+  }
+  return params;
+}
+
+const params = getSearchParameters();
+
+if (window.location.pathname=='/places') {
+  if (params['lon']=='') {
+    navigator.geolocation.getCurrentPosition((data) => {
+      const lat = data.coords.latitude;
+      const lon = data.coords.longitude;
+      const query = params['query'];
+      console.log('joli');
+      window.location.href = `/places?lon=${lon}&lat=${lat}&query=${query}&gl=y`;
+    });
+  }
+}
+
+
+genreButtons.forEach((button) => {
+  button.addEventListener('click', function() {
+      navigator.geolocation.getCurrentPosition((data) => {
+      const lat = data.coords.latitude;
+      const lon = data.coords.longitude;
+      const query = button.dataset.genre;
+      window.location.href = `/places?lon=${lon}&lat=${lat}&query=${query}&gl=y`;
+    });
+  });
+})
+
+
+if (backButton != null) {
+  backButton.addEventListener('click', () => {
+    window.history.back();
+  })
+}
+
+if (favoriteButton != null) {
+  favoriteButton.addEventListener('click', () => {
+    favoriteButton.classList.toggle('pressed');
+    favoriteButton.classList.toggle('unpressed');
+  })
+}
 
 if (showPhoto != null) {
   showPhoto.forEach((photo) => {

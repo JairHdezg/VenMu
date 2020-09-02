@@ -6,6 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
+
+puts "Destroying existing genres"
+@genres = Genre.all
+@genres.each do |genre|
+  genre.destroy
+end 
+
+puts 'Destroying existing places'
+@places = Place.all
+@places.each do |place|
+  place.photo.purge if place.photo.attached?
+  place.destroy
+end
+
+puts 'Destroying existing users'
+@users = User.all
+@users.each do |user|
+  user.photo.purge if user.photo.attached?
+  user.destroy
+end
+
 puts 'Creating Genres'
 
 genres = [
@@ -143,7 +164,7 @@ end
 
 puts 'finished'
 
-puts 'Creating 2 users'
+puts 'Creating 3 users'
 
 @user1 = User.new(email: 'harry@mail.com', password: '123456')
 file = URI.open('https://res.cloudinary.com/dtnzbx6ci/image/upload/v1597941567/img_1022_copy_lxyp2p.jpg')
@@ -155,17 +176,25 @@ file = URI.open('https://static.standard.co.uk/s3fs-public/thumbnails/image/2020
 @user2.photo.attach(io: file, filename: 'george.png', content_type: 'image/png')
 @user2.save!
 
+@user3 = User.new(email: 'triblo@mail.com', password: '123456')
+file = URI.open('https://goodofgoshen.com/wp-content/uploads/2019/06/GoG19_profile-Tricia-Blosser.jpg')
+@user3.photo.attach(io: file, filename: 'triblo.png', content_type: 'image/png')
+@user3.save!
+
 puts 'Finished'
 
 puts 'Creating 3 places'
-
-@place1 = Place.new(name: 'Taco Bar', top_genre: 'Chill', category: 'Bar', address: 'Panama City, Panama', description: 'Cozy hangout spot with good American Music', phone_number: '55 1845 9513')
+@place1 = Place.new(name: 'Taqueria San Marcos', top_genre: 'reggaeton', category: 'Nightclub', address: '113 S. Main St., Goshen, IN', description:"You'll love the reggaeton and dance music here! Great patio, tacos, as well!", phone_number: '55 1845 9513')
 file = URI.open('https://www.dondeir.com/wp-content/uploads/2019/03/cafe-taco-bar-barra.jpg')
 @place1.photos.attach(io: file, filename: 'taco-bar.jpg', content_type: 'image/png')
+file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/19247794_881425275342861_148534934067197032_n.jpg?_nc_cat=101&_nc_sid=9267fe&_nc_ohc=_EX_r2T0IxkAX9sffJ3&_nc_ht=scontent-ort2-1.xx&oh=49c1926d11b4ae4ba28a6ad80f126c0a&oe=5F751C71')
+@place1.photos.attach(io: file, filename: 'taco-bar2.jpg', content_type: 'image/png')
+file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/37600726_10157672821638761_282030556500197376_o.jpg?_nc_cat=101&_nc_sid=8bfeb9&_nc_ohc=1cM1NQVCZbEAX9yPhPv&_nc_ht=scontent-ort2-1.xx&oh=35e514997d2153ef13898b76b9151faa&oe=5F7457F9')
+@place1.photos.attach(io: file, filename: 'taco-bar3.jpg', content_type: 'image/png')
 @place1.user = @user1
 @place1.save!
 
-@place2 = Place.new(name: 'Gin Gin', top_genre: 'Electronic', category: 'Restaurant Bar', address: 'Cuernavaca, Morelos', description: 'Kitchen Bar specializing in gin cocktails', phone_number: '55 5248 0911')
+@place2 = Place.new(name: 'Gin Gin', top_genre: 'dance', category: 'Bar', address: 'Cuernavaca, Morelos', description: 'Great dance music and reggaeton! Kitchen Bar specializes in gin cocktails', phone_number: '55 5248 0911')
 file = URI.open('https://gingin.mx/repository/imagenes/siteUbicacion/3/_MG_6749.jpg')
 @place2.photos.attach(io: file, filename: 'g1.png', content_type: 'image/png')
 file = URI.open('https://fastly.4sqi.net/img/general/200x200/156020961_g4F844ile81RCR0bOrOnAHYuMI10UBmLmORCglDoxqM.jpg')
@@ -177,9 +206,13 @@ file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0d/c0/fa/d4/pho
 @place2.user = @user1
 @place2.save!
 
-@place3 = Place.new(name: 'La Bodega', top_genre: 'Latin', category: 'Kitchen Bar', address: 'Cholula, Puebla', url: 'https://www.labodega.rest/', description: 'Mexican Restaurant with traditional music', phone_number: '55 5511 7390')
+@place3 = Place.new(name: 'La Bodega', top_genre: 'latin', category: 'Restaurant', address: 'Cholula, Puebla', url: 'https://www.labodega.rest/', description: 'Mexican Restaurant with traditional music', phone_number: '55 5511 7390')
 file = URI.open('https://www.labodega.rest/images/galeria/1/1.jpg')
 @place3.photos.attach(io: file, filename: 'labodega.jpg', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/flagged/photo-1579941429125-4be1ab232711?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
+@place3.photos.attach(io: file, filename: 'labodega2.jpg', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1589769105893-3cfe4c0c8851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
+@place3.photos.attach(io: file, filename: 'labodega3.jpg', content_type: 'image/png')
 @place3.user = @user2
 @place3.save!
 
@@ -217,38 +250,64 @@ genre_review3.review = @review3
 genre_review3.genre = Genre.find_by(name: 'pop')
 genre_review3.save
 
-# New seeds
-# Ligoneer, Indiana, United States
+puts "Finished"
+
+puts "Creating 5 Goshen places!"
 @place4 = Place.new(name: 'Venturi', top_genre: 'Soul', category: 'Bar', address: 'Goshen, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
-place4_picture = URI.open('https://images.squarespace-cdn.com/content/v1/52f12ea6e4b07a35a2f94fd7/1391551486776-TX3ZQXDEW39FF6KH6JB1/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/venturi-interior.jpg')
-@place4.photos.attach(io: place4_picture, filename: 'venturi.jpg', content_type: 'image/png')
-place42_picture = URI.open('https://images.squarespace-cdn.com/content/v1/52f12ea6e4b07a35a2f94fd7/1391712981281-Z4IVE7Y0NH9YAYEL6LVZ/ke17ZwdGBToddI8pDm48kNe6zOZTHfz7l6ZgjxUpukVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI_yASvo-WEqohroAwDGiHyF2S9ug-6_kqb0gBNu81ch4KMshLAGzx4R3EDFOm1kBS/three-margherite.jpg')
-@place4.photos.attach(io: place42_picture, filename: 'venturi-2.jpg', content_type: 'image/png')
-place43_picture = URI.open('https://cdn.usarestaurants.info/assets/uploads/f5d70eb642fcc334923ac860c95dcf5e_-united-states-indiana-elkhart-county-elkhart-township-goshen-venturi-574-485-2985htm.jpg')
-@place4.photos.attach(io: place43_picture, filename: 'venturi-3.jpg', content_type: 'image/png')
+file = URI.open('https://images.squarespace-cdn.com/content/v1/52f12ea6e4b07a35a2f94fd7/1391551486776-TX3ZQXDEW39FF6KH6JB1/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/venturi-interior.jpg')
+@place4.photos.attach(io: file, filename: 'venturi.jpg', content_type: 'image/png')
+file = URI.open('https://images.squarespace-cdn.com/content/v1/52f12ea6e4b07a35a2f94fd7/1391712981281-Z4IVE7Y0NH9YAYEL6LVZ/ke17ZwdGBToddI8pDm48kNe6zOZTHfz7l6ZgjxUpukVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI_yASvo-WEqohroAwDGiHyF2S9ug-6_kqb0gBNu81ch4KMshLAGzx4R3EDFOm1kBS/three-margherite.jpg')
+@place4.photos.attach(io: file, filename: 'venturi-2.jpg', content_type: 'image/png')
+file = URI.open('https://cdn.usarestaurants.info/assets/uploads/f5d70eb642fcc334923ac860c95dcf5e_-united-states-indiana-elkhart-county-elkhart-township-goshen-venturi-574-485-2985htm.jpg')
+@place4.photos.attach(io: file, filename: 'venturi-3.jpg', content_type: 'image/png')
 @place4.user = @user1
 @place4.save!
 
 @place5 = Place.new(name: 'Common Spirits', top_genre: 'Soul', category: 'Bar', address: 'Ligoneer, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
-place5_picture = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_20160520_110210-1.jpg')
-@place5.photos.attach(io: place5_picture, filename: 'common-spirits-1.jpg', content_type: 'image/png')
+file = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_20160520_110210-1.jpg')
+@place5.photos.attach(io: file, filename: 'common-spirits-1.jpg', content_type: 'image/png')
+file = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_20160609_133357.jpg')
+@place5.photos.attach(io: file, filename: 'common-spirits-2.jpg', content_type: 'image/png')
+file = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_20160520_124533.jpg')
+@place5.photos.attach(io: file, filename: 'common-spirits-3.jpg', content_type: 'image/png')
 @place5.user = @user1
 @place5.save!
 
 @place6 = Place.new(name: 'Constant Spring', top_genre: 'Soul', category: 'Bar', address: 'New Paris, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
-place6_picture = URI.open('https://bloximages.newyork1.vip.townnews.com/southbendtribune.com/content/tncms/assets/v3/editorial/b/0a/b0a7bbc2-ed8e-5801-b0f4-0c70dd137ced/55e8158422eee.image.jpg?crop=543%2C543%2C128%2C0&resize=1200%2C1200&order=crop%2Cresize')
-@place6.photos.attach(io: place6_picture, filename: 'constant-spring-1.jpg', content_type: 'image/png')
+file = URI.open('https://bloximages.newyork1.vip.townnews.com/southbendtribune.com/content/tncms/assets/v3/editorial/b/0a/b0a7bbc2-ed8e-5801-b0f4-0c70dd137ced/55e8158422eee.image.jpg?crop=543%2C543%2C128%2C0&resize=1200%2C1200&order=crop%2Cresize')
+@place6.photos.attach(io: file, filename: 'constant-spring-1.jpg', content_type: 'image/png')
+file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/118215013_10157882671363214_5593952434385893705_o.jpg?_nc_cat=109&_nc_sid=9267fe&_nc_ohc=wHXGktzkN2oAX9lUvtf&_nc_ht=scontent-ort2-1.xx&oh=4473102d5f097f2b3fc712bc96cad635&oe=5F75DC60')
+@place6.photos.attach(io: file, filename: 'constant-spring-2.jpg', content_type: 'image/png')
+file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/103256447_10157663196388214_7798530207763132223_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=pVldq05eMpwAX_G0UIs&_nc_ht=scontent-ort2-1.xx&oh=b7c8eca4a32ca5affcd32beeb08b37de&oe=5F75D11F')
+@place6.photos.attach(io: file, filename: 'constant-spring-3.jpg', content_type: 'image/png')
 @place6.user = @user1
 @place6.save!
 
 @place7 = Place.new(name: 'Goshen Brewing Company', top_genre: 'Soul', category: 'Bar', address: 'Elkhart, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
-place7_picture = URI.open('https://goshenbrewing.com/wp-content/uploads/2015/05/1080-goshen-brewing-8.jpg')
-@place7.photos.attach(io: place7_picture, filename: 'goshen-brewing-1.jpg', content_type: 'image/png')
+file = URI.open('https://goshenbrewing.com/wp-content/uploads/2015/05/1080-goshen-brewing-8.jpg')
+@place7.photos.attach(io: file, filename: 'goshen-brewing-1.jpg', content_type: 'image/png')
+file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-0/c34.0.206.206a/p206x206/105654352_1886314034865335_848628426071560408_o.jpg?_nc_cat=110&_nc_sid=110474&_nc_ohc=7YC2aMavQfQAX-XvjjP&_nc_ht=scontent-ort2-1.xx&oh=5296af7bdc7492fb3fa0f549dd247f70&oe=5F771FE5')
+@place7.photos.attach(io: file, filename: 'goshen-brewing-2.jpg', content_type: 'image/png')
+file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-0/c32.0.206.206a/p206x206/89924300_759033684238_1481289376636862464_n.jpg?_nc_cat=107&_nc_sid=de0e5b&_nc_ohc=SV8rd_reYOwAX_B7RgL&_nc_ht=scontent-ort2-1.xx&oh=e8456e31cb3313ab16eb1bc11c48e40d&oe=5F7571FD')
+@place7.photos.attach(io: file, filename: 'goshen-brewing-3.jpg', content_type: 'image/png')
 @place7.user = @user1
 @place7.save!
 
-# Reviews for Venturi
+@place8 = Place.new(name: 'The Electric Brew', top_genre: 'jazz', category: 'Coffee', address: '118 E. Washington St, Goshen, IN, USA', description: 'Mostly jazz, ambient, acoustic, and indie-rock played here, with a cozy vibe.', phone_number: '(574) 555-0911')
+file = URI.open('https://lh5.googleusercontent.com/p/AF1QipMxOWat0FjGXxAd8FBWyHgRd2IECqEtVPPlCSF0=w600-h485-p-k-no')
+@place8.photos.attach(io: file, filename: 'electricbrew.png', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1578499026171-a1016496b7f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
+@place8.photos.attach(io: file, filename: 'coffeeshop.png', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/flagged/photo-1563855078923-9cb686dc0e7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place8.photos.attach(io: file, filename: 'coffee.png', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
+@place8.photos.attach(io: file, filename: 'coffeeambiance.png', content_type: 'image/png')
+@place8.user = @user2
+@place8.save!
+puts "Finished!"
 
+# Reviews for Venturi
+puts "Creating 3 Venturi reviews"
 @review4 = Review.new(content: 'Excelent soul music, I danced all night', rating: 5)
 @review4.place = @place4
 @review4.user = @user2
@@ -273,15 +332,48 @@ genre_review5.save
 @review6.place = @place4
 @review6.user = @user2
 @review6.save!
-genre_review5 = GenresReview.new
-genre_review5.review = @review6
-genre_review5.genre = Genre.find_by(name: 'soul')
-genre_review5.save
+genre_review6 = GenresReview.new
+genre_review6.review = @review6
+genre_review6.genre = Genre.find_by(name: 'soul')
+genre_review6.save
 @review6.save!
 
 puts 'Finished'
+puts 'Creating 3 GBCo reviews'
 
-puts 'Creating 3 favorites'
+@review7 = Review.new(content: 'Great soul music! Plus great beer and pad thai', rating: 5)
+@review7.place = @place7
+@review7.user = @user2
+@review7.save!
+genre_review7 = GenresReview.new
+genre_review7.review = @review7
+genre_review7.genre = Genre.find_by(name: 'soul')
+genre_review7.save
+@review7.save!
+
+
+@review8= Review.new(content: 'Awesome vibe, love their patio seating! So tranquil!', rating: 4)
+@review8.user = @user1
+@review8.place = @place7
+@review8.save!
+genre_review8 = GenresReview.new
+genre_review8.review = @review8
+genre_review8.genre = Genre.find_by(name: 'soul')
+genre_review8.save
+
+
+@review9 = Review.new(content: 'Love the acoustic nights on Wednesdays!', rating: 5)
+@review9.user = @user3
+@review9.place = @place7
+@review9.save!
+genre_review9 = GenresReview.new
+genre_review9.review = @review9
+genre_review9.genre = Genre.find_by(name: 'acoustic')
+genre_review9.save
+
+puts "Finished"
+
+puts 'Creating 5 favorites'
 
 @favorite1 = Favorite.new
 @favorite1.user = @user1
@@ -294,8 +386,13 @@ puts 'Creating 3 favorites'
 @favorite2.save!
 
 @favorite3 = Favorite.new
-@favorite3.user = @user1
-@favorite3.place = @place3
+@favorite3.user = @user3
+@favorite3.place = @place7
 @favorite3.save!
+
+@favorite4 = Favorite.new
+@favorite4.user = @user3
+@favorite4.place = @place8
+@favorite4.save!
 
 puts 'Finished'

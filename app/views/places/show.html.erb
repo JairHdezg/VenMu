@@ -1,5 +1,9 @@
 <div class="show-container">
-  <%= render 'shared/navbar_white' %>
+  <% if current_user %>
+    <%= render 'shared/navbar_white' %>
+  <% else %>
+    <%= render 'shared/navbar' %>
+  <% end %>
   <div class="show-main" style="background-image: url('<%= cl_image_path @place.photos[0].key %>')">
   </div>
 
@@ -21,12 +25,32 @@
 
       <h1 id="show-title"> <%= @place.name.capitalize %> </h1>
       <p id="show-address"> <%= @place.address %> </p>
-      <p id="show-url"> <%= @place.url %> </p>
+      <p id="show-url"> <%= @place.category %> </p>
 
       <!-- top genre tag -->
       <div class="top-tag d-flex align-items-center">
         <p class="top-tag-genre"> <%= @place.top_genre %> </p>
       </div>
+
+      <!-- favorite button -->
+      <% if @place.isfavorite %>
+        <div class="favorite-button pressed d-flex align-items-center justify-content-center">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Added to your favorites!</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% else %>
+      <%= simple_form_for [@place, @favorite] do |f| %>
+        <button type="submit" class="favorite-button unpressed d-flex align-items-center justify-content-center">
+          <i class="fas fa-heart"></i>
+        </button>
+        <% end %>
+
+      <% end %>
 
       <!-- Slider main container -->
       <div class="swiper-container s1">
@@ -54,18 +78,17 @@
       <!-- Modal -->
       <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content" id="review-modal-content">
+          <div class="modal-content d-flex justify-content-center" id="review-modal-content">
             <div class="modal-header border-bottom-0" id="review-modal-header">
-              <h5 class="modal-title" id="modal-review-title">New review</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body review-body d-flex justify-content-center">
               <%= simple_form_for [@place, @review] do |f| %>
                 <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {class: 'star_rating' } %>
                 <%= f.input :content %>
-                <%= f.collection_check_boxes :genres, Genre.all, :id, :name %>
+                <%= f.input :genres, as: :select, :input_html => { :id => 'review' },collection: Genre.all %>
             </div>
             <div class="modal-footer" id="review-modal-footer">
               <%= f.submit class: "btn btn-primary btn-sm rounded"%>

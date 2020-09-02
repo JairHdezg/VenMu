@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 gem 'cloudinary'
 gem 'pundit'
+gem 'pg_search'
+gem 'rest-client'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

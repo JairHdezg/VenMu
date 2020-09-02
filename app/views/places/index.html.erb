@@ -1,7 +1,10 @@
 <div class="index-container">
   <!-- navbar -->
-  <%= render 'shared/navbar' %>
-
+  <% if current_user %>
+    <%= render 'shared/navbar_white' %>
+  <% else %>
+    <%= render 'shared/navbar' %>
+  <% end %>
   <div id="map" class="main-map"
     style="width: 100vw; height: 93vh;"
     data-markers="<%= @markers.to_json %>"
@@ -19,18 +22,42 @@
 
     <!--category for query -->
     <div class="places-categories d-flex align-items-center">
+      <div class="dropdown">
+        <button class=" dropdown-toggle border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+          <div class="ml-3 swiper-slide d-flex align-items-center justify-content-center" id="places-query-burger">
+            <i class="fas fa-align-left"></i>
+          </div>
+        </button>
+        <div class="dropdown-menu dropdown-menu-categories" aria-labelledby="dropdownMenuButton">
+          <form action="/places">
+            <% @categories.each do |category| %>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value=" <%= category %> " name="categories[]">
+                <label class="dropdown-item" for="defaultCheck1">
+                  <%= category %>
+                </label>
+              </div>
+            <% end %>
+            <input class="form-check-input" value="<%= params[:lon]%>" id="defaultCheck1" name="lon" hidden checked>
+            <input class="form-check-input" value="<%= params[:lat]%>" id="defaultCheck1" name="lat" hidden checked>
+            <input class="form-check-input" value="<%= params[:query]%>" id="defaultCheck1" name="query" hidden checked>
+            <div class="button-container d-flex justify-content-end">
+              <button type="submit" class="btn btn-block btn-sm btn-primary align-items-end" id="category-button">Find</button>
+            </div>
+          </form>
+        </div>
+      </div>
 
       <!-- Slider main container -->
       <div class="swiper-container s3 ">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper d-flex align-items-center">
 
-          <div class="ml-3 swiper-slide d-flex align-items-center justify-content-center" id="places-query-burger"><i class="fas fa-align-left"></i></div>
-
           <% @categories.each do |category| %>
-            <div class="swiper-slide places-query-category" style="width: unset"> <%= category %> </div>
+            <%= link_to places_path({lat: params[:lat], lon: params[:lon], category: category, query: params[:query]}), method: :get, class: "swiper-slide places-query-category", style: "width: unset" do %>
+              <div class="" > <%= category %> </div>
+            <% end %>
           <% end %>
-
 
         </div>
         <!-- If we need pagination -->
