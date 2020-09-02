@@ -14,7 +14,7 @@ class PlacesController < ApplicationController
           top_genre ILIKE :query \
         "
 
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 500)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 2000)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -24,7 +24,7 @@ class PlacesController < ApplicationController
           AND category ILIKE :category \
         "
 
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category]).near([params[:lon], params[:lat]], 500)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category]).near([params[:lon], params[:lat]], 2000)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -33,7 +33,7 @@ class PlacesController < ApplicationController
           top_genre ILIKE :query \
           AND category IN (:categories) \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories]).near([params[:lon], params[:lat]], 500)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories]).near([params[:lon], params[:lat]], 2000)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -42,7 +42,7 @@ class PlacesController < ApplicationController
           name ILIKE :query \
           OR top_genre ILIKE :query \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lon], params[:lat]], 500)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lon], params[:lat]], 2000)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
       end
@@ -53,7 +53,7 @@ class PlacesController < ApplicationController
       sql_query = " \
           top_genre ILIKE :query \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lon], params[:lat]], 500)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lon], params[:lat]], 2000)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
