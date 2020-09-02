@@ -29,7 +29,7 @@
           <form action="/places">
             <% @categories.each do |category| %>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value=" <%= category %> " id="defaultCheck1" name="categories[]">
+                <input class="form-check-input" type="checkbox" value=" <%= category %> " name="categories[]">
                 <label class="dropdown-item" for="defaultCheck1">
                   <%= category %>
                 </label>
