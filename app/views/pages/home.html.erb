@@ -32,46 +32,36 @@
     <div class="modal-dialog modal-fluid" role="document">
       <div class="modal-body container-fluid d-flex justify-content-center mx-0 my-1">
         <div class="container-flexbox">
-          <%= link_to places_path({query: "rock"}), method: :get, class: "no-underline" do %>
-            <div class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/descarga_3_mgvflq.jpg)">
-              <h4 class="genre-title">ROCK</h4>
-            </div>
-          <% end %>
-          <%= link_to places_path({query: "pop"}), method: :get, class: "no-underline" do %>
-            <div class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/photo-1514525253161-7a46d19cd819_ndlj2b.jpg)">
-              <h4 class="genre-title">POP</h4>
-            </div>
-          <% end %>
-          <%= link_to places_path({query: "reggaeton"}), method: :get, class: "no-underline" do %>
-            <div class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479956/photo-1532981434728-a2706e29a80e_m44kil.jpg)">
-              <h4 class="genre-title">REGGAETON</h4>
-            </div>
-          <% end %>
-          <%= link_to places_path({query: "latin"}), method: :get, class: "no-underline" do %>
-            <div class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479959/photo-1504609813442-a8924e83f76e_kcehsz.jpg)">
-              <h4 class="genre-title">LATIN</h4>
-            </div>
-          <% end %>
-          <%= link_to places_path({query: "classical"}), method: :get, class: "no-underline" do %>
-            <div class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/dan-gold-YW9cBl03LmE-unsplash_toyjlx.jpg)">
-              <h4 class="genre-title">CLASSICAL</h4>
-            </div>
-          <% end %>
-          <%= link_to places_path({query: "jazz"}), method: :get, class: "no-underline" do %>
-            <div class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480096/unnamed_wyze1e.jpg)">
-              <h4 class="genre-title">JAZZ</h4>
-            </div>
-          <% end %>
-          <%= link_to places_path({query: "soul"}), method: :get, class: "no-underline" do%>
-            <div class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/derek-truninger-uLitVttkC7o-unsplash_if201c.jpg)">
-              <h4 class="genre-title">SOUL</h4>
-            </div>
-          <% end %>
-          <%= link_to places_path({query: "dance"}), method: :get, class: "no-underline" do %>
-            <div class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/marcela-laskoski-YrtFlrLo2DQ-unsplash_b74bg3.jpg)">
-              <h4 class="genre-title">DANCE</h4>
-            </div>
-          <% end %>
+              <div data-genre='rock' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/descarga_3_mgvflq.jpg)">
+                <h4 class="genre-title">ROCK</h4>
+              </div>
+              <div data-genre='pop' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479957/photo-1514525253161-7a46d19cd819_ndlj2b.jpg)">
+                <h4 class="genre-title">POP</h4>
+              </div>
+
+              <div data-genre='reggaeton' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479956/photo-1532981434728-a2706e29a80e_m44kil.jpg)">
+                <h4 class="genre-title">REGGAETON</h4>
+              </div>
+
+              <div data-genre='latin' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598479959/photo-1504609813442-a8924e83f76e_kcehsz.jpg)">
+                <h4 class="genre-title">LATIN</h4>
+              </div>
+
+              <div data-genre='classical' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/dan-gold-YW9cBl03LmE-unsplash_toyjlx.jpg)">
+                <h4 class="genre-title">CLASSICAL</h4>
+              </div>
+
+              <div data-genre='jazz' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480096/unnamed_wyze1e.jpg)">
+                <h4 class="genre-title">JAZZ</h4>
+              </div>
+
+              <div data-genre='soul' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/derek-truninger-uLitVttkC7o-unsplash_if201c.jpg)">
+                <h4 class="genre-title">SOUL</h4>
+              </div>
+
+              <div data-genre='dance' class="genre-container rounded d-flex align-items-end m-2" style="background-image: linear-gradient(rgba(9,11,9,0.3)80%, rgba(9,11,9,0.6) 35%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1598480137/marcela-laskoski-YrtFlrLo2DQ-unsplash_b74bg3.jpg)">
+                <h4 class="genre-title">DANCE</h4>
+              </div>
         </div>
       </div>
       <button type="button" id="modal-btn-close" class="close" data-dismiss="modal" aria-label="Close">

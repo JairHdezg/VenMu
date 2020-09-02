@@ -26,12 +26,26 @@ const mainPhoto = document.querySelector('.show-main')
 const favoriteButton = document.querySelector('.favorite-button')
 const backButton = document.getElementById('main-back-button')
 const connectSpotify = document.getElementById('spb')
+const genreButtons = document.querySelectorAll('.genre-container')
 
 if (connectSpotify != null) {
   connectSpotify.addEventListener('click', () => {
     console.log('holi')
   })
 }
+
+
+
+genreButtons.forEach((button) => {
+  button.addEventListener('click', function() {
+      navigator.geolocation.getCurrentPosition((data) => {
+      const lat = data.coords.latitude;
+      const lon = data.coords.longitude;
+      const query = button.dataset.genre;
+      window.location.href = `/places?lon=${lon}&lat=${lat}&query=${query}&gl=y`;
+    });
+  });
+})
 
 
 if (backButton != null) {

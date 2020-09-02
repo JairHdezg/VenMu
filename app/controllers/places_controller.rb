@@ -44,7 +44,7 @@ class PlacesController < ApplicationController
     end
 
     @categories = [ 'Restaurant', 'Coffee', 'Nightclub', 'Bar', 'Brunch' ]
-    @user = current_user 
+    @user = current_user
   end
 
   def show
