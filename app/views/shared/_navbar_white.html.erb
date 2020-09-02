@@ -2,7 +2,21 @@
 
   <div id="main-back-button" class="d-flex align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
 
-  <div id="main-search-button" class="main-menu-white"><i class="fas fa-search"></i></div>
+
+  <div class="dropleft">
+    <button class="main-search-button dropdown-toggle border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+      <div id="main-search-button" class="d-flex align-items-center justify-content-center"><i class="fas fa-search"></i></div>
+    </button>
+
+    <div class="dropdown-menu search" aria-labelledby="dropdownMenuButton">
+
+      <%= simple_form_for :search, url: '/places', method: "GET" do |f| %>
+        <%= f.input :address, required: true, label_html: { hidden: true }, input_html: {id: "address-bar"}, placeholder: "Address" %>
+        <%= f.input :query, as: :select, :input_html => { :class => 'select2' }, collection: Genre.all, required: true, label_html: { hidden: true } %>
+        <%= f.button :submit, "Find", class: 'btn btn-primary btn-block rounded shadow mt-5' %>
+      <% end %>
+    </div>
+  </div>
 
   <div id="main-menu-button" class="main-menu-white"><i class="fas fa-bars"></i></div>
 </div>

@@ -6,7 +6,7 @@ class PlacesController < ApplicationController
 
   def index
     skip_policy_scope
-    if params[:query]
+    if params[:lon]
       @query = params[:query]
 
       if params[:category]
@@ -36,6 +36,14 @@ class PlacesController < ApplicationController
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
       end
+
+    elsif params[:query]
+      sql_query = " \
+          top_genre ILIKE :query \
+        "
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%")
+        @geocodedPlaces = @places.geocoded
+        @markers = display_markers(@geocodedPlaces)
 
     else
       @places = policy_scope(Place)
@@ -86,7 +94,7 @@ class PlacesController < ApplicationController
     @usercode = params[:code]
     @response = SpotifyAccessTokenFetcher.execute(@usercode)
     top_genre = get_spotify_top_genre(@response['items'])
-    redirect_to places_path({query: top_genre})
+    redirect_to places_path({query: top_genre, lon: '', lat: ''})
   end
 
   def edit

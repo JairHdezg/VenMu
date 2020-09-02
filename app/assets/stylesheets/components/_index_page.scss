@@ -27,6 +27,10 @@
   content: none;
 }
 
+.dropdown-toggle::before {
+  content: none !important;
+}
+
 .dropdown-toggle {
   padding-left: 0;
 }
@@ -48,7 +52,7 @@
   font-size: 1.4vh;
 }
 
-.dropdown-menu {
+.dropdown-menu-categories {
   width: 16vw;
   padding: 1vh 5vw;
   border-radius: 2vw;
