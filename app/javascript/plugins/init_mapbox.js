@@ -8,6 +8,7 @@ const initMapbox = () => {
   //   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
   //   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   // };
+
   function getSearchParameters() {
       var prmstr = window.location.search.substr(1);
       return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
@@ -28,14 +29,50 @@ const initMapbox = () => {
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/bright-v8',
-      center: [params['lon'], params['lat']],
-      zoom: 8
-    });
+    if (params['address'] && params['address'].length > 1) {
+      const publicKey = document.querySelector("meta[name='mapbox-api-key']")
+      .content;
+      const address = params['address'];
+      const newAddress = address.replace('+','%20');
+      fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${newAddress}.json?access_token=${publicKey}`)
+        .then(response => response.json())
+        .then((data) => {
+          const lat = data['features'][0]['center'][1];
+          const lon = data['features'][0]['center'][0];
+          const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/bright-v8',
+            center: [lon, lat],
+            zoom: 9
+          });
 
-    var geolocate = new mapboxgl.GeolocateControl({
+          const markers = JSON.parse(mapElement.dataset.markers);
+          markers.forEach((marker) => {
+          const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+
+          const element = document.createElement('div');
+            element.className = 'marker';
+            element.style.backgroundImage = "url('https://image.flaticon.com/icons/png/512/1789/1789848.png')";
+            element.style.backgroundSize = 'contain';
+            element.style.width = '50px';
+            element.style.height = '50px';
+
+          new mapboxgl.Marker(element)
+            .setLngLat([ marker.lng, marker.lat ])
+            .setPopup(popup)
+            .addTo(map);
+          });
+        });
+
+    } else {
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/bright-v8',
+        center: [params['lon'], params['lat']],
+        zoom: 7
+      });
+
+      var geolocate = new mapboxgl.GeolocateControl({
       positionOptions: {
         enableHighAccuracy: false
       },
@@ -43,29 +80,15 @@ const initMapbox = () => {
       showAccuracyCircle: false,
     });
 
-    if (params['gl'] == 'y') {
-      // Add the control to the map.
-      map.addControl(geolocate, 'top-left');
-      map.on('load', function() {
-        geolocate.trigger();
-        map.flyTo({
-        center: [params['lon'], params['lat']],
-        zoom: 8
-      });
-      });
+      if (params['gl'] == 'y') {
+        // Add the control to the map.
+        map.addControl(geolocate, 'top-left');
+        map.on('load', function() {
+          geolocate.trigger();
+        });
+      }
 
-    }
-
-    // map.flyTo({
-    //   center: [params['lon'], params['lat']],
-    //   zoom: 8
-    // });
-
-
-    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-    //   mapboxgl: mapboxgl, placeholder: "Search location!" }), "top-right");
-
-    const markers = JSON.parse(mapElement.dataset.markers);
+      const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
@@ -81,6 +104,9 @@ const initMapbox = () => {
         .setPopup(popup)
         .addTo(map);
     });
+    }
+
+
 
     // fitMapToMarkers(map, markers);
 

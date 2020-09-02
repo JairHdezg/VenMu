@@ -38,6 +38,8 @@
                 </label>
               </div>
             <% end %>
+            <input class="form-check-input" value="<%= params[:lon]%>" id="defaultCheck1" name="lon" hidden checked>
+            <input class="form-check-input" value="<%= params[:lat]%>" id="defaultCheck1" name="lat" hidden checked>
             <input class="form-check-input" value="<%= params[:query]%>" id="defaultCheck1" name="query" hidden checked>
             <div class="button-container d-flex justify-content-end">
               <button type="submit" class="btn btn-block btn-sm btn-primary align-items-end" id="category-button">Find</button>
@@ -52,7 +54,7 @@
         <div class="swiper-wrapper d-flex align-items-center">
 
           <% @categories.each do |category| %>
-            <%= link_to places_path({category: category, query: params[:query]}), method: :get, class: "swiper-slide places-query-category", style: "width: unset" do %>
+            <%= link_to places_path({lat: params[:lat], lon: params[:lon], category: category, query: params[:query]}), method: :get, class: "swiper-slide places-query-category", style: "width: unset" do %>
               <div class="" > <%= category %> </div>
             <% end %>
           <% end %>
