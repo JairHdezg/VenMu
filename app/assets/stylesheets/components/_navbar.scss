@@ -85,3 +85,9 @@
   color: white;
   font-size: 2vh;
 }
+
+@media (max-width: 320px) {
+  .main-search-button i {
+  margin-left: 2vw;
+}
+}
