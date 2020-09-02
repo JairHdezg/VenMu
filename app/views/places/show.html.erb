@@ -1,5 +1,9 @@
 <div class="show-container">
-  <%= render 'shared/navbar_white' %>
+  <% if current_user %>
+    <%= render 'shared/navbar_white' %>
+  <% else %>
+    <%= render 'shared/navbar' %>
+  <% end %>
   <div class="show-main" style="background-image: url('<%= cl_image_path @place.photos[0].key %>')">
   </div>
 
