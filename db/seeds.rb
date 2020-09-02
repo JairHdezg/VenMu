@@ -306,6 +306,61 @@ file = URI.open('https://images.unsplash.com/photo-1521017432531-fbd92d768814?ix
 @place8.save!
 puts "Finished!"
 
+puts "Creating 5 CDMX places!"
+@place11 = Place.new(name: 'Solis', top_genre: 'jazz', category: 'Bar', address: 'Condessa, Mexico City', description: 'Cozy hangout spot with good jazz music', phone_number: '55 1845 9513')
+file = URI.open('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place11.photos.attach(io: file, filename: 'brownbar.jpg', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1485872299829-c673f5194813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place11.photos.attach(io: file, filename: 'cocktailslaughing.jpg', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1577099636826-7a532667d518?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place11.photos.attach(io: file, filename: 'soul3.jpg', content_type: 'image/png')
+@place11.user = @user2
+@place11.save!
+
+@place9 = Place.new(name: 'Los Primos', top_genre: 'rock', category: 'Bar', address: 'Calle Querétaro 227, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX, Mexico', description: 'Great spot with awesome rock music! Classic rock until 9:00pm, hard rock and metal into the night!', phone_number: '55 1847 9513')
+file = URI.open('https://images.unsplash.com/photo-1570936100858-56eb3a5f5ae1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place9.photos.attach(io: file, filename: 'rockbar1.jpg', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1565755713428-1bdfaa7db8ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place9.photos.attach(io: file, filename: 'rockbar2.jpg', content_type: 'image/png')
+file = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_20160520_124533.jpg')
+@place9.photos.attach(io: file, filename: 'common-spirits-3.jpg', content_type: 'image/png')
+@place9.user = @user2
+@place9.save!
+
+@place10 = Place.new(name: "Limon", top_genre: 'pop', category: 'restaurant', address: 'Monterrey 332, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1897 9513')
+file = URI.open('https://images.unsplash.com/photo-1530119412657-4f6cd87aad79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place10.photos.attach(io: file, filename: 'limon1.jpg', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1554917134-21e9f7431d08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place10.photos.attach(io: file, filename: 'limon2.jpg', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1553194588-6ba2cd5b410f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place10.photos.attach(io: file, filename: 'limon3.jpg', content_type: 'image/png')
+@place10.user = @user2
+@place10.save!
+
+@place12 = Place.new(name: 'Cafe Discoteq', top_genre: 'reggaeton', category: 'Nightclub', address: 'Av. Tamaulipas 107, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX, Mexico', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+file = URI.open('https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place12.photos.attach(io: file, filename: 'cafediscoteq1.jpg', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1516460541734-4d739711d218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place12.photos.attach(io: file, filename: 'cafediscoteq2.jpg', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1569924995012-c4c706bfcd51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place12.photos.attach(io: file, filename: 'cafediscoteq3.jpg', content_type: 'image/png')
+@place12.user = @user2
+@place12.save!
+
+@place13 = Place.new(name: "Frida's", top_genre: 'latin', category: 'Coffee', address: 'Londres 255, Del Carmen, Coyoacán, 04100 Ciudad de México, CDMX, Mexico', description: "Mostly music with latin flavors played here, a cozy vibe Frida would've loved.", phone_number: '(574) 555-0911')
+file = URI.open('https://images.unsplash.com/photo-1453614512568-c4024d13c247?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place13.photos.attach(io: file, filename: 'fridas.png', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1578499026171-a1016496b7f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
+@place13.photos.attach(io: file, filename: 'coffeeshop.png', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/flagged/photo-1563855078923-9cb686dc0e7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@place13.photos.attach(io: file, filename: 'coffee.png', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
+@place13.photos.attach(io: file, filename: 'coffeeambiance.png', content_type: 'image/png')
+@place13.user = @user2
+@place13.save!
+
+puts "Finished!"
+
 # Reviews for Venturi
 puts "Creating 3 Venturi reviews"
 @review4 = Review.new(content: 'Excelent soul music, I danced all night', rating: 5)
