@@ -30,10 +30,43 @@ const genreButtons = document.querySelectorAll('.genre-container')
 
 if (connectSpotify != null) {
   connectSpotify.addEventListener('click', () => {
-    console.log('holi')
+    navigator.geolocation.getCurrentPosition((data) => {
+      var prmstr = window.location.search
+      const lat = data.coords.latitude;
+      const lon = data.coords.longitude;
+
+    });
   })
 }
 
+function getSearchParameters() {
+    var prmstr = window.location.search.substr(1);
+    return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+  }
+
+function transformToAssocArray( prmstr ) {
+  var params = {};
+  var prmarr = prmstr.split("&");
+  for ( var i = 0; i < prmarr.length; i++) {
+      var tmparr = prmarr[i].split("=");
+      params[tmparr[0]] = tmparr[1];
+  }
+  return params;
+}
+
+const params = getSearchParameters();
+
+if (window.location.pathname=='/places') {
+  if (params['lon']=='') {
+    navigator.geolocation.getCurrentPosition((data) => {
+      const lat = data.coords.latitude;
+      const lon = data.coords.longitude;
+      const query = params['query'];
+      console.log('joli');
+      window.location.href = `/places?lon=${lon}&lat=${lat}&query=${query}&gl=y`;
+    });
+  }
+}
 
 
 genreButtons.forEach((button) => {

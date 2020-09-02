@@ -38,6 +38,12 @@
   color: #424040
 }
 
+.search {
+  width: 60vw;
+  padding: 1vh 2vw;
+  border-radius: 2vw;
+}
+
 #main-menu-close {
   color: #424040;
   position: absolute;
@@ -65,7 +71,7 @@
   width: 100vw;
 }
 
-#main-search-button {
+.main-search-button {
   background-color: $blue;
   width: 4.5vh;
   height: 4.5vh;
@@ -75,7 +81,7 @@
   right: 8vh;
 }
 
-#main-search-button i {
+.main-search-button i {
   color: white;
   font-size: 2vh;
 }
