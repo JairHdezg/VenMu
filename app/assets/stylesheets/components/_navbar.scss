@@ -22,6 +22,10 @@
 .bottom {
   top: 0
 }
+#address-button{
+  padding: .2vh;
+  font-size: 2vh;
+}
 
 #main-menu-button {
   position: absolute;
@@ -39,7 +43,7 @@
 }
 
 .search {
-  width: 60vw;
+  width: 65vw;
   padding: 1vh 2vw;
   border-radius: 2vw;
 }
