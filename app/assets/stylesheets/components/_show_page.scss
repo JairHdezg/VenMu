@@ -8,7 +8,7 @@
 }
 
 .place-rating i {
-  color: #EAAE40;
+  color: $yellow;
   font-size: 15px;
 }
 
@@ -22,7 +22,7 @@
   position: absolute;
   color: $blue;
   border-radius: 50%;
-  background-color: white;
+  background-color: $white;
 }
 
 .button {
@@ -90,7 +90,7 @@
   position: relative;
   top: 60vh;
   margin-top: 0vh;
-  background-color: #ffffff;
+  background-color: $white;
   border-radius: 25px;
   padding-bottom: 20px;
   height: 100vh;

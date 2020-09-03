@@ -76,13 +76,14 @@
 }
 
 .place-rating{
+  color: $black;
   margin-top: 4px;
   padding-left: 15px;
 }
 
 .add-venmu{
-  color: #F4F4F4;
-  background: #47768E;
+  color: $white;
+  background: $blue linear-gradient(180deg, #61899d, #47768E) repeat-x;
   border-color: #47768E;
   font-weight: 400;
   text-align: center;
@@ -102,7 +103,7 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #F4F4F4;
+  background-color: $white;
   background-clip: border-box;
   border: 1px solid rgba(9, 11, 9, 0.125);
   border-radius: 25px;
@@ -118,7 +119,7 @@
 
 .genre-border{
   border-style: solid;
-  border-color: #D4D4D4;
+  border-color: $light-gray;
   border-radius: 25px;
   border-width: 1px;
   width: 60px;

@@ -78,19 +78,23 @@
       <!-- Modal -->
       <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content d-flex justify-content-center" id="review-modal-content">
-            <div class="modal-header border-bottom-0" id="review-modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <div class="modal-content d-flex justify-content-center mx-0" id="review-modal-content">
+<%
+=begin%>
+             <div class="modal-header" id="review-modal-header">
+            </div> 
+<%
+=end%>
+            <div class="modal-body review-body d-flex justify-content-center">
+              <button type="button" id="btn-close" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-            </div>
-            <div class="modal-body review-body d-flex justify-content-center">
               <%= simple_form_for [@place, @review] do |f| %>
+                <%= f.input :genres, as: :select, :input_html => { :id => 'review-multiselect', :multiple => true },collection: Genre.all %>
                 <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {class: 'star_rating' } %>
                 <%= f.input :content %>
-                <%= f.input :genres, as: :select, :input_html => { :id => 'review-multiselect', :multiple => true },collection: Genre.all %>
             </div>
-            <div class="modal-footer" id="review-modal-footer">
+            <div class="modal-footer d-flex justify-content-center" id="review-modal-footer">
               <%= f.submit class: "btn btn-primary btn-sm rounded"%>
               <% end %>
             </div>

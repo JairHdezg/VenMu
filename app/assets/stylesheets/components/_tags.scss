@@ -8,7 +8,7 @@
   margin: 0 5px;
   height: 20px;
   padding: 0 10px;
-  background: #F0F0F0;
+  background: $white;
   border-radius: 5px;
 }
 
@@ -19,7 +19,7 @@
   line-height: 12px;
   text-align: center;
   margin: 0;
-  color: #47768E;
+  color: $blue;
 }
 
 
@@ -32,12 +32,12 @@
 .top-tag-genre {
   border-radius: 5px;
   padding: 5px 10px;
-  background: #F0F0F0;
+  background: $white;
   font-style: normal;
   font-weight: normal;
   font-size: 11px;
   line-height: 12px;
   text-align: center;
   margin: 0;
-  color: #47768E;
+  color: $blue;
 }

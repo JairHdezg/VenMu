@@ -8,7 +8,7 @@
 }
 
 .places-card-info {
-  color: white;
+  color: $white;
 }
 
 .places-card-info h4 {
@@ -32,6 +32,6 @@
 }
 
 .place-card-rating i {
-  color: #EAAE40;
+  color: $yellow;
   font-size: 2vh;
 }
