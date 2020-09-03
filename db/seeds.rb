@@ -288,7 +288,7 @@ file = URI.open('https://images.unsplash.com/photo-1596016764780-a5fdbe817fbe?ix
 puts "Finished!"
 
 puts "Creating 7 CDMX places!"
-@place2 = Place.new(name: 'Gin Gin', top_genre: 'dance', category: 'Bar', address: 'Granada, Miguel Hidalgo, 11529 Ciudad de México, CDMX, Mexico', description: 'Great dance music and reggaeton! Kitchen Bar specializes in gin cocktails', phone_number: '55 5248 0911')
+@place2 = Place.new(name: 'Gin Gin', top_genre: 'rock', category: 'Bar', address: 'Granada, Miguel Hidalgo, 11529 Ciudad de México, CDMX, Mexico', description: 'Great rock music! The bar specializes in gin cocktails', phone_number: '55 5248 0911')
 file = URI.open('https://gingin.mx/repository/imagenes/siteUbicacion/3/_MG_6749.jpg')
 @place2.photos.attach(io: file, filename: 'g1.png', content_type: 'image/png')
 file = URI.open('https://fastly.4sqi.net/img/general/200x200/156020961_g4F844ile81RCR0bOrOnAHYuMI10UBmLmORCglDoxqM.jpg')
@@ -298,7 +298,7 @@ file = URI.open('https://i.ytimg.com/vi/wLgb5L84uiI/maxresdefault.jpg')
 @place2.user = @user1
 @place2.save!
 
-@place3 = Place.new(name: 'La Bodega', top_genre: 'latin', category: 'Restaurant', address: 'Miguel Hidalgo, 11800 CDMX, Mexico', url: 'https://www.labodega.rest/', description: 'Mexican Restaurant with traditional music', phone_number: '55 5511 7390')
+@place3 = Place.new(name: 'La Bodega', top_genre: 'jazz', category: 'Restaurant', address: 'Miguel Hidalgo, 11800 CDMX, Mexico', url: 'https://www.labodega.rest/', description: 'Mexican Restaurant with traditional music', phone_number: '55 5511 7390')
 file = URI.open('https://www.labodega.rest/images/galeria/1/1.jpg')
 @place3.photos.attach(io: file, filename: 'labodega.jpg', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/flagged/photo-1579941429125-4be1ab232711?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
@@ -308,7 +308,7 @@ file = URI.open('https://images.unsplash.com/photo-1589769105893-3cfe4c0c8851?ix
 @place3.user = @user2
 @place3.save!
 
-@place11 = Place.new(name: 'Solis', top_genre: 'jazz', category: 'Bar', address: 'Condesa, Mexico City', description: 'Cozy hangout spot with good jazz music', phone_number: '55 1845 9513')
+@place11 = Place.new(name: 'Solis', top_genre: 'jazz', category: 'Restaurant', address: 'Condesa, Mexico City', description: 'Cozy hangout spot with good jazz music', phone_number: '55 1845 9513')
 file = URI.open('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place11.photos.attach(io: file, filename: 'brownbar.jpg', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1485872299829-c673f5194813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
@@ -328,7 +328,7 @@ file = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_201605
 @place9.user = @user2
 @place9.save!
 
-@place10 = Place.new(name: "Limon", top_genre: 'pop', category: 'restaurant', address: 'Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1897 9513')
+@place10 = Place.new(name: "Limon", top_genre: 'rock', category: 'bar', address: 'Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico', description: 'Fun hangout spot with good rock music and shufffleboard!', phone_number: '55 1897 9513')
 file = URI.open('https://images.unsplash.com/photo-1530119412657-4f6cd87aad79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place10.photos.attach(io: file, filename: 'limon1.jpg', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1554917134-21e9f7431d08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
@@ -338,7 +338,7 @@ file = URI.open('https://images.unsplash.com/photo-1553194588-6ba2cd5b410f?ixlib
 @place10.user = @user2
 @place10.save!
 
-@place12 = Place.new(name: 'Cafe Discoteq', top_genre: 'reggaeton', category: 'Nightclub', address: 'Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX, Mexico', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+@place12 = Place.new(name: 'Cafe Discoteq', top_genre: 'rock', category: 'Nightclub', address: 'Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX, Mexico', description: 'Hard rock cafe, not like those other posers', phone_number: '55 1845 9513')
 file = URI.open('https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place12.photos.attach(io: file, filename: 'cafediscoteq1.jpg', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1516460541734-4d739711d218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
@@ -348,7 +348,7 @@ file = URI.open('https://images.unsplash.com/photo-1569924995012-c4c706bfcd51?ix
 @place12.user = @user2
 @place12.save!
 
-@place13 = Place.new(name: "Frida's", top_genre: 'latin', category: 'Coffee', address: 'Del Carmen, Coyoacán, 04100 Ciudad de México, CDMX, Mexico', description: "Mostly music with latin flavors played here, a cozy vibe Frida would've loved.", phone_number: '(574) 555-0911')
+@place13 = Place.new(name: "Frida's", top_genre: 'rock', category: 'Nightclub', address: 'Del Carmen, Coyoacán, 04100 Ciudad de México, CDMX, Mexico', description: "Mostly rock music with latin flavors played here, a fun vibe Frida would've loved.", phone_number: '(574) 555-0911')
 file = URI.open('https://images.unsplash.com/photo-1453614512568-c4024d13c247?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place13.photos.attach(io: file, filename: 'fridas.png', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1578499026171-a1016496b7f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
