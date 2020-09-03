@@ -28,19 +28,18 @@ const favoriteButton = document.querySelector('.favorite-button')
 const backButton = document.getElementById('main-back-button')
 const connectSpotify = document.getElementById('spb')
 const genreButtons = document.querySelectorAll('.genre-container');
+const genreOptions = document.querySelectorAll('.user-topgenre-card');
 
-if (connectSpotify != null) {
-  connectSpotify.addEventListener('click', () => {
-    // var miInit = { method: 'GET',
-    //            mode: 'no-cors',
-    //            cache: 'default' };
-    // fetch('https://accounts.spotify.com/authorize?client_id=ea2e45d4ae1c4d5baca9c94a4aaa5731&response_type=code&redirect_uri=http://localhost:3000/callback&scope=user-read-private%20user-top-read', miInit)
-    //   // .then(response => response.json())
-    //   // .then((data) => {
-    //   //   console.log(data)
-    //   // });
+genreOptions.forEach((button) => {
+  button.addEventListener('click', function() {
+      navigator.geolocation.getCurrentPosition((data) => {
+      const lat = data.coords.latitude;
+      const lon = data.coords.longitude;
+      const query = button.dataset.genre;
+      window.location.href = `/places?lon=${lon}&lat=${lat}&query=${query}&gl=y`;
+    });
   });
-}
+})
 
 function getSearchParameters() {
     var prmstr = window.location.search.substr(1);
@@ -60,7 +59,7 @@ function transformToAssocArray( prmstr ) {
 const params = getSearchParameters();
 
 if (window.location.pathname=='/places') {
-  if (params['lon']=='' || params['lon'] == null ) {
+  if (( params['lon']=='' || params['lon'] == null ) && params['address'] == null) {
     navigator.geolocation.getCurrentPosition((data) => {
       const lat = data.coords.latitude;
       const lon = data.coords.longitude;
