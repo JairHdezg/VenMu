@@ -60,7 +60,7 @@ function transformToAssocArray( prmstr ) {
 const params = getSearchParameters();
 
 if (window.location.pathname=='/places') {
-  if (params['lon']=='' || params['lon'] == null ) {
+  if (( params['lon']=='' || params['lon'] == null ) && params['address'] == null) {
     navigator.geolocation.getCurrentPosition((data) => {
       const lat = data.coords.latitude;
       const lon = data.coords.longitude;

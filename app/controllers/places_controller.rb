@@ -13,18 +13,17 @@ class PlacesController < ApplicationController
       sql_query = " \
           top_genre ILIKE :query \
         "
-
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 200)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 25)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
       elsif params[:category]
+
         sql_query = " \
           top_genre ILIKE :query \
           AND category ILIKE :category \
         "
-
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category]).near([params[:lat], params[:lon]], 200)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category]).near([params[:lat], params[:lon]], 25)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -33,7 +32,7 @@ class PlacesController < ApplicationController
           top_genre ILIKE :query \
           AND category IN (:categories) \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories]).near([params[:lat], params[:lon]], 200)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories]).near([params[:lat], params[:lon]], 25)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -42,7 +41,7 @@ class PlacesController < ApplicationController
         sql_query = " \
           top_genre ILIKE :query \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lat], params[:lon]], 200)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lat], params[:lon]], 25)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -120,6 +119,7 @@ class PlacesController < ApplicationController
     end
     top_genre = get_spotify_top_genre(@response['items'])
     redirect_to places_path({query: top_genre, lon: '', lat: ''})
+    raise
   end
 
   def edit
@@ -153,8 +153,21 @@ class PlacesController < ApplicationController
         top_genres[genre] ? top_genres[genre] += 1 : top_genres[genre] = 1
       end
     end
+    all_genres = get_genres_array
     sorted_top = top_genres.sort_by { |genre, votes| votes }
     sorted_top.last[0]
+    top_genres.delete_if do |key, value|
+      all_genres.include?(key) == false
+    end
+    raise
+  end
+
+  def get_genres_array
+    genre_array = []
+    Genre.all do |genre|
+      genre_array.push(genre.name)
+    end
+    genre_array
   end
 
   def display_markers(geocoded)

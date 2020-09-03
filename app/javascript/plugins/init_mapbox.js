@@ -52,7 +52,7 @@ const initMapbox = () => {
 
           const element = document.createElement('div');
             element.className = 'marker';
-            element.style.backgroundImage = "url('https://image.flaticon.com/icons/png/512/1789/1789848.png')";
+            element.style.backgroundImage = "url('https://res.cloudinary.com/detnzqadn/image/upload/v1599154754/icon1_acsz25.png)";
             element.style.backgroundSize = 'contain';
             element.style.width = '50px';
             element.style.height = '50px';
@@ -94,7 +94,7 @@ const initMapbox = () => {
 
       const element = document.createElement('div');
         element.className = 'marker';
-        element.style.backgroundImage = "url('https://image.flaticon.com/icons/png/512/1789/1789848.png')";
+        element.style.backgroundImage = "url('https://res.cloudinary.com/detnzqadn/image/upload/v1599154754/icon1_acsz25.png')";
         element.style.backgroundSize = 'contain';
         element.style.width = '50px';
         element.style.height = '50px';
