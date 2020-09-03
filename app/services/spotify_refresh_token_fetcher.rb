@@ -1,9 +1,8 @@
-class SpotifyAccessTokenFetcher
+class SpotifyRefreshTokenFetcher
   include Executable
 
-  def initialize(user, usercode)
+  def initialize(user)
     @user = user
-    @user.spotify_code = usercode
     @access_token = nil
   end
 

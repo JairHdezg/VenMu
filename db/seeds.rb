@@ -313,7 +313,7 @@ file = URI.open('https://images.unsplash.com/photo-1521017432531-fbd92d768814?ix
 puts "Finished!"
 
 puts "Creating 5 CDMX places!"
-@place11 = Place.new(name: 'Solis', top_genre: 'jazz', category: 'Bar', address: 'Condessa, Mexico City', description: 'Cozy hangout spot with good jazz music', phone_number: '55 1845 9513')
+@place11 = Place.new(name: 'Solis', top_genre: 'jazz', category: 'Bar', address: 'Condesa, Mexico City', description: 'Cozy hangout spot with good jazz music', phone_number: '55 1845 9513')
 file = URI.open('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place11.photos.attach(io: file, filename: 'brownbar.jpg', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1485872299829-c673f5194813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
