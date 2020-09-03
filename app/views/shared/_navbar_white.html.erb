@@ -25,7 +25,9 @@
 </div>
 <div class='navigation top ' id="main-menu-nav">
   <div id="main-menu-close"><i class="fas fa-times"></i></div>
- <!--  <div class="container" style="width: 100vw; height: 100vh;">
+  
+  <div class="container" style="width: 100vw; height: 100vh;">
+
       <div class="row pt-4">
         <div class="col-4">
           <div class="user-pic" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key%>')">
@@ -37,11 +39,14 @@
             <%= @user.email %>
           </div>
           <div class="edit">
-            <p> Edit Profile </p>
+            Edit Profile
+          </div>
+          <div class="logout">
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
           </div>
         </div>
       </div>
-      <div class='text-center pt-1'>
+      <div class='text-center'>
        <p class="fav"> Search with your Favorites! </p>
       </div>
       <div class="d-flex justify-content-center btn rounded pt-1" style="background-color: #1BD35D; color: white">
@@ -52,64 +57,74 @@
       </div>
         <div class="overflow">
           <% @user.favorites.each do |favorite| %>
-            <div class="user-card mb-2" style="background-color: #F0F0F0">
-              <div class="row">
-                <div class="col">
-                  <div class="favorite-photos rounded" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path favorite.place.photos[0].key, crop: :fill %>')">
+          <div>
+            <%= link_to place_path(favorite), method: :get do %>
+              <div class="user-card mb-2" style="background-color: #F0F0F0">
+                <div class="row">
+                  <div class="col">
+                    <div class="favorite-photos rounded" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path favorite.place.photos[0].key, crop: :fill %>')">
+                    </div>
                   </div>
-                </div>
-                <div class="col pr-1">
-                  <div class="row place-name">
-                    <%= favorite.place.name %>
+                  <div class="col pr-1">
+                    <div class="row place-name">
+                      <%= favorite.place.name %>
+                    </div>
+                    <div class="row place-address">
+                      <%= favorite.place.address %>
+                    </div>
                   </div>
-                  <div class="row place-address">
-                    <%= favorite.place.address %>
-                  </div>
-                </div>
-                <div class="col avg-rating">
-                  <div class="row" style="width: 100px">
-                    <% favorite.place.average_rating.times do %>
+                  <div class="col avg-rating">
+                    <div class="row" style="width:100px">
+                      <% favorite.place.average_rating.times do %>
                         <i id="stars" class="fas fa-star"></i>
-                    <% end %>
-                  </div>
-                  <div class="row place-genre d-flex justify-content-center mr-1 genre-border">
-                  <%= favorite.place.top_genre %>
+                      <% end %>
+                    </div>
+                    <div class="row place-genre d-flex justify-content-center mr-1 genre-border">
+                    <%= favorite.place.top_genre %>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            <%end%>
+          </div>  
           <% end %>
         </div>
-      <div class="user-title mt-4">
+    
+      <div class="user-title mt-3">
         My Places
       </div>
         <div class="overflow">
             <% @user.places.each do |place| %>
-              <div class="user-card" style="background-color: #F0F0F0;">
-                <div class="row">
-                  <div class="col">
-                    <div class="favorite-photos rounded" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path place.photos[0].key, crop: :fill %>')">
+
+              <div>
+                <%= link_to place_path(place), method: :get do %>
+                  <div class="user-card mb-2" style="background-color: #F0F0F0">
+                    <div class="row">
+                      <div class="col">
+                        <div class="favorite-photos rounded" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path place.photos[0].key, crop: :fill %>')">
+                        </div>
+                      </div>
+                      <div class="col pr-1">
+                        <div class="row place-name">
+                          <%= place.name %>
+                        </div>
+                        <div class="row place-address">
+                          <%= place.address %>
+                        </div>
+                      </div>
+                      <div class="col avg-rating">
+                        <div class="row" style="width:100px">
+                          <% place.average_rating.times do %>
+                            <i id="stars" class="fas fa-star"></i>
+                          <% end %>
+                        </div>
+                        <div class="row place-genre d-flex justify-content-center mr-1 genre-border">
+                        <%= place.top_genre %>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="row place-name">
-                      <%= place.name %>
-                    </div>
-                    <div class="row place-address">
-                      <%= place.address %>
-                    </div>
-                  </div>
-                  <div class="col avg-rating">
-                    <div class="row" style="width: 100px">
-                    <% place.average_rating.times do %>
-                        <i id="stars" class="fas fa-star"></i>
-                    <% end %>
-                    </div>
-                    <div class="row place-genre d-flex justify-content-center mr-1 genre-border">
-                    <%= place.top_genre %>
-                    </div>
-                  </div>
-                </div>
+                <%end%>
               </div>
             <% end %>
         </div>
@@ -122,6 +137,6 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </div>
 

@@ -1,6 +1,6 @@
 .favorite-photos{
   width: 100px;
-  height: 70px;
+  height: 80px;
   background-position: center;
   background-size: cover;
 }
@@ -12,10 +12,10 @@
   background-position: center;
 }
 .overflow{
-  width: 100vw; 
+  width: 91vw; 
   overflow:scroll; 
   position:relative;
-  height: 73px;
+  height: 105px;
 }
 
 .fav{
@@ -31,16 +31,25 @@
 
 .user-info{
   padding: 0;
-  margin-top: 15px;
+  margin-top: 3px;
 }
+
 .user-name{
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
 }
+
 .edit{
-  font-size: 12px;
+  font-size: 11px;
   opacity: 50%;
 }
+
+.logout{
+  font-size: 11px;
+  margin-top: 7px;
+  opacity: 80%;
+}
+
 .user-title{
   font-size: 15px;
   padding-top: 1px;
@@ -48,26 +57,32 @@
   margin-bottom: 5px;
   font-weight: bold;
 }
+
 .place-name{
   font-weight: bold;
-  font-size: 12px;
-  margin-top: 4px;
+  font-size: 10px;
+  margin-top: 8px;
 }
+
 .place-address{
   margin-top: 5px;
-  font-size: 9px;
+  font-size: 7px;
 }
+
 .place-genre{
   font-size: 9px;
-  margin-top: 5px;
+  margin-top: 17px;
+  margin-left: 16px;
 }
+
 .place-rating{
-  color: black;
   margin-top: 4px;
+  padding-left: 15px;
 }
+
 .add-venmu{
   color: #F4F4F4;
-  background: #47768E linear-gradient(180deg, #61899d, #47768E) repeat-x;
+  background: #47768E;
   border-color: #47768E;
   font-weight: 400;
   text-align: center;
@@ -81,7 +96,7 @@
 
 .user-card{
   width: 90vw; 
-  height: 73px;
+  height: 80px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -94,8 +109,10 @@
 }
 
 .avg-rating{
-  margin-top: 4px;
+  margin-top: 6px;
   margin-right: 22px;
+  margin-left: 20px;
+
   padding-top: 4px;
 }
 
@@ -103,5 +120,8 @@
   border-style: solid;
   border-color: #D4D4D4;
   border-radius: 25px;
-  border-width: 3px;
+  border-width: 1px;
+  width: 60px;
 }
+
+
