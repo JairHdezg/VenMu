@@ -29,7 +29,7 @@ class SpotifyAccessTokenFetcher
   end
 
   def get_top_songs
-    @response2 = RestClient.get "https://api.spotify.com/v1/me/top/artists?time_range=short_term", {
+    @response2 = RestClient.get "https://api.spotify.com/v1/me/top/artists?time_range=medium_term", {
       Authorization: "Bearer #{@access_token}"
     }
     JSON.parse(@response2)
