@@ -42,6 +42,7 @@ genres = [
   "alternative",
   "ambient",
   "anime",
+  "art pop"
   "black-metal",
   "bluegrass",
   "blues",

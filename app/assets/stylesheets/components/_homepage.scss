@@ -5,7 +5,7 @@
   width: 100vw;
   position: relative;
   top: 91vh;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.48) 100%), #F0F0F0;
+  background: linear-gradient(180deg, $white 0%, rgba(255, 255, 255, 0.48) 100%), $light-gray;
   height: 30vh;
 }
 
@@ -64,7 +64,7 @@
 
 // FRANK WAS HEREEEEEEEEEEEE
 .home-main{
-  background: linear-gradient(180deg, rgba(28, 28, 28, 0.6) 0%, rgba(255, 255, 255, 0) 100%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1599102953/photo-1562409733-b21abfd782a1_vpotyu.jpg), #F0F0F0;
+  background: linear-gradient(180deg, rgba(28, 28, 28, 0.6) 0%, rgba(255, 255, 255, 0) 100%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1599102953/photo-1562409733-b21abfd782a1_vpotyu.jpg), $light-gray;
   overflow: hidden;
   position: fixed;
   top: 0px;
@@ -86,13 +86,13 @@
   text-align: center;
   text-transform: capitalize;
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-  color: #FFFFFF;
+  color: $white;
 }
 
 #mu{
   height: 1vh;
   width: 52px;
-  border-top: 3px solid white;
+  border-top: 3px solid $white;
   left: 52vw;
   position: absolute;
   top: 7px;
@@ -102,7 +102,7 @@
   text-align: center;
   font-family: 'roboto';
   font-style: normal;
-  color: #FFFFFF;
+  color: $white;
   font-weight: 100;
   font-size: 18px;
 }
@@ -117,8 +117,8 @@
 .spotify-text{
   text-align: center;
   font-family: Roboto;
-  font-size:1.8vh;
-  color: #FFFFFF;
+  font-size: 1.8vh;
+  color: $white;
   font-weight: 100;
   width: 60vw;
   margin: 2vh auto;

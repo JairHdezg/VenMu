@@ -31,10 +31,10 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
-    background-color: #F4F4F4;
+    color: $black;
+    background-color: $white;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid $light-gray;
     border-radius: 25px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -53,11 +53,11 @@
 
 }
 .select2-dropdown{
-  background-color: white !important;
+  background-color: $white !important;
   border-radius: 25px;
-  border: 1px solid black;
+  border: 1px solid $black;
 }
 
 .select2-results{
-  color: grey !important;
+  color: $black !important;
 }

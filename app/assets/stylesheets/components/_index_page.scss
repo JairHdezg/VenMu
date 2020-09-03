@@ -9,7 +9,7 @@
   width: 100vw;
   position: relative;
   top: 84vh;
-  background-color: #ffffff;
+  background-color: $white;
   height: 40vh;
 }
 
@@ -74,7 +74,7 @@
   height: .5vh;
   width: 12vw;
   position: absolute;
-  background-color: #424040;
+  background-color: $black;
   right: 44vw;
   top: 1vh;
 }
@@ -83,7 +83,7 @@
   margin-bottom: 1vh;
   height: 5vh;
   width: 100%;
-  background-color: #F0F0F0;
+  background-color: $light-gray;
 }
 
 .places-query-category {
@@ -92,7 +92,7 @@
   border-radius: 1vh;
   font-size: 1.6vh;
   padding: .5vh 3vw;
-  color: white;
+  color: $white;
   background-color: $blue;
 }
 
