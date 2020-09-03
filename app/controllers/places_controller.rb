@@ -13,10 +13,9 @@ class PlacesController < ApplicationController
       sql_query = " \
           top_genre ILIKE :query \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 25)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 50)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
-
       elsif params[:category]
 
         sql_query = " \
