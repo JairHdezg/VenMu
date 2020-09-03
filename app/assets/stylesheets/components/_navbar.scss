@@ -22,6 +22,10 @@
 .bottom {
   top: 0
 }
+#address-button{
+  padding: .2vh;
+  font-size: 2vh;
+}
 
 #main-menu-button {
   position: absolute;
@@ -39,7 +43,7 @@
 }
 
 .search {
-  width: 60vw;
+  width: 65vw;
   padding: 1vh 2vw;
   border-radius: 2vw;
 }
@@ -81,7 +85,25 @@
   right: 8vh;
 }
 
+.main-search-button-home {
+  font-size: 3vh;
+  width: 4.5vh;
+  height: 4.5vh;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.3vh;
+  left: 2.3vh;
+  background: none !important;
+  color:white;
+}
+
 .main-search-button i {
   color: white;
   font-size: 2vh;
+}
+
+@media (max-width: 320px) {
+  .main-search-button i {
+  margin-left: 2vw;
+}
 }

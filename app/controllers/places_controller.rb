@@ -14,7 +14,7 @@ class PlacesController < ApplicationController
           top_genre ILIKE :query \
         "
 
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 50)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 200)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -24,7 +24,7 @@ class PlacesController < ApplicationController
           AND category ILIKE :category \
         "
 
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category]).near([params[:lon], params[:lat]], 50)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category]).near([params[:lat], params[:lon]], 200)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -33,18 +33,19 @@ class PlacesController < ApplicationController
           top_genre ILIKE :query \
           AND category IN (:categories) \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories]).near([params[:lon], params[:lat]], 50)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories]).near([params[:lat], params[:lon]], 200)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
       else
+
         sql_query = " \
-          name ILIKE :query \
-          OR top_genre ILIKE :query \
+          top_genre ILIKE :query \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lon], params[:lat]], 50)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lat], params[:lon]], 200)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
+
       end
 
 
@@ -53,7 +54,7 @@ class PlacesController < ApplicationController
       sql_query = " \
           top_genre ILIKE :query \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lon], params[:lat]], 50)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near([params[:lon], params[:lat]], 2000)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -98,13 +99,25 @@ class PlacesController < ApplicationController
 
   def connect
     skip_policy_scope
-    redirect_to 'https://accounts.spotify.com/authorize?client_id=ea2e45d4ae1c4d5baca9c94a4aaa5731&response_type=code&redirect_uri=http://localhost:3000/callback&scope=user-read-private%20user-top-read'
+    if current_user
+      if current_user.spotify_code
+        redirect_to callback
+      else
+        redirect_to 'https://accounts.spotify.com/authorize?client_id=ea2e45d4ae1c4d5baca9c94a4aaa5731&response_type=code&redirect_uri=http://localhost:3000/callback&scope=user-read-private%20user-top-read'
+      end
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def callback
     skip_policy_scope
-    @usercode = params[:code]
-    @response = SpotifyAccessTokenFetcher.execute(@usercode)
+    if current_user.spotify_code
+      @response = SpotifyRefreshTokenFetcher.execute(current_user)
+    else
+      @usercode = params[:code]
+      @response = SpotifyAccessTokenFetcher.execute(current_user, @usercode)
+    end
     top_genre = get_spotify_top_genre(@response['items'])
     redirect_to places_path({query: top_genre, lon: '', lat: ''})
   end

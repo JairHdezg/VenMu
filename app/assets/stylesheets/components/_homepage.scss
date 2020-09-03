@@ -1,99 +1,48 @@
-.home-page {
-  height: 100vh;
-  width : 100vw;
-  background-image: url("https://res.cloudinary.com/detnzqadn/image/upload/v1598463761/photo-1543007630-9710e4a00a20_jg8nze.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-.title {
-  font-weight: 900;
-  font-size: 50px;
-  color: $white;
-}
-
-.sub-title {
-  font-weight: bold;
-  font-style: normal;
-  font-size: 24px;
-  color: $white;
-}
-
-.under-search {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  color: $white;
-}
-
-.search-bar {
-  border-radius: 20px;
-  opacity: 0.5;
-  width: 80vw;
-}
-
-.search-bar::placeholder {
-  color: $primary;
-  opacity: 0.7;
-  padding: 1em;
-}
-
-.search-bar:focus {
-  color: $primary;
-  opacity: 0.9;
-  outline: none;
-}
-
-.submit-btn {
-  background: $white;
-  border: none;
-  color: $black;
-  position: absolute;
-  right: 5vw;
-}
-
-.animate-bottom {
-  position: relative;
-  animation: animatebottom 0.4s;
-}
-
-@keyframes animatebottom {
-  from {
-    bottom: -300px;
-    opacity: 0;
-}
-
-to {
-    bottom: 0;
-    opacity: 1;
-}
-}
-
-.modal-body {
-  display: flex;
-  align-items: space-between;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 90vh;
+.genre-card-container {
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  z-index: 1;
   width: 100vw;
+  position: relative;
+  top: 91vh;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.48) 100%), #F0F0F0;
+  height: 30vh;
 }
 
-.container-flexbox {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  height: 85vh;
-  width: 85vw;
+.genre-cards-main {
+  width: 100vw;
+  height: 15vh;
+  position: absolute;
+  top: 33%;
+  background-color: transparent;
+  padding-left: 5vw;
+}
+
+.main-genre {
+  margin: 0;
+  height: 100%;
+  background-color: transparent;
 }
 
 .genre-container{
-  width: 34vw;
-  height: 20vh;
+  border-radius: 20px;
+  background-color: none;
+  width: 100%;
+  height: 15vh;
   background-size: cover;
   background-position: center;
-  margin: 20px;
+  margin: 0;
+}
+
+.genre-text {
+  position: absolute;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 14px;
+  right: 41vw;
+  top: 4vh;
 }
 
 .genre-container h4 {
@@ -106,12 +55,76 @@ to {
   font-size: .94em;
 }
 
-.background-light {
-  background: linear-gradient( rgba(244,244,244,0.3),rgba(244,244,244,0.4));
+@media (max-width: 320px) {
+  .genre-text {
+    font-size: 10px;
+    right: 40vw;
+  }
 }
 
-.btn-close {
-  width: 80vw;
-  height: 2rem;
-  display: inline-block;
+// FRANK WAS HEREEEEEEEEEEEE
+.home-main{
+  background: linear-gradient(180deg, rgba(28, 28, 28, 0.6) 0%, rgba(255, 255, 255, 0) 100%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1599102953/photo-1562409733-b21abfd782a1_vpotyu.jpg), #F0F0F0;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.home_page_title_container{
+  position:absolute;
+  width: 100vw;
+  top: 10vh;
+}
+.home_page_title{
+  font-family: 'Pragati Narrow', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
+}
+
+#mu{
+  height: 1vh;
+  width: 52px;
+  border-top: 3px solid white;
+  left: 52vw;
+  position: absolute;
+  top: 7px;
+}
+
+.home_page_subtitle{
+  text-align: center;
+  font-family: 'roboto';
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.spotify{
+  position:absolute;
+  width: 100vw;
+  text-align: center;
+  top: 60vh;
+}
+
+.spotify-text{
+  text-align: center;
+  font-family: Roboto;
+  font-size:1.8vh;
+  color: #FFFFFF;
+  font-weight: 100;
+  width: 60vw;
+  margin: 2vh auto;
+}
+
+.spotify-logo{
+  width: 12vw;
+  height: 12vw;
 }

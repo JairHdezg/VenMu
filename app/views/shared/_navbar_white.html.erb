@@ -4,7 +4,7 @@
 
 
   <div class="dropleft">
-    <button class="main-search-button dropdown-toggle border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+    <button class="main-search-button dropdown-toggle border-0 d-flex justify-content-center align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
       <div id="main-search-button" class="d-flex align-items-center justify-content-center"><i class="fas fa-search"></i></div>
     </button>
 
@@ -25,12 +25,15 @@
 </div>
 <div class='navigation top ' id="main-menu-nav">
   <div id="main-menu-close"><i class="fas fa-times"></i></div>
+  
   <div class="container" style="width: 100vw; height: 100vh;">
+
       <div class="row pt-4">
         <div class="col-4">
-          <div class="user-pic" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key, crop: :fill %>')">
+          <div class="user-pic" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key%>')">
           </div>
         </div>
+
         <div class="col-8 user-info">
           <div class="user-name">
             <%= @user.email %>
@@ -86,11 +89,13 @@
           </div>  
           <% end %>
         </div>
+    
       <div class="user-title mt-3">
         My Places
       </div>
         <div class="overflow">
             <% @user.places.each do |place| %>
+
               <div>
                 <%= link_to place_path(place), method: :get do %>
                   <div class="user-card mb-2" style="background-color: #F0F0F0">
@@ -132,5 +137,6 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
 

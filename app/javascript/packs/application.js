@@ -2,6 +2,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+// require('multiselect')
 
 // External imports
 import "bootstrap";
@@ -30,13 +31,15 @@ const genreButtons = document.querySelectorAll('.genre-container');
 
 if (connectSpotify != null) {
   connectSpotify.addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition((data) => {
-      var prmstr = window.location.search
-      const lat = data.coords.latitude;
-      const lon = data.coords.longitude;
-
-    });
-  })
+    // var miInit = { method: 'GET',
+    //            mode: 'no-cors',
+    //            cache: 'default' };
+    // fetch('https://accounts.spotify.com/authorize?client_id=ea2e45d4ae1c4d5baca9c94a4aaa5731&response_type=code&redirect_uri=http://localhost:3000/callback&scope=user-read-private%20user-top-read', miInit)
+    //   // .then(response => response.json())
+    //   // .then((data) => {
+    //   //   console.log(data)
+    //   // });
+  });
 }
 
 function getSearchParameters() {
@@ -57,12 +60,11 @@ function transformToAssocArray( prmstr ) {
 const params = getSearchParameters();
 
 if (window.location.pathname=='/places') {
-  if (params['lon']=='') {
+  if (params['lon']=='' || params['lon'] == null ) {
     navigator.geolocation.getCurrentPosition((data) => {
       const lat = data.coords.latitude;
       const lon = data.coords.longitude;
       const query = params['query'];
-      console.log('joli');
       window.location.href = `/places?lon=${lon}&lat=${lat}&query=${query}&gl=y`;
     });
   }
@@ -127,6 +129,7 @@ document.addEventListener('turbolinks:load', () => {
   initStarRating();
   initSelect2();
   initAutocomplete();
+  // ('#review-multiselect').multiselect()
 });
 
 var swiper = new Swiper('.s1', {
