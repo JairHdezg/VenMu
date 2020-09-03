@@ -98,7 +98,7 @@
 
 .places-query-category:hover {
   text-decoration: none;
-  color: white;
+  color: $white;
 }
 
 #places-query-burger i {
@@ -108,12 +108,12 @@
   border-radius: 20%;
   width: 100%;
   padding: 1vh;
-  color: white;
+  color: $white;
   background-color: $blue;
 }
 
 #places-query-burger {
-  background-color: #F0F0F0;
+  background-color: $light-gray;
   width: 30px;
 }
 
