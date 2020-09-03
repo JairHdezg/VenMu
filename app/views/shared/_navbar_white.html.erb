@@ -11,11 +11,11 @@
     <div class="dropdown-menu search" aria-labelledby="dropdownMenuButton">
       <form action="/places">
         <input name='address' class="form-control rounded form-control-sm mb-1" id="addressInput" aria-describedby="emailHelp" placeholder="City">
-        <input name='query[]' class="form-control rounded form-control-sm mb-1" id="genreInput" aria-describedby="emailHelp" placeholder="Genre">
+        <input name='query' class="form-control rounded form-control-sm mb-1" id="genreInput" aria-describedby="emailHelp" placeholder="Genre">
         <input class="form-check-input" value="<%= params[:lat]%>" id="defaultCheck1" name="lat" hidden checked>
         <input class="form-check-input" value="<%= params[:lon]%>" id="defaultCheck1" name="lon" hidden checked>
         <div class="button-container d-flex justify-content-end">
-        <button type="submit" class="btn btn-block btn-sm btn-primary align-items-end" id="category-button">Find</button>
+        <button type="submit" class="btn btn-block btn-sm btn-primary align-items-end" id="address-button">Find</button>
         </div>
       </form>
     </div>
@@ -83,7 +83,7 @@
               </div>
             </div>
           <%end%>
-        </div>  
+        </div>
         <% end %>
       </div>
     <div class="user-title mt-3">

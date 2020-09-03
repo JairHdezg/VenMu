@@ -103,7 +103,13 @@
 }
 
 @media (max-width: 320px) {
+
   .main-search-button i {
-  margin-left: 2vw;
-}
+    margin-left: 2vw;
+  }
+
+  #address-button{
+    padding: .8vh;
+    font-size: 2.2vh;
+  }
 }
