@@ -358,6 +358,16 @@ file = URI.open('https://images.unsplash.com/photo-1521017432531-fbd92d768814?ix
 @place13.user = @user2
 @place13.save!
 
+@dino = Place.new(name: "Dinosaur", top_genre: 'rock', category: 'Nightclub', address: 'Del Carmen, Coyoacán, 04100 Ciudad de México, CDMX, Mexico', description: "Classic rock with a stone age twist!", phone_number: '(574) 555-0911')
+file = URI.open('https://images.unsplash.com/photo-1565789279225-6cf30f169070?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@dino.photos.attach(io: file, filename: 'dino1.png', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1552566626-2d907dab0dff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+@dino.photos.attach(io: file, filename: 'dino2.png', content_type: 'image/png')
+file = URI.open('https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
+@dino.photos.attach(io: file, filename: 'coffeeambiance.png', content_type: 'image/png')
+@dino.user = @user2
+@dino.save!
+
 puts "Finished!"
 
 puts 'Creating 3 reviews'
