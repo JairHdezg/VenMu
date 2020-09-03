@@ -171,3 +171,21 @@ var swiper = new Swiper('.s4', {
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
+
+
+
+// TOGGLIN
+const pickGenre = document.querySelector(".genre-card-container");
+if (pickGenre){
+  
+  const openBtn = document.getElementById("main-menu-button");
+  const closeBtn = document.getElementById("main-menu-close");
+
+  openBtn.addEventListener("click", () =>{
+    pickGenre.classList ="hidden-home"
+  })
+
+  closeBtn.addEventListener("click", () =>{
+    pickGenre.classList ="genre-card-container"
+  })
+}
