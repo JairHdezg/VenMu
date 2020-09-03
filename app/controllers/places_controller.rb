@@ -101,7 +101,7 @@ class PlacesController < ApplicationController
       if current_user.spotify_code
         redirect_to callback
       else
-        redirect_to 'https://accounts.spotify.com/authorize?client_id=ea2e45d4ae1c4d5baca9c94a4aaa5731&response_type=code&redirect_uri=http://localhost:3000/callback&scope=user-read-private%20user-top-read'
+        redirect_to 'https://accounts.spotify.com/authorize?client_id=ea2e45d4ae1c4d5baca9c94a4aaa5731&response_type=code&redirect_uri=https://www.venmu.tech/callback&scope=user-read-private%20user-top-read'
       end
     else
       redirect_to new_user_session_path

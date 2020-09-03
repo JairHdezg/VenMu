@@ -19,7 +19,7 @@ class SpotifyAccessTokenFetcher
       {
         grant_type: "authorization_code",
         code: @user.spotify_code,
-        redirect_uri: "http://localhost:3000/callback",
+        redirect_uri: "https://www.venmu.tech/callback",
         client_id: 'ea2e45d4ae1c4d5baca9c94a4aaa5731',
         client_secret: '9b541da2efcb4de6b00ad7d2a71c3ff3',
       }
