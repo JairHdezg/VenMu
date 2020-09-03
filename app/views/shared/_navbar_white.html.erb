@@ -1,6 +1,6 @@
 <div class="navigation-bar-white">
 
-  <div id="main-back-button" class="d-flex align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
+  <div id="main-back-button" class="d-flex align-items-center justify-content-center text-primary"><i class="fas fa-chevron-left"></i></div>
 
 
   <div class="dropleft">
@@ -21,22 +21,25 @@
     </div>
   </div>
 
-  <div id="main-menu-button" class="main-menu-white"><i class="fas fa-bars"></i></div>
+  <div id="main-menu-button" class="main-menu-blue"><i class="fas fa-bars"></i></div>
 </div>
 <div class='navigation top ' id="main-menu-nav">
   <div id="main-menu-close"><i class="fas fa-times"></i></div>
   <div class="container" style="width: 100vw; height: 100vh;">
     <div class="row pt-4">
       <div class="col-4">
-        <div class="user-pic" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key, crop: :fill %>')">
-        </div>
+        <% if @user.photo.attached? %>
+          <div class="user-pic" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key, crop: :fill %>')"></div>
+        <% else %>
+          <div class="user-pic" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS1Y7KMgh6-ISpd98CmqSKbiY0_xRFjwpiU0Q&usqp=CAU')"></div>
+        <% end %>
       </div>
       <div class="col-8 user-info">
         <div class="user-name">
           <%= @user.email %>
         </div>
         <div class="edit">
-          Edit Profile
+          <%= link_to "Edit Profile", edit_user_registration_path %>
         </div>
         <div class="logout">
           <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
@@ -127,8 +130,8 @@
       <p class='text-center pt-1 fav'>Are we missing your favorite place?</p>
     </div>
     <div class="d-flex justify-content-center">
-      <div class="add-venmu rounded">
-        Add it to Venmu!
+      <div class="add-venmu rounded"">
+        <%= link_to "Add it on VenMu", new_place_path, style: "color:white"%> 
       </div>
     </div>
   </div>
