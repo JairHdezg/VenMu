@@ -1,0 +1,63 @@
+.genre-main{
+  background: linear-gradient(180deg, rgba(28, 28, 28, 0.84) 0%, rgba(66, 64, 64, 0.68) 100%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1599102953/photo-1562409733-b21abfd782a1_vpotyu.jpg), $white;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.genre_page_title_container{
+  position:absolute;
+  width: 100vw;
+  top: 14vh;
+}
+
+.genre_page_subtitle{
+  text-align: center;
+  font-family: 'roboto';
+  font-style: normal;
+  color: $white;
+  font-weight: 100;
+  font-size: 3vh;
+  margin: 0 auto;
+  width:70vw;
+}
+
+.genre_page_subsubtitle{
+  text-align: center;
+  font-family: 'roboto';
+  font-style: normal;
+  color: $white;
+  font-weight: 200;
+  font-size: 2vh;
+  width:70vw;
+  margin: 3vh auto;
+}
+
+.topgenre-container {
+  width: 90vw;
+  height: 43vh;
+  top:15vh;
+  padding: 0 12vw 0 12vw;
+  background-color: transparent;
+  margin-top: 34vh;
+  overflow: scroll;
+}
+
+.user-topgenre-card{
+  border-radius: 2vh;
+  height: 8vh;
+  width: 60vw;
+  background-color: $light-gray;
+  margin: 1vh 0;
+  box-shadow: .3vh .3vh 1vh .1vh rgba(247,247,247,.2);
+}
+
+.genre-card-name {
+  margin: 0;
+  font-size: 2.2vh;
+  color: $black;
+}

@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :connect, :callback]
-  after_action :verify_authorized, except: [:index, :connect, :callback]
+  after_action :verify_authorized, except: [:index, :connect, :topgenres, :callback]
   require "json"
   require "rest-client"
 
@@ -117,9 +117,19 @@ class PlacesController < ApplicationController
       @usercode = params[:code]
       @response = SpotifyAccessTokenFetcher.execute(current_user, @usercode)
     end
-    top_genre = get_spotify_top_genre(@response['items'])
-    redirect_to places_path({query: top_genre, lon: '', lat: ''})
-    raise
+    user_top_genres = {genres: get_spotify_top_genres(@response['items'])}
+    redirect_to topgenres_path({topgenres: user_top_genres})
+  end
+
+  def topgenres
+    skip_policy_scope
+    if current_user
+      top_genres = genre_params
+      top_genres_hash = top_genres[:genres].to_h
+      @sorted_top = top_genres_hash.sort_by { |genre, votes| votes }.reverse!
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def edit
@@ -146,7 +156,11 @@ class PlacesController < ApplicationController
       params.require(:place).permit(:name, :top_genre, :category, :address, :url, :description, :phone_number, :photos=> [])
   end
 
-  def get_spotify_top_genre(items)
+  def genre_params
+    params.require(:topgenres).permit(genres: {})
+  end
+
+  def get_spotify_top_genres(items)
     top_genres = {}
     items.each do |item|
       item['genres'].each do |genre|
@@ -154,17 +168,17 @@ class PlacesController < ApplicationController
       end
     end
     all_genres = get_genres_array
-    sorted_top = top_genres.sort_by { |genre, votes| votes }
-    sorted_top.last[0]
     top_genres.delete_if do |key, value|
       all_genres.include?(key) == false
     end
-    raise
+    sorted_top = top_genres.sort_by { |genre, votes| votes }
+    top_genres
   end
 
   def get_genres_array
     genre_array = []
-    Genre.all do |genre|
+    genres = Genre.all
+    genres.each do |genre|
       genre_array.push(genre.name)
     end
     genre_array

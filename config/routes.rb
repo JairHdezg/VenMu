@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'connect', to: 'places#connect'
   get 'callback', to: 'places#callback'
+  get 'topgenres', to: 'places#topgenres'
 
   resources :places do
     resources :reviews, only: [:new, :create]

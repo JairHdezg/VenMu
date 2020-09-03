@@ -1,0 +1,23 @@
+<div class="genre-main d-flex justify-content-center">
+
+  <div class="navigation-bar-white">
+  <%= link_to '/', method: :get do %>
+  <div id="main-back-button" class="d-flex align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
+  <% end %>
+  </div>
+
+
+
+  <div class="genre_page_title_container ">
+    <p class="genre_page_subtitle d-flex justify-content-center">Your most listened genres on Spotify:</p>
+    <p class="genre_page_subsubtitle d-flex justify-content-center">Pick one!</p>
+  </div>
+  <div class="topgenre-container justify-content-center row">
+    <% @sorted_top.each do |genre| %>
+      <div class="user-topgenre-card col-11 d-flex justify-content-center align-items-center" data-genre="<%= genre[0] %>">
+        <p class="genre-card-name"><%= genre[0].capitalize %></p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
