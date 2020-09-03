@@ -1,0 +1,39 @@
+<div class="navigation-bar">
+
+
+    <div class="dropleft">
+      <button class="main-search-button-home dropdown-toggle border-0 d-flex justify-content-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+        <div id="main-search-button" class="d-flex align-items-center justify-content-center"><i class="fas fa-search"></i></div>
+      </button>
+  
+      <div class="dropdown-menu search" aria-labelledby="dropdownMenuButton">
+        <form action="/places">
+          <input name='address' class="form-control rounded form-control-sm mb-1" id="addressInput" aria-describedby="emailHelp" placeholder="City">
+          <input name='query' value="<%= params[:query] %>" class="form-control rounded form-control-sm mb-1" id="genreInput" aria-describedby="emailHelp" placeholder="Genre">
+          <input class="form-check-input" value="<%= params[:lat]%>" id="defaultCheck1" name="lat" hidden checked>
+          <input class="form-check-input" value="<%= params[:lon]%>" id="defaultCheck1" name="lon" hidden checked>
+          <div class="button-container d-flex justify-content-end">
+          <button type="submit" class="btn btn-block btn-sm btn-primary align-items-end" id="category-button">Find</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="main-menu-button" class="main-menu-white"><i class="fas fa-bars"></i></div>
+  </div>
+  <div class='navigation top ' id="main-menu-nav">
+    <div id="main-menu-close"><i class="fas fa-times"></i></div>
+    <h1 id="nosignupTitle" class="mt-5 ml-3 mr-3 pb-2">VenMu</h1>
+    <p class="ml-3 mt-3 notlogged-in-label">Already a VenMuist?</p>
+    <%= link_to new_user_session_path do %>
+    <div class="d-flex justify-content-center btn btn-primary rounded m-3 btn-nav-no">
+      <h5 class= "notlogged-in-label">Sign in!</h4>
+    </div>
+    <% end %>
+  
+    <p class="ml-3 mt-4 notlogged-in-label">Become a VenMuist</p>
+    <%= link_to new_user_registration_path do %>
+    <div class="d-flex justify-content-center btn btn-primary rounded m-3 btn-nav-no">
+      <h5 class= "notlogged-in-label">Sign up now!</h4>
+    </div>
+    <% end %>
+  </div>

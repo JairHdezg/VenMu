@@ -1,4 +1,4 @@
-<div class="container-fluid home-page d-flex flex-column justify-content-between" id="home-container">
+<!-- <div class="container-fluid home-page d-flex flex-column justify-content-between" id="home-container">
   <div class="row mt-3 hide">
     <div class="col-sm-12">
       <div class="letter-thingy"></div>
@@ -74,4 +74,25 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="home-main">
+  <% if current_user %>
+    <%= render 'shared/navbar-home-online' %>
+  <% else %>
+    <%= render 'shared/navbar-home-offline' %>
+  <% end %>
+
+  <div class="home_page_title_container">
+    <div id="mu"></div>
+    <h1 class="home_page_title">VenMu</h1>
+    <p class="home_page_subtitle">Your music. New places.</p>
+    <div class="spotify">
+      <p class="spotify-text d-flex justify-content-center ">Connect to spotify to find places that match your favorite music!</p>
+      <%= link_to '/connect', method: :get do %>
+      <img class="spotify-logo" src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fdetnzqadn%2Fimage%2Fupload%2Fv1599105082%2FSpotify_Icon_RGB_White_tp04wp.png" alt="spotify logo">
+      <% end %>
+    </div>
+  </div>
+
 </div>
