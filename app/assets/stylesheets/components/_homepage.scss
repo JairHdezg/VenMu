@@ -73,3 +73,68 @@
   }
 }
 
+// FRANK WAS HEREEEEEEEEEEEE
+.home-main{
+  background: linear-gradient(180deg, rgba(28, 28, 28, 0.6) 0%, rgba(255, 255, 255, 0) 100%), url(https://res.cloudinary.com/detnzqadn/image/upload/v1599102953/photo-1562409733-b21abfd782a1_vpotyu.jpg), #F0F0F0;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.home_page_title_container{
+  position:absolute;
+  width: 100vw;
+  top: 10vh;
+}
+.home_page_title{
+  font-family: 'Pragati Narrow', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
+}
+
+#mu{
+  height: 1vh;
+  width: 9vh;
+  border-top: 3px solid white;
+  left: 52.5vw;
+  position: absolute;
+  top: 7px;
+}
+
+.home_page_subtitle{
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 300;
+}
+
+.spotify{
+  position:absolute;
+  width: 100vw;
+  text-align: center;
+  top: 53vh;
+}
+
+.spotify-text{
+  text-align: center;
+  font-family: Roboto;
+  font-size:2vh;
+  color: #FFFFFF;
+  font-weight: 300;
+  width: 60vw;
+  margin: 2vh auto;
+}
+
+.spotify-logo{
+  width: 48px;
+  height: 48px;
+}
