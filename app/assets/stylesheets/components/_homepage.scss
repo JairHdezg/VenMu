@@ -1,14 +1,3 @@
-.home-main {
-  overflow: hidden;
-  position: fixed;
-  top: 0px;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-color: grey;
-}
-
 .genre-card-container {
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
@@ -102,39 +91,40 @@
 
 #mu{
   height: 1vh;
-  width: 9vh;
+  width: 52px;
   border-top: 3px solid white;
-  left: 52.5vw;
+  left: 52vw;
   position: absolute;
   top: 7px;
 }
 
 .home_page_subtitle{
   text-align: center;
-  font-family: Roboto;
+  font-family: 'roboto';
   font-style: normal;
   color: #FFFFFF;
-  font-weight: 300;
+  font-weight: 100;
+  font-size: 18px;
 }
 
 .spotify{
   position:absolute;
   width: 100vw;
   text-align: center;
-  top: 53vh;
+  top: 60vh;
 }
 
 .spotify-text{
   text-align: center;
   font-family: Roboto;
-  font-size:2vh;
+  font-size:1.8vh;
   color: #FFFFFF;
-  font-weight: 300;
+  font-weight: 100;
   width: 60vw;
   margin: 2vh auto;
 }
 
 .spotify-logo{
-  width: 48px;
-  height: 48px;
+  width: 12vw;
+  height: 12vw;
 }
