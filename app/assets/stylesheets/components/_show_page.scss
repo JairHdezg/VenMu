@@ -80,7 +80,7 @@
   padding: 0 5px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 325px) {
   .show-description{
     font-size: 10px;
   }
@@ -97,8 +97,9 @@
 }
 
 #show-title {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 5px;
+  width: 70vw;
 }
 
 #show-address {
