@@ -1,0 +1,25 @@
+
+@media (max-width: 575.98px) {
+  .mdlgscreens-query {
+    display: none;
+  }
+  .bd-highlight {
+    display: none;
+  }
+}
+
+@media (min-width: 575.98px) {
+  .mdlgscreens-query {
+    width: 100%;
+    height: 100%;
+    background-color: $light-gray;
+    z-index: 20000;
+    position: absolute;
+  }
+  .genre-card-container {
+    display: none;
+  }
+  .genre-container {
+    display: none;
+  }
+}

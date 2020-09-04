@@ -1,3 +1,4 @@
+<%= render 'shared/media-overlay' %>
 <div class="show-container">
   <% if current_user %>
     <%= render 'shared/navbar_white' %>
@@ -80,11 +81,6 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content d-flex justify-content-center mx-0" id="review-modal-content">
 <%
-=begin%>
-             <div class="modal-header" id="review-modal-header">
-            </div> 
-<%
-=end%>
             <div class="modal-body review-body d-flex justify-content-center">
               <button type="button" id="btn-close" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

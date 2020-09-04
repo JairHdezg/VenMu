@@ -9,6 +9,7 @@
   height: 30vh;
 }
 
+
 .genre-cards-main {
   width: 100vw;
   height: 15vh;
@@ -89,7 +90,7 @@
   color: $white;
 }
 
-#mu{
+.mu {
   height: 1vh;
   width: 52px;
   border-top: 3px solid $white;
@@ -127,4 +128,35 @@
 .spotify-logo{
   width: 12vw;
   height: 12vw;
+}
+
+.logo_container_style {
+  position:absolute;
+  width: 100%;
+  top: 10vh;
+}
+
+@media (max-width: 575.98px) {
+  .mdlgscreens-query {
+    display: none;
+  }
+  .bd-highlight {
+    display: none;
+  }
+}
+
+@media (min-width: 575.98px) {
+  .mdlgscreens-query {
+    width: 100%;
+    height: 100%;
+    background-color: $light-gray;
+    z-index: 20000;
+    position: absolute;
+  }
+  .genre-card-container {
+    display: none;
+  }
+  .genre-container {
+    display: none;
+  }
 }
