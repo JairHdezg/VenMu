@@ -10,6 +10,7 @@ class Place < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   belongs_to :user
+  validates :photos, presence: :true
 
   def average_rating
     if (reviews.length != 0)
