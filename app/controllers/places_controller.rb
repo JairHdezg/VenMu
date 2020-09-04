@@ -108,7 +108,7 @@ class PlacesController < ApplicationController
     if @place.save
       redirect_to place_path(@place)
     else
-      raise
+      render new
     end
   end
 
