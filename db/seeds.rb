@@ -193,6 +193,158 @@ file = URI.open('https://goodofgoshen.com/wp-content/uploads/2019/06/GoG19_profi
 
 puts 'Finished'
 
+puts 'Creating 6 Jazz CDMX places!'
+
+@turkana = Place.new(name: 'Turkana Jazz Club', top_genre: 'jazz', category: 'Restaurant', address: 'Colonia Condesa, Cuauhtémoc, 06100 Mexico City, CDMX', description:"Mexican Restaurant with Jazz music.", phone_number: '55 5564 2214')
+file = URI.open('https://mxcity.mx/wp-content/uploads/2019/09/turkana-terraza-restaurante-3.jpg')
+@turkana.photos.attach(io: file, filename: 'turkana.jpg', content_type: 'image/png')
+file = URI.open('https://images.otstatic.com/prod/26043267/1/large.jpg')
+@turkana.photos.attach(io: file, filename: 'turkana2.jpg', content_type: 'image/png')
+file = URI.open('https://images.otstatic.com/prod/26043268/1/large.jpg')
+@turkana.photos.attach(io: file, filename: 'turkana3.jpg', content_type: 'image/png')
+@turkana.user = @user1
+@turkana.save!
+
+@parkerlenox = Place.new(name: 'Parker and Lenox', top_genre: 'jazz', category: 'Bar', address: 'Juárez, Cuauhtémoc, 06600 Mexico City, CDMX', description:"Very fun, chill American bar!", phone_number: '52 55 5546 6979')
+file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/07/b5/c9/7a/getlstd-property-photo.jpg')
+@parkerlenox.photos.attach(io: file, filename: 'parkerlenox.jpg', content_type: 'image/png')
+file = URI.open('https://img.chilango.com/2015/06/burlesque-en-parker-lenox.jpg')
+@parkerlenox.photos.attach(io: file, filename: 'parkerlenox2.jpg', content_type: 'image/png')
+file = URI.open('https://i.pinimg.com/originals/c9/d7/0c/c9d70cb664601e0a101a2d9d8d7f07dc.jpg')
+@parkerlenox.photos.attach(io: file, filename: 'parkerlenox3.jpg', content_type: 'image/png')
+@parkerlenox.user = @user1
+@parkerlenox.save!
+
+@zinco = Place.new(name: 'Zinco', top_genre: 'jazz', category: 'Club', address: 'Historic Center of the Cdad. de México, Centro, Cuauhtémoc, 06050 Mexico City, CDMX', description:"One of the most prestigous venues in Mexico City.", phone_number: '55 1131 7760')
+file = URI.open('https://media.timeout.com/images/101224003/image.jpg')
+@zinco.photos.attach(io: file, filename: 'zinco.jpg', content_type: 'image/png')
+file = URI.open('https://media.gq.com/photos/59079e1e9fec29371ec9dc11/master/w_3640,h_2427,c_limit/mexico-city-speakeasies-Zinco-Jazz-Club-edit.jpg')
+@zinco.photos.attach(io: file, filename: 'zinco2.jpg', content_type: 'image/png')
+file = URI.open('https://www.telegraph.co.uk/content/dam/Travel/Destinations/Central%20America/Hotels%20-%20Mexico/Mexico-city/zinco-mexico-city-nightlife.jpg?imwidth=480')
+@zinco.photos.attach(io: file, filename: 'zinco3.jpg', content_type: 'image/png')
+@zinco.user = @user1
+@zinco.save!
+
+@pizzajazz = Place.new(name: 'Pizza Jazz Cafe', top_genre: 'jazz', category: 'Cafe', address: 'Portales Oriente, Benito Juárez, 03303 Mexico City, CDMX', description:"Great Pizza, Great Jazz. What more could you ask for?", phone_number: '55 2736 7912')
+file = URI.open('https://canalonce.mx/itinerario/wp-content/uploads/2016/12/1-5-290x290.jpg')
+@pizzajazz.photos.attach(io: file, filename: 'pizzajazz.jpg', content_type: 'image/png')
+file = URI.open('https://media.timeout.com/images/101221345/630/472/image.jpg')
+@pizzajazz.photos.attach(io: file, filename: 'pizzajazz2.jpg', content_type: 'image/png')
+file = URI.open('https://media.timeout.com/images/101221347/630/472/image.jpg')
+@pizzajazz.photos.attach(io: file, filename: 'pizzajazz3.jpg', content_type: 'image/png')
+@pizzajazz.user = @user2
+@pizzajazz.save!
+
+@casafranca = Place.new(name: 'Casa Franca', top_genre: 'jazz', category: 'Bar', address: 'Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX', description:"Cozy Jazz and Blues Club with Cocktails and Food.", phone_number: '55 5208 2265')
+file = URI.open('https://scontent.fmid1-2.fna.fbcdn.net/v/t31.0-8/26756576_1819998221368035_4026337139604838043_o.jpg?_nc_cat=103&_nc_sid=e3f864&_nc_ohc=oikB1TBkdUEAX_-f7Jx&_nc_ht=scontent.fmid1-2.fna&oh=87a77c4606736fd85704de294aa8f87c&oe=5F783CF0')
+@casafranca.photos.attach(io: file, filename: 'casafranca.jpg', content_type: 'image/png')
+file = URI.open('https://scontent.fmid1-1.fna.fbcdn.net/v/t31.0-8/22528882_1726676340700224_4740388024434799474_o.jpg?_nc_cat=104&_nc_sid=e3f864&_nc_ohc=2MzxxYgMqOoAX8uz6kH&_nc_ht=scontent.fmid1-1.fna&oh=cae5c619f225f78bc848dd33a0062e73&oe=5F792477')
+@casafranca.photos.attach(io: file, filename: 'casafranca2.jpg', content_type: 'image/png')
+file = URI.open('https://mxcity.mx/wp-content/uploads/2019/09/casa-franca.jpg')
+@casafranca.photos.attach(io: file, filename: 'casafranca3.jpg', content_type: 'image/png')
+@casafranca.user = @user2
+@casafranca.save!
+
+@elconvite = Place.new(name: 'El Convite Inn and Coffee', top_genre: 'jazz', category: 'Restaurant', address: 'Portales Sur, Benito Juárez, 03300 Mexico City, CDMX', description:"Family owned Restaurant with Jazz on Wheels.", phone_number: '55 5601 2260')
+file = URI.open('http://elconvite.com.mx/wp-content/uploads/2020/05/64600809_10161637476235276_6039714510648901632_o-1024x686.jpg')
+@elconvite.photos.attach(io: file, filename: 'elconvite.jpg', content_type: 'image/png')
+file = URI.open('http://elconvite.com.mx/wp-content/uploads/2020/05/64561546_10161637474685276_4732300670172921856_o-1024x768.jpg')
+@elconvite.photos.attach(io: file, filename: 'elconvite2.jpg', content_type: 'image/png')
+file = URI.open('http://elconvite.com.mx/wp-content/uploads/2020/05/59872777_10161476112955276_4579957694852497408_n.jpg')
+@elconvite.photos.attach(io: file, filename: 'elconvite3.jpg', content_type: 'image/png')
+@elconvite.user = @user2
+@elconvite.save!
+
+puts 'Listo!'
+
+puts 'Creating 6 CDMX Rock Places'
+
+@valiant = Place.new(name: 'Valiant', top_genre: 'rock', category: 'Bar', address: 'Colonia Centro, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX', description:"A pub with local rock music", phone_number: '55 5510 1540')
+file = URI.open('https://media.timeout.com/images/103264658/630/472/image.jpg')
+@valiant.photos.attach(io: file, filename: 'valiant.jpg', content_type: 'image/png')
+file = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/M2f8y-ZpL3PYT6cQ-xQQ5w/ls.jpg')
+@valiant.photos.attach(io: file, filename: 'valiant2.jpg', content_type: 'image/png')
+file = URI.open('https://mxcity.mx/wp-content/uploads/2016/05/Valiant-Pub.png')
+@valiant.photos.attach(io: file, filename: 'valiant3.jpg', content_type: 'image/png')
+@valiant.user = @user1
+@valiant.save!
+
+@sixtiesbar = Place.new(name: 'Sixties Bar', top_genre: 'rock', category: 'bar', address: 'Colonia Condesa, Cuauhtémoc, 06140 Mexico City, CDMX', description:"A restaurant with a 60's theme.", phone_number: '55 5264 5069')
+file = URI.open('https://scontent.fmid1-1.fna.fbcdn.net/v/t1.0-9/84464346_2668509119922854_652723643310145536_o.jpg?_nc_cat=108&_nc_sid=9267fe&_nc_ohc=pkZ-Iqk4AskAX8yczLd&_nc_ht=scontent.fmid1-1.fna&oh=27220f107af74cc20798e8c9e1820451&oe=5F766A27')
+@sixtiesbar.photos.attach(io: file, filename: 'sixtiesbar.jpg', content_type: 'image/png')
+file = URI.open('https://scontent-qro1-1.xx.fbcdn.net/v/t1.0-9/85026393_2664432320330534_8526072491347542016_o.jpg?_nc_cat=107&_nc_sid=a26aad&_nc_ohc=r-Z_FS0rDVMAX-ncOlG&_nc_ht=scontent-qro1-1.xx&oh=2516c4b309dead87a5d764ad31b5bd9b&oe=5F78E7A8')
+@sixtiesbar.photos.attach(io: file, filename: 'sixtiesbar2.jpg', content_type: 'image/png')
+file = URI.open('https://resizer.otstatic.com/v2/photos/xlarge/1/23692860.jpg')
+@sixtiesbar.photos.attach(io: file, filename: 'sixtiesbar3.jpg', content_type: 'image/png')
+@sixtiesbar.user = @user2
+@sixtiesbar.save!
+
+@bebop = Place.new(name: 'Be Bops Diner', top_genre: 'rock', category: 'restaurant', address: 'Roma Nte., Cuauhtémoc, 06700 Mexico City, CDMX', description:"An American Restaurant featuring Rock and Roll!", phone_number: '55 6586 3449')
+file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/17/e3/db/8c/be-bops-diner.jpg')
+@bebop.photos.attach(io: file, filename: 'bebop.jpg', content_type: 'image/png')
+file = URI.open('https://media.timeout.com/images/103765252/630/472/image.jpg')
+@bebop.photos.attach(io: file, filename: 'bebop2.jpg', content_type: 'image/png')
+file = URI.open('https://media.timeout.com/images/103765251/image.jpg')
+@bebop.photos.attach(io: file, filename: 'bebop3.jpg', content_type: 'image/png')
+@bebop.user = @user1
+@bebop.save!
+
+@gatocalavera = Place.new(name: 'Gato Calavera', top_genre: 'rock', category: 'bar', address: 'Hipódromo, Cuauhtémoc, 06100 Ciudad de México, CDMX', description:"Bar featuring Rock music.", phone_number: '55 4633 3246')
+file = URI.open('https://i.pinimg.com/originals/53/13/1d/53131d3ca4b2fdb4ca8a1d8e59c2b516.jpg')
+@gatocalavera.photos.attach(io: file, filename: 'gatocalavera.jpg', content_type: 'image/png')
+file = URI.open('https://pbs.twimg.com/media/Ef6EWLWXYAAnYaa.jpg')
+@gatocalavera.photos.attach(io: file, filename: 'gatocalavera2.jpg', content_type: 'image/png')
+file = URI.open('https://media.timeout.com/images/103957382/630/472/image.jpg')
+@gatocalavera.photos.attach(io: file, filename: 'gatocalavera3.jpg', content_type: 'image/png')
+@gatocalavera.user = @user1
+@gatocalavera.save!
+
+@rockson = Place.new(name: 'Rock Son', top_genre: 'rock', category: 'bar', address: 'Madero 20, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX', description:"A bar with live rock music", phone_number: '55 5512 0781')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTJ4WBK3Aln6npEqirVM9dghBrvN8whOLUdQ&usqp=CAU')
+@rockson.photos.attach(io: file, filename: 'rockson.jpg', content_type: 'image/png')
+file = URI.open('https://i.ytimg.com/vi/5d7HJRM0oJQ/maxresdefault.jpg')
+@rockson.photos.attach(io: file, filename: 'rockson2.jpg', content_type: 'image/png')
+file = URI.open('https://2.kekantoimg.com/tmkwUKlkWCWejE8NB_CCdzAVaL0=/360x360/s3.amazonaws.com/kekanto_pics/pics/422/792422.jpg')
+@rockson.photos.attach(io: file, filename: 'rockson3.jpg', content_type: 'image/png')
+@rockson.user = @user1
+@rockson.save!
+
+@bizarrocafe = Place.new(name: 'Bizarro Cafe', top_genre: 'rock', category: 'bar', address: 'Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX', description:"Bar featuring Rock music.", phone_number: '55 5264 3411')
+file = URI.open('https://3.bp.blogspot.com/-61EzXkDm8x4/VPJeiy7cdoI/AAAAAAAAEBM/Q3w40JnhxpU/s1600/bizarro_mexipop_city.JPG')
+@bizarrocafe.photos.attach(io: file, filename: 'bizarrocafe.jpg', content_type: 'image/png')
+file = URI.open('https://fastly.4sqi.net/img/general/600x600/7DA5oAjl0oJ4F-FMzZ4Dkfd_tkfhRBbo-33Y2_I_Rbw.jpg')
+@bizarrocafe.photos.attach(io: file, filename: 'bizarrocafe2.jpg', content_type: 'image/png')
+file = URI.open('https://www.reporteindigo.com/wp-content/uploads/2019/07/IMG_0110-660x440.jpg')
+@bizarrocafe.photos.attach(io: file, filename: 'bizarrocafe3.jpg', content_type: 'image/png')
+@bizarrocafe.user = @user1
+@bizarrocafe.save!
+
+puts 'Finished!'
+
+puts 'Creating Gosh damn Places!'
+
+@wingsetc = Place.new(name: 'Wings Etc', top_genre: 'art pop', category: 'bar', address: '2815 Gateway S Dr, Goshen, IN 46526, United States', description:"Chain pub known for chicken wings & a wide variety of sauces, with sports on TV & video games.", phone_number: '574-537-9464')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRpzI0lgfVhuz3khWpo4qf8lAvW-6B_7KM_Cg&usqp=CAU')
+@wingsetc.photos.attach(io: file, filename: 'wingsetc.jpg', content_type: 'image/png')
+file = URI.open('https://pbs.twimg.com/media/DtwCeTrWkAEU1TO.jpg')
+@wingsetc.photos.attach(io: file, filename: 'wingsetc2.jpg', content_type: 'image/png')
+file = URI.open('https://cdn.usarestaurants.info/assets/uploads/f883c58d0bf5543f2304797b9266ffcc_-united-states-indiana-elkhart-county-elkhart-township-goshen-wings-etc-574-537-9464htm.jpg')
+@wingsetc.photos.attach(io: file, filename: 'wingsetc3.jpg', content_type: 'image/png')
+@wingsetc.user = @user1
+@wingsetc.save!
+
+@ignitiongarage = Place.new(name: 'Ignition Garage', top_genre: 'art pop', category: 'bar', address: '120 E Washington St, Goshen, IN 46528, United States', description:"Chain pub known for chicken wings & a wide variety of sauces, with sports on TV & video games.", phone_number: '574-971-8282')
+file = URI.open('https://bloximages.newyork1.vip.townnews.com/southbendtribune.com/content/tncms/assets/v3/editorial/7/59/759cdf7a-f74d-11e3-b99d-0017a43b2370/53a236c4ddaeb.image.jpg')
+@ignitiongarage.photos.attach(io: file, filename: 'ignitiongarage.jpg', content_type: 'image/png')
+file = URI.open('https://68.media.tumblr.com/4567f9fdcd93b1b47b32f97608e74421/tumblr_or3tyfToPv1u80zz9o1_500.jpg')
+@ignitiongarage.photos.attach(io: file, filename: 'ignitiongarage2.jpg', content_type: 'image/png')
+file = URI.open('https://record.goshen.edu/wp-content/uploads/2016/11/Features-Ignition-KM-640x426.jpg')
+@ignitiongarage.photos.attach(io: file, filename: 'ignitiongarage3.jpg', content_type: 'image/png')
+@ignitiongarage.user = @user1
+@ignitiongarage.save!
+
+puts 'Listo!'
+
 puts "Creating 10 Goshen places!"
 @place1 = Place.new(name: 'Taqueria San Marcos', top_genre: 'soul', category: 'Restaurant', address: '113 S. Main St., Goshen, IN', description:"You'll love the reggaeton and dance music here! Great patio, tacos, as well!", phone_number: '55 1845 9513')
 file = URI.open('https://www.dondeir.com/wp-content/uploads/2019/03/cafe-taco-bar-barra.jpg')
@@ -588,3 +740,141 @@ genre_review19.genre = Genre.find_by(name: "latin")
 genre_review19.save
 
 puts "finished!"
+
+puts 'creating reviews for first 6 cdmx jazz places'
+
+@review20 = Review.new(content: "Has an amazing vibe! The music selection was on point!", rating: 5)
+@review20.user = @user2
+@review20.place = @parkerlenox
+@review20.save!
+genre_review20 = GenresReview.new
+genre_review20.review = @review20
+genre_review20.genre = Genre.find_by(name: "jazz")
+genre_review20.save
+
+@review21 = Review.new(content: "WOW! Just WOW! This place is a hidden gem, amazing live performance. Will definitely be back!", rating: 5)
+@review21.user = @user2
+@review21.place = @zinco
+@review21.save!
+genre_review21 = GenresReview.new
+genre_review21.review = @review21
+genre_review21.genre = Genre.find_by(name: "jazz")
+genre_review21.save
+
+@review22 = Review.new(content: "Pretty cool place with live performances, a little bit small though. Pizza is also mediocre", rating: 3)
+@review22.user = @user1
+@review22.place = @pizzajazz
+@review22.save!
+genre_review22 = GenresReview.new
+genre_review22.review = @review22
+genre_review22.genre = Genre.find_by(name: "jazz")
+genre_review22.save
+
+@review23 = Review.new(content: "Really good music selection! The vibe here is great.", rating: 4)
+@review23.user = @user1
+@review23.place = @casafranca
+@review23.save!
+genre_review23 = GenresReview.new
+genre_review23.review = @review23
+genre_review23.genre = Genre.find_by(name: "jazz")
+genre_review23.save
+
+@review24 = Review.new(content: "This restaurant has 'Jazz on Wheels' where there are live performances. Awesome!", rating: 5)
+@review24.user = @user1
+@review24.place = @elconvite
+@review24.save!
+genre_review24 = GenresReview.new
+genre_review24.review = @review24
+genre_review24.genre = Genre.find_by(name: "jazz")
+genre_review24.save
+
+puts 'finished!'
+
+puts 'Creating Goshen Reviews'
+
+@review25 = Review.new(content: "This restaurant is pretty cool, decent music, decent wings", rating: 4)
+@review25.user = @user2
+@review25.place = @elconvite
+@review25.save!
+genre_review25 = GenresReview.new
+genre_review25.review = @review25
+genre_review25.genre = Genre.find_by(name: "art pop")
+genre_review25.save
+
+@review26 = Review.new(content: "Such an awesome place with live music! Also a record store!!!", rating: 5)
+@review26.user = @user1
+@review26.place = @elconvite
+@review26.save!
+genre_review26 = GenresReview.new
+genre_review26.review = @review26
+genre_review26.genre = Genre.find_by(name: "art pop")
+genre_review26.save
+
+puts 'finished'
+
+puts 'creating reviews for 6 cdmx rock places and 1 jazz'
+
+@review27 = Review.new(content: "This is a very cool bar! Definitely recommend!", rating: 5)
+@review27.user = @user1
+@review27.place = @sixtiesbar
+@review27.save!
+genre_review27 = GenresReview.new
+genre_review27.review = @review27
+genre_review27.genre = Genre.find_by(name: "rock")
+genre_review27.save
+
+@review28 = Review.new(content: "Amazing! Just Amazing! Awesome vibe", rating: 5)
+@review28.user = @user1
+@review28.place = @bebop
+@review28.save!
+genre_review28 = GenresReview.new
+genre_review28.review = @review28
+genre_review28.genre = Genre.find_by(name: "rock")
+genre_review28.save
+
+@review29 = Review.new(content: "I had a blast here!!!", rating: 5)
+@review29.user = @user2
+@review29.place = @gatocalavera
+@review29.save!
+genre_review29 = GenresReview.new
+genre_review29.review = @review29
+genre_review29.genre = Genre.find_by(name: "rock")
+genre_review29.save
+
+@review30 = Review.new(content: "One of the best places for live music in CDMX!", rating: 5)
+@review30.user = @user2
+@review30.place = @rockson
+@review30.save!
+genre_review30 = GenresReview.new
+genre_review30.review = @review30
+genre_review30.genre = Genre.find_by(name: "rock")
+genre_review30.save
+
+@review31 = Review.new(content: "Very chill place. Will definitely come back", rating: 4)
+@review31.user = @user1
+@review31.place = @bizarrocafe
+@review31.save!
+genre_review31 = GenresReview.new
+genre_review31.review = @review31
+genre_review31.genre = Genre.find_by(name: "rock")
+genre_review31.save
+
+@review32 = Review.new(content: "Decent music", rating: 3)
+@review32.user = @user2
+@review32.place = @valiant
+@review32.save!
+genre_review32 = GenresReview.new
+genre_review32.review = @review32
+genre_review32.genre = Genre.find_by(name: "rock")
+genre_review32.save
+
+@review33 = Review.new(content: "Such an amazing vibe! Highly recommend!", rating: 5)
+@review33.user = @user1
+@review33.place = @turkana
+@review33.save!
+genre_review33 = GenresReview.new
+genre_review33.review = @review33
+genre_review33.genre = Genre.find_by(name: "jazz")
+genre_review33.save
+
+puts 'finished'
