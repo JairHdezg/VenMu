@@ -34,23 +34,30 @@
       </div>
 
       <!-- favorite button -->
-      <% if @place.isfavorite(@user) %>
-        <div class="favorite-button pressed d-flex align-items-center justify-content-center">
-          <i class="fas fa-heart"></i>
-        </div>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>Added to your favorites!</strong>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+      <% if @user %>
+        <% if @place.isfavorite(@user) %>
+          <div class="favorite-button pressed d-flex align-items-center justify-content-center">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Added to your favorites!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <% else %>
+          <%= simple_form_for [@place, @favorite] do |f| %>
+          <button type="submit" class="favorite-button unpressed d-flex align-items-center justify-content-center">
+            <i class="fas fa-heart"></i>
           </button>
-        </div>
+          <% end %>
+        <% end %>
       <% else %>
       <%= simple_form_for [@place, @favorite] do |f| %>
         <button type="submit" class="favorite-button unpressed d-flex align-items-center justify-content-center">
           <i class="fas fa-heart"></i>
         </button>
         <% end %>
-
       <% end %>
 
       <!-- Slider main container -->

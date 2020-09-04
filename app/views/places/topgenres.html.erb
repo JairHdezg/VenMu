@@ -13,7 +13,7 @@
     <p class="genre_page_subsubtitle d-flex justify-content-center">Pick one!</p>
   </div>
   <div class="topgenre-container justify-content-center align-items-start row">
-    <% [['rock', 1], ['pop', 2], ['latin', 2], ['hiphop', 4], ['hiphop', 4]].each do |genre| %>
+    <% @sorted_top.each do |genre| %>
       <%= link_to places_path({ query: genre[0] }), method: :get, class: "no-underline user-topgenre-card col-11 d-flex justify-content-center align-items-center" do %>
         <p class="genre-card-name"><%= genre[0].capitalize %></p>
       <% end %>
