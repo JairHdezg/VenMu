@@ -34,7 +34,7 @@
       </div>
 
       <!-- favorite button -->
-      <% if @place.isfavorite %>
+      <% if @place.isfavorite(@user) %>
         <div class="favorite-button pressed d-flex align-items-center justify-content-center">
           <i class="fas fa-heart"></i>
         </div>
@@ -80,7 +80,6 @@
       <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content d-flex justify-content-center mx-0" id="review-modal-content">
-<%
             <div class="modal-body review-body d-flex justify-content-center">
               <button type="button" id="btn-close" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

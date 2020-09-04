@@ -25,8 +25,8 @@ class Place < ApplicationRecord
 
   end
 
-  def isfavorite
-    user.favorites.each do |favorite|
+  def isfavorite(current_user)
+    current_user.favorites.each do |favorite|
       return true if favorite.place == self
     end
     return false

@@ -10,19 +10,39 @@ class PlacesController < ApplicationController
       @query = params[:query]
 
       if params[:address]
-      sql_query = " \
+
+        if[:category]
+          sql_query = " \
           top_genre ILIKE :query \
+          AND category ILIKE :category \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 50)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category]).near( params[:address] , 25)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
+        elsif params[:categories]
+          sql_query = " \
+          top_genre ILIKE :query \
+          AND category IN (:categories) \
+          "
+          @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories]).near(params[:address], 25)
+          @geocodedPlaces = @places.geocoded
+          @markers = display_markers(@geocodedPlaces)
+        else
+          sql_query = " \
+            top_genre ILIKE :query \
+          "
+          @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").near(params[:address], 50)
+          @geocodedPlaces = @places.geocoded
+          @markers = display_markers(@geocodedPlaces)
+        end
+
       elsif params[:category]
 
         sql_query = " \
           top_genre ILIKE :query \
           AND category ILIKE :category \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category]).near([params[:lat], params[:lon]], 25)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", category: params[:category]).near([params[:lat], params[:lon]], 50)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
@@ -31,7 +51,7 @@ class PlacesController < ApplicationController
           top_genre ILIKE :query \
           AND category IN (:categories) \
         "
-        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories]).near([params[:lat], params[:lon]], 25)
+        @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%", categories: params[:categories]).near([params[:lat], params[:lon]], 50)
         @geocodedPlaces = @places.geocoded
         @markers = display_markers(@geocodedPlaces)
 
