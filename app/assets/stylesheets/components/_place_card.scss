@@ -31,6 +31,17 @@
   letter-spacing: -2px;
 }
 
+.place-card-category {
+  font-size: 1.7vh;
+  color: $white;
+  line-height: 1.5vh;
+  padding: 0;
+  position: absolute;
+  font-family: 'open sans';
+  top: 1.5vh;
+  left: 7%;
+}
+
 .place-card-rating i {
   color: $yellow;
   font-size: 2vh;

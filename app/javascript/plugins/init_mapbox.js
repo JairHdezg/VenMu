@@ -43,7 +43,7 @@ const initMapbox = () => {
             container: 'map',
             style: 'mapbox://styles/mapbox/bright-v8',
             center: [lon, lat],
-            zoom: 9
+            zoom: 8
           });
 
           const markers = JSON.parse(mapElement.dataset.markers);
@@ -69,7 +69,7 @@ const initMapbox = () => {
         container: 'map',
         style: 'mapbox://styles/mapbox/bright-v8',
         center: [params['lon'], params['lat']],
-        zoom: 7
+        zoom: 8
       });
 
       var geolocate = new mapboxgl.GeolocateControl({
