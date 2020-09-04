@@ -37,13 +37,14 @@
 
 .genre-text {
   position: absolute;
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-style: normal;
-  font-weight: 200;
-  font-size: 12px;
+  font-weight: 300;
+  font-size: 13px;
   line-height: 14px;
-  right: 41vw;
+  width: 100vw;
   top: 4vh;
+  text-align: center !important;
 }
 
 .genre-container h4 {
@@ -54,12 +55,16 @@
   color: $white;
   line-height: 1.5em;
   font-size: .94em;
+  font-family: 'roboto';
+  font-weight: 300;
+  position: absolute;
+  bottom: 1vh;
+  left: 3vw;
 }
 
 @media (max-width: 320px) {
   .genre-text {
-    font-size: 10px;
-    right: 40vw;
+    font-size: 11px;
   }
 }
 
