@@ -64,7 +64,7 @@ const initMapbox = () => {
           });
         });
 
-    } else {
+    } else if (params['lon']) {
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/bright-v8',
