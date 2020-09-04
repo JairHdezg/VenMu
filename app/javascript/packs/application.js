@@ -59,7 +59,7 @@ function transformToAssocArray( prmstr ) {
 const params = getSearchParameters();
 
 if (window.location.pathname=='/places') {
-  if (( params['lon']=='' || params['lon'] == null ) && params['address'] == null) {
+  if (( params['lon']=='' || params['lon'] == null ) && (params['address'] == null || params['address'] == '')) {
     navigator.geolocation.getCurrentPosition((data) => {
       const lat = data.coords.latitude;
       const lon = data.coords.longitude;
@@ -176,7 +176,7 @@ $('#myModal').on('shown.bs.modal', function () {
 // TOGGLIN
 const pickGenre = document.querySelector(".genre-card-container");
 if (pickGenre){
-  
+
   const openBtn = document.getElementById("main-menu-button");
   const closeBtn = document.getElementById("main-menu-close");
 

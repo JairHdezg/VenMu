@@ -54,7 +54,7 @@
         <div class="swiper-wrapper d-flex align-items-center">
 
           <% @categories.each do |category| %>
-            <%= link_to places_path({lat: params[:lat], lon: params[:lon], category: category, query: params[:query]}), method: :get, class: "swiper-slide places-query-category", style: "width: unset" do %>
+            <%= link_to places_path({address: params[:address], lat: params[:lat], lon: params[:lon], category: category, query: params[:query]}), method: :get, class: "swiper-slide places-query-category", style: "width: unset" do %>
               <div class="" > <%= category %> </div>
             <% end %>
           <% end %>
