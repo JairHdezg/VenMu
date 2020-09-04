@@ -54,16 +54,20 @@ function transformToAssocArray( prmstr ) {
 
 const params = getSearchParameters();
 
-if (window.location.pathname=='/places') {
-  if (( params['lon']=='' || params['lon'] == null ) && (params['address'] == null || params['address'] == '')) {
-    navigator.geolocation.getCurrentPosition((data) => {
-      const lat = data.coords.latitude;
-      const lon = data.coords.longitude;
-      const query = params['query'];
-      window.location.href = `/places?lon=${lon}&lat=${lat}&query=${query}&gl=y`;
-    });
+window.onload = function() {
+  if (window.location.pathname=='/places') {
+    if (( params['lon']=='' || params['lon'] == null ) && (params['address'] == null || params['address'] == '')) {
+      navigator.geolocation.getCurrentPosition((data) => {
+        const lat = data.coords.latitude;
+        const lon = data.coords.longitude;
+        const query = params['query'];
+        window.location.href = `/places?lon=${lon}&lat=${lat}&query=${query}&gl=y`;
+      });
+    }
   }
-}
+};
+
+
 
 
 // genreButtons.forEach((button) => {

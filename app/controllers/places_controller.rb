@@ -10,8 +10,7 @@ class PlacesController < ApplicationController
       @query = params[:query]
 
       if params[:address]
-
-        if[:category]
+        if params[:category]
           sql_query = " \
           top_genre ILIKE :query \
           AND category ILIKE :category \
@@ -37,7 +36,6 @@ class PlacesController < ApplicationController
         end
 
       elsif params[:category]
-
         sql_query = " \
           top_genre ILIKE :query \
           AND category ILIKE :category \
@@ -56,7 +54,6 @@ class PlacesController < ApplicationController
         @markers = display_markers(@geocodedPlaces)
 
       else
-
         sql_query = " \
           top_genre ILIKE :query \
         "
