@@ -26,7 +26,7 @@
       <!-- <div class="dropdown"> -->
 
         <%= link_to places_path({address: params[:address], lat: params[:lat], lon: params[:lon], query: params[:query]}), method: :get, class: "" do %>
-        <button class=" dropdown-toggle border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+        <button class=" dropdown-toggle border-0 mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
           <div class="ml-3 swiper-slide d-flex align-items-center justify-content-center" id="places-query-burger">
             <i class="fas fa-align-left"></i>
           </div>
@@ -102,7 +102,7 @@
 
 
                   <div class="places-card-info">
-                    <h4> <%= place.name.capitalize %> </h4>
+                    <h4> <%= place.name.titleize %> </h4>
                     <p> <%= place.top_genre.capitalize %> </p>
                   </div>
 
