@@ -22,13 +22,17 @@
 
     <!--category for query -->
     <div class="places-categories d-flex align-items-center">
-      <div class="dropdown">
+      <!-- <div class="dropdown"> -->
+
+        <%= link_to places_path({address: params[:address], lat: params[:lat], lon: params[:lon], query: params[:query]}), method: :get, class: "" do %>
         <button class=" dropdown-toggle border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
           <div class="ml-3 swiper-slide d-flex align-items-center justify-content-center" id="places-query-burger">
             <i class="fas fa-align-left"></i>
           </div>
         </button>
-        <div class="dropdown-menu dropdown-menu-categories" aria-labelledby="dropdownMenuButton">
+        <% end %>
+
+       <!--  <div class="dropdown-menu dropdown-menu-categories" aria-labelledby="dropdownMenuButton">
           <form action="/places">
             <% @categories.each do |category| %>
               <div class="form-check">
@@ -45,8 +49,8 @@
               <button type="submit" class="btn btn-block btn-sm btn-primary align-items-end" id="category-button">Find</button>
             </div>
           </form>
-        </div>
-      </div>
+        </div> -->
+     <!--  </div> -->
 
       <!-- Slider main container -->
       <div class="swiper-container s3 ">

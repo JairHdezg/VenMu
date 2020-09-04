@@ -18,9 +18,24 @@
   top: -100vh;
 }
 
+.home-address {
+  background-color:transparent;
+  border: 1px solid $white;
+}
+
+.home-address::placeholder {
+  color: $white;
+}
+
 .bottom {
   top: 0;
 }
+
+.home-button {
+  background-color: $light-gray !important;
+  opacity: .7;
+}
+
 #address-button{
   padding: .2vh;
   font-size: 2vh;
@@ -49,6 +64,15 @@
   width: 65vw;
   padding: 1vh 2vw;
   border-radius: 2vw;
+}
+
+.search-home {
+  width: 73vw;
+  padding: 1vh 2vw;
+  border-radius: 2vw;
+  background-color: transparent !important;
+  box-shadow: none;
+  border: none;
 }
 
 #main-menu-close {

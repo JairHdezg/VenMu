@@ -33,7 +33,7 @@
       </div>
 
       <!-- favorite button -->
-      <% if @place.isfavorite %>
+      <% if @place.isfavorite(@user) %>
         <div class="favorite-button pressed d-flex align-items-center justify-content-center">
           <i class="fas fa-heart"></i>
         </div>
@@ -82,7 +82,7 @@
 <%
 =begin%>
              <div class="modal-header" id="review-modal-header">
-            </div> 
+            </div>
 <%
 =end%>
             <div class="modal-body review-body d-flex justify-content-center">
