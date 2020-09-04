@@ -18,6 +18,7 @@ import { hidingHome } from '../packs/hiding_home';
 import { initSelect2 } from '../plugins/init_select2';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
+
 const menuButton = document.getElementById('main-menu-button')
 const navBar = document.getElementById('main-menu-nav')
 const closeNav = document.getElementById('main-menu-close')
@@ -188,3 +189,22 @@ if (pickGenre){
     pickGenre.classList ="genre-card-container"
   })
 }
+
+window.addEventListener('load', () => {
+  navigator.serviceWorker.register('/service-worker.js').then(registration => {
+    console.log('ServiceWorker registered: ', registration);
+    var serviceWorker;
+    if (registration.installing) {
+      serviceWorker = registration.installing;
+      console.log('Service worker installing.');
+    } else if (registration.waiting) {
+      serviceWorker = registration.waiting;
+      console.log('Service worker installed & waiting.');
+    } else if (registration.active) {
+      serviceWorker = registration.active;
+      console.log('Service worker active.');
+    }
+  }).catch(registrationError => {
+    console.log('Service worker registration failed: ', registrationError);
+  });
+});
