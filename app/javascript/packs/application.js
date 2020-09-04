@@ -54,7 +54,7 @@ function transformToAssocArray( prmstr ) {
 
 const params = getSearchParameters();
 
-window.onload = function() {
+window.addEventListener('load', () => {
   if (window.location.pathname=='/places') {
     if (( params['lon']=='' || params['lon'] == null ) && (params['address'] == null || params['address'] == '')) {
       navigator.geolocation.getCurrentPosition((data) => {
@@ -65,7 +65,7 @@ window.onload = function() {
       });
     }
   }
-};
+});
 
 
 
