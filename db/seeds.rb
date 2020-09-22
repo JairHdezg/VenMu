@@ -323,7 +323,7 @@ puts 'Finished!'
 
 puts 'Creating Gosh damn Places!'
 
-@wingsetc = Place.new(name: 'Wings Etc', top_genre: 'art pop', category: 'bar', address: '2815 Gateway S Dr, Goshen, IN 46526, United States', description:"Chain pub known for chicken wings & a wide variety of sauces, with sports on TV & video games.", phone_number: '574-537-9464')
+@wingsetc = Place.new(name: 'Wings Etc', top_genre: 'rock', category: 'bar', address: '2815 Gateway S Dr, Goshen, IN 46526, United States', description:"Chain pub known for great rock, classic rock, and alternative music. Plus there's chicken wings & variety of sauces, sports on TV & video games.", phone_number: '574-537-9464')
 file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRpzI0lgfVhuz3khWpo4qf8lAvW-6B_7KM_Cg&usqp=CAU')
 @wingsetc.photos.attach(io: file, filename: 'wingsetc.jpg', content_type: 'image/png')
 file = URI.open('https://pbs.twimg.com/media/DtwCeTrWkAEU1TO.jpg')
@@ -333,7 +333,7 @@ file = URI.open('https://cdn.usarestaurants.info/assets/uploads/f883c58d0bf5543f
 @wingsetc.user = @user1
 @wingsetc.save!
 
-@ignitiongarage = Place.new(name: 'Ignition Garage', top_genre: 'art pop', category: 'bar', address: '120 E Washington St, Goshen, IN 46528, United States', description:"Chain pub known for chicken wings & a wide variety of sauces, with sports on TV & video games.", phone_number: '574-971-8282')
+@ignitiongarage = Place.new(name: 'Ignition Garage', top_genre: 'rock', category: 'bar', address: '120 E Washington St, Goshen, IN 46528, United States', description:"Former garage turned music store/bar/venue, you'll love the indie rock/pop, jazz, and soul music played here!", phone_number: '574-971-8282')
 file = URI.open('https://bloximages.newyork1.vip.townnews.com/southbendtribune.com/content/tncms/assets/v3/editorial/7/59/759cdf7a-f74d-11e3-b99d-0017a43b2370/53a236c4ddaeb.image.jpg')
 @ignitiongarage.photos.attach(io: file, filename: 'ignitiongarage.jpg', content_type: 'image/png')
 file = URI.open('https://68.media.tumblr.com/4567f9fdcd93b1b47b32f97608e74421/tumblr_or3tyfToPv1u80zz9o1_500.jpg')
@@ -346,7 +346,7 @@ file = URI.open('https://record.goshen.edu/wp-content/uploads/2016/11/Features-I
 puts 'Listo!'
 
 puts "Creating 10 Goshen places!"
-@place1 = Place.new(name: 'Taqueria San Marcos', top_genre: 'soul', category: 'Restaurant', address: '113 S. Main St., Goshen, IN', description:"You'll love the reggaeton and dance music here! Great patio, tacos, as well!", phone_number: '55 1845 9513')
+@place1 = Place.new(name: 'Taqueria San Marcos', top_genre: 'latin', category: 'Restaurant', address: '113 S. Main St., Goshen, IN', description:"You'll love the latin, reggaeton, and dance music here! Great tacos, as well!", phone_number: '55 1845 9513')
 file = URI.open('https://www.dondeir.com/wp-content/uploads/2019/03/cafe-taco-bar-barra.jpg')
 @place1.photos.attach(io: file, filename: 'taco-bar.jpg', content_type: 'image/png')
 file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/19247794_881425275342861_148534934067197032_n.jpg?_nc_cat=101&_nc_sid=9267fe&_nc_ohc=_EX_r2T0IxkAX9sffJ3&_nc_ht=scontent-ort2-1.xx&oh=49c1926d11b4ae4ba28a6ad80f126c0a&oe=5F751C71')
@@ -356,7 +356,7 @@ file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/37600726_10157672
 @place1.user = @user1
 @place1.save!
 
-@place4 = Place.new(name: 'Venturi', top_genre: 'art pop', category: 'Restaurant', address: '123 E. Lincoln, Goshen, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+@place4 = Place.new(name: 'Venturi', top_genre: 'pop', category: 'Restaurant', address: '123 E. Lincoln, Goshen, Indiana, United States', description: 'Good indie/art pop, plus soul music! Also the pizza is divine!', phone_number: '55 1845 9513')
 file = URI.open('https://images.squarespace-cdn.com/content/v1/52f12ea6e4b07a35a2f94fd7/1391551486776-TX3ZQXDEW39FF6KH6JB1/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/venturi-interior.jpg')
 @place4.photos.attach(io: file, filename: 'venturi.jpg', content_type: 'image/png')
 file = URI.open('https://images.squarespace-cdn.com/content/v1/52f12ea6e4b07a35a2f94fd7/1391712981281-Z4IVE7Y0NH9YAYEL6LVZ/ke17ZwdGBToddI8pDm48kNe6zOZTHfz7l6ZgjxUpukVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI_yASvo-WEqohroAwDGiHyF2S9ug-6_kqb0gBNu81ch4KMshLAGzx4R3EDFOm1kBS/three-margherite.jpg')
@@ -366,7 +366,7 @@ file = URI.open('https://cdn.usarestaurants.info/assets/uploads/f5d70eb642fcc334
 @place4.user = @user1
 @place4.save!
 
-@place5 = Place.new(name: 'Common Spirits', top_genre: 'art pop', category: 'Bar', address: '111 E. Lincoln Ave, Goshen Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+@place5 = Place.new(name: 'Common Spirits', top_genre: 'dance', category: 'Bar', address: '111 E. Lincoln Ave, Goshen Indiana, United States', description: 'great dance music here!', phone_number: '55 1845 9513')
 file = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_20160520_110210-1.jpg')
 @place5.photos.attach(io: file, filename: 'common-spirits-1.jpg', content_type: 'image/png')
 file = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_20160609_133357.jpg')
@@ -376,7 +376,7 @@ file = URI.open('https://commonspirits.com/wp-content/uploads/2014/12/IMG_201605
 @place5.user = @user1
 @place5.save!
 
-@place6 = Place.new(name: 'Constant Spring', top_genre: 'art pop', category: 'Bar', address: '219 S. Main St, Goshen Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+@place6 = Place.new(name: 'Constant Spring', top_genre: 'dance', category: 'Bar', address: '219 S. Main St, Goshen Indiana, United States', description: 'Great hangout spot with great dance music and lots of outside seating', phone_number: '55 1845 9513')
 file = URI.open('https://bloximages.newyork1.vip.townnews.com/southbendtribune.com/content/tncms/assets/v3/editorial/b/0a/b0a7bbc2-ed8e-5801-b0f4-0c70dd137ced/55e8158422eee.image.jpg?crop=543%2C543%2C128%2C0&resize=1200%2C1200&order=crop%2Cresize')
 @place6.photos.attach(io: file, filename: 'constant-spring-1.jpg', content_type: 'image/png')
 file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/118215013_10157882671363214_5593952434385893705_o.jpg?_nc_cat=109&_nc_sid=9267fe&_nc_ohc=wHXGktzkN2oAX9lUvtf&_nc_ht=scontent-ort2-1.xx&oh=4473102d5f097f2b3fc712bc96cad635&oe=5F75DC60')
@@ -386,7 +386,7 @@ file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/103256447_1015766
 @place6.user = @user1
 @place6.save!
 
-@place7 = Place.new(name: 'Goshen Brewing Company', top_genre: 'art pop', category: 'Restaurant', address: '315 W. Washington St.,Goshen, Indiana, United States', description: 'Cozy hangout spot with good Soul Music', phone_number: '55 1845 9513')
+@place7 = Place.new(name: 'Goshen Brewing Company', top_genre: 'jazz', category: 'Restaurant', address: '315 W. Washington St.,Goshen, Indiana, United States', description: "Good jazz music plus lots of local bands and amazing outdoor music experience!", phone_number: '55 1845 9513')
 file = URI.open('https://goshenbrewing.com/wp-content/uploads/2015/05/1080-goshen-brewing-8.jpg')
 @place7.photos.attach(io: file, filename: 'goshen-brewing-1.jpg', content_type: 'image/png')
 file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-0/c34.0.206.206a/p206x206/105654352_1886314034865335_848628426071560408_o.jpg?_nc_cat=110&_nc_sid=110474&_nc_ohc=7YC2aMavQfQAX-XvjjP&_nc_ht=scontent-ort2-1.xx&oh=5296af7bdc7492fb3fa0f549dd247f70&oe=5F771FE5')
@@ -396,7 +396,7 @@ file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-0/c32.0.206.206a/p2
 @place7.user = @user1
 @place7.save!
 
-@place8 = Place.new(name: 'The Electric Brew', top_genre: 'soul', category: 'Restaurant', address: '118 E. Washington St, Goshen, IN, USA', description: 'Mostly jazz, ambient, acoustic, and indie-rock played here, with a cozy vibe.', phone_number: '(574) 555-0911')
+@place8 = Place.new(name: 'The Electric Brew', top_genre: 'jazz', category: 'Restaurant', address: '118 E. Washington St, Goshen, IN, USA', description: 'Mostly jazz, ambient, acoustic, and indie-rock played here, with a cozy vibe.', phone_number: '(574) 555-0911')
 file = URI.open('https://lh5.googleusercontent.com/p/AF1QipMxOWat0FjGXxAd8FBWyHgRd2IECqEtVPPlCSF0=w600-h485-p-k-no')
 @place8.photos.attach(io: file, filename: 'electricbrew.png', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1578499026171-a1016496b7f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
@@ -406,7 +406,7 @@ file = URI.open('https://images.unsplash.com/photo-1521017432531-fbd92d768814?ix
 @place8.user = @user2
 @place8.save!
 
-@eat = Place.new(name: 'Eat', top_genre: 'soul', category: 'Restaurant', address: '127 E. Washington St, Goshen, IN, USA', description: 'Mostly jazz, soul, acoustic, and indie-rock played here, with a cozy vibe.', phone_number: '(574) 555-0911')
+@eat = Place.new(name: 'Eat', top_genre: 'soul', category: 'Restaurant', address: '127 E. Washington St, Goshen, IN, USA', description: 'Mostly soul, jazz, acoustic, and indie-rock played here, with a cozy vibe.', phone_number: '(574) 555-0911')
 file = URI.open('https://images.unsplash.com/photo-1527224538127-2104bb71c51b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80')
 @eat.photos.attach(io: file, filename: 'eat.png', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1578499026171-a1016496b7f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
@@ -416,7 +416,7 @@ file = URI.open('https://images.unsplash.com/photo-1521017432531-fbd92d768814?ix
 @eat.user = @user2
 @eat.save!
 
-@maple = Place.new(name: 'Maple Indian Cuisine', top_genre: 'art pop', category: 'Restaurant', address: '127 S. Main St, Goshen, IN, USA', description: 'Lots of indie pop, world music, and art pop played here, with delicious food.', phone_number: '(574) 555-0911')
+@maple = Place.new(name: 'Maple Indian Cuisine', top_genre: 'pop', category: 'Restaurant', address: '127 S. Main St, Goshen, IN, USA', description: 'Lots of indie pop, world music, and art pop played here, with delicious food.', phone_number: '(574) 555-0911')
 file = URI.open('https://images.unsplash.com/photo-1536305030588-45dc07a2a372?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
 @maple.photos.attach(io: file, filename: 'indianfood.png', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1582228096960-7f5d2ec4aa8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
@@ -424,7 +424,7 @@ file = URI.open('https://images.unsplash.com/photo-1582228096960-7f5d2ec4aa8e?ix
 @maple.user = @user2
 @maple.save!
 
-@phoking = Place.new(name: 'Pho King', top_genre: 'art pop', category: 'Restaurant', address: '1407 College Ave, Goshen, IN, USA', description: 'Mostly art pop, kpop, and world music, great Pho too! Pho King rocks!', phone_number: '(574) 555-0911')
+@phoking = Place.new(name: 'Pho Noodlicious', top_genre: 'classical', category: 'Restaurant', address: '1407 College Ave, Goshen, IN, USA', description: 'Mostly classical music, but also occassionally art pop, kpop, and world music here. Great Pho and spring rolls too!', phone_number: '(574) 555-0911')
 file = URI.open('https://images.unsplash.com/photo-1512200937580-db88be2072a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
 @phoking.photos.attach(io: file, filename: 'phoking.png', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1596016764780-a5fdbe817fbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
@@ -432,7 +432,7 @@ file = URI.open('https://images.unsplash.com/photo-1596016764780-a5fdbe817fbe?ix
 @phoking.user = @user2
 @phoking.save!
 
-@elephantbar = Place.new(name: 'Elephant Bar', top_genre: 'art pop', category: 'bar', address: '227 S. Main, Goshen, IN, USA', description: 'Mostly art pop, kpop, and world music, great Pho too! Pho King rocks!', phone_number: '(574) 555-0911')
+@elephantbar = Place.new(name: 'Elephant Bar', top_genre: 'pop', category: 'bar', address: '227 S. Main, Goshen, IN, USA', description: 'Mostly art pop, kpop, and world music, great Pho too! Pho King rocks!', phone_number: '(574) 555-0911')
 file = URI.open('https://images.unsplash.com/photo-1512200937580-db88be2072a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
 @elephantbar.photos.attach(io: file, filename: 'phoking.png', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1596016764780-a5fdbe817fbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
@@ -473,7 +473,7 @@ file = URI.open('https://images.unsplash.com/photo-1577099636826-7a532667d518?ix
 @place11.user = @user2
 @place11.save!
 
-@place9 = Place.new(name: 'Los Primos', top_genre: 'rock', category: 'Bar', address: 'Cuauhtémoc, 06700 Ciudad de México, CDMX, Mexico', description: 'Great spot with awesome rock music! Classic rock until 9:00pm, hard rock and metal into the night!', phone_number: '55 1847 9513')
+@place9 = Place.new(name: 'Los Primos', top_genre: 'latin', category: 'Bar', address: '123 S. 3rd St., Goshen, IN, USA', description: 'Great spot with awesome latin/rock music! Lalo Cura forever!!', phone_number: '55 1847 9513')
 file = URI.open('https://images.unsplash.com/photo-1570936100858-56eb3a5f5ae1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 @place9.photos.attach(io: file, filename: 'rockbar1.jpg', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1565755713428-1bdfaa7db8ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
@@ -649,22 +649,22 @@ puts 'Creating 5 favorites'
 puts 'Finished'
 
 puts "Creating new reviews for places9-13"
-@review10 = Review.new(content: 'Went to the SOAD tribute, awesome night', rating: 5)
+@review10 = Review.new(content: 'Fantastic latin beats, always gets my feet moving while enjoying stellar gorditas! YUM!', rating: 5)
 @review10.user = @user1
 @review10.place = @place9
 @review10.save!
 genre_review10 = GenresReview.new
 genre_review10.review = @review10
-genre_review10.genre = Genre.find_by(name: 'rock')
+genre_review10.genre = Genre.find_by(name: 'latin')
 genre_review10.save
 
-@review11 = Review.new(content: 'Pretty chill.', rating: 4)
+@review11 = Review.new(content: 'Love these rhythms! Everything from fast Puerto Rican salsa to harmonic banda, and often some local latin rock too!', rating: 4)
 @review11.user = @user2
 @review11.place = @place9
 @review11.save!
 genre_review11 = GenresReview.new
 genre_review11.review = @review11
-genre_review11.genre = Genre.find_by(name: 'rock')
+genre_review11.genre = Genre.find_by(name: 'latin')
 genre_review11.save
 
 @review12 = Review.new(content: 'Music is great, had a blast! ', rating: 5)
