@@ -649,22 +649,22 @@ puts 'Creating 5 favorites'
 puts 'Finished'
 
 puts "Creating new reviews for places9-13"
-@review10 = Review.new(content: 'Went to the SOAD tribute, awesome night', rating: 5)
+@review10 = Review.new(content: 'Fantastic latin beats, always gets my feet moving while enjoying stellar gorditas! YUM!', rating: 5)
 @review10.user = @user1
 @review10.place = @place9
 @review10.save!
 genre_review10 = GenresReview.new
 genre_review10.review = @review10
-genre_review10.genre = Genre.find_by(name: 'rock')
+genre_review10.genre = Genre.find_by(name: 'latin')
 genre_review10.save
 
-@review11 = Review.new(content: 'Pretty chill.', rating: 4)
+@review11 = Review.new(content: 'Love these rhythms! Everything from fast Puerto Rican salsa to harmonic banda, and often some local latin rock too!', rating: 4)
 @review11.user = @user2
 @review11.place = @place9
 @review11.save!
 genre_review11 = GenresReview.new
 genre_review11.review = @review11
-genre_review11.genre = Genre.find_by(name: 'rock')
+genre_review11.genre = Genre.find_by(name: 'latin')
 genre_review11.save
 
 @review12 = Review.new(content: 'Music is great, had a blast! ', rating: 5)
