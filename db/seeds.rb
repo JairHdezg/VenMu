@@ -323,7 +323,7 @@ puts 'Finished!'
 
 puts 'Creating Gosh damn Places!'
 
-@wingsetc = Place.new(name: 'Wings Etc', top_genre: 'art pop', category: 'bar', address: '2815 Gateway S Dr, Goshen, IN 46526, United States', description:"Chain pub known for chicken wings & a wide variety of sauces, with sports on TV & video games.", phone_number: '574-537-9464')
+@wingsetc = Place.new(name: 'Wings Etc', top_genre: 'rock', category: 'bar', address: '2815 Gateway S Dr, Goshen, IN 46526, United States', description:"Chain pub known for chicken wings & a wide variety of sauces, with sports on TV & video games.", phone_number: '574-537-9464')
 file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRpzI0lgfVhuz3khWpo4qf8lAvW-6B_7KM_Cg&usqp=CAU')
 @wingsetc.photos.attach(io: file, filename: 'wingsetc.jpg', content_type: 'image/png')
 file = URI.open('https://pbs.twimg.com/media/DtwCeTrWkAEU1TO.jpg')
@@ -333,7 +333,7 @@ file = URI.open('https://cdn.usarestaurants.info/assets/uploads/f883c58d0bf5543f
 @wingsetc.user = @user1
 @wingsetc.save!
 
-@ignitiongarage = Place.new(name: 'Ignition Garage', top_genre: 'art pop', category: 'bar', address: '120 E Washington St, Goshen, IN 46528, United States', description:"Chain pub known for chicken wings & a wide variety of sauces, with sports on TV & video games.", phone_number: '574-971-8282')
+@ignitiongarage = Place.new(name: 'Ignition Garage', top_genre: 'rock', category: 'bar', address: '120 E Washington St, Goshen, IN 46528, United States', description:"Former garage turned music store/bar/venue, you'll love the indie rock/pop, jazz, and soul music played here!", phone_number: '574-971-8282')
 file = URI.open('https://bloximages.newyork1.vip.townnews.com/southbendtribune.com/content/tncms/assets/v3/editorial/7/59/759cdf7a-f74d-11e3-b99d-0017a43b2370/53a236c4ddaeb.image.jpg')
 @ignitiongarage.photos.attach(io: file, filename: 'ignitiongarage.jpg', content_type: 'image/png')
 file = URI.open('https://68.media.tumblr.com/4567f9fdcd93b1b47b32f97608e74421/tumblr_or3tyfToPv1u80zz9o1_500.jpg')
@@ -346,7 +346,7 @@ file = URI.open('https://record.goshen.edu/wp-content/uploads/2016/11/Features-I
 puts 'Listo!'
 
 puts "Creating 10 Goshen places!"
-@place1 = Place.new(name: 'Taqueria San Marcos', top_genre: 'soul', category: 'Restaurant', address: '113 S. Main St., Goshen, IN', description:"You'll love the reggaeton and dance music here! Great patio, tacos, as well!", phone_number: '55 1845 9513')
+@place1 = Place.new(name: 'Taqueria San Marcos', top_genre: 'latin', category: 'Restaurant', address: '113 S. Main St., Goshen, IN', description:"You'll love the latin, reggaeton, and dance music here! Great tacos, as well!", phone_number: '55 1845 9513')
 file = URI.open('https://www.dondeir.com/wp-content/uploads/2019/03/cafe-taco-bar-barra.jpg')
 @place1.photos.attach(io: file, filename: 'taco-bar.jpg', content_type: 'image/png')
 file = URI.open('https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/19247794_881425275342861_148534934067197032_n.jpg?_nc_cat=101&_nc_sid=9267fe&_nc_ohc=_EX_r2T0IxkAX9sffJ3&_nc_ht=scontent-ort2-1.xx&oh=49c1926d11b4ae4ba28a6ad80f126c0a&oe=5F751C71')
